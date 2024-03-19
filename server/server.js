@@ -13,6 +13,11 @@ if (!MONGO_URL) {
 const app = express();
 app.use(express.json());
 
+app.get("/api/matches/", async (req, res) => {
+    const matches = await MatchModel.find().sort({ date: "asc" });
+    return res.json(matches);
+})
+
 
 const main = async () => {
     await mongoose.connect(MONGO_URL);
