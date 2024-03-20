@@ -1,3 +1,37 @@
 .MatchesTable {
-    padding: 0.5rem;
+    width: 100%; /* Set the table to full width */
+    border-collapse: collapse; /* Remove borders between cells */
 }
+
+.MatchesTable th,
+.MatchesTable td {
+    padding: 10px 20px; /* Add some padding for better readability */
+    text-align: center; /* Center text in all cells */
+}
+
+.MatchesTable thead th {
+    background-color: #333; /* Dark background for headers */
+    color: #fff; /* White text for headers */
+    font-weight: bold; /* Make headers bolder */
+}
+
+.MatchesTable tr:nth-child(even) {
+    background-color: #f2f2f2; /* Alternate row background color */
+}
+
+.MatchesTable tr:hover {
+    background-color: #ddd; /* Highlight row on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Optional: Style specific columns (adjust class names as needed) */
+.MatchesTable .date {
+    color: #999; /* Lighter color for date column */
+}
+
+.MatchesTable .homeScore,
+.MatchesTable .awayScore {
+    font-weight: bold; /* Bold text for scores */
+    color: #007bff; /* Blue color for scores */
+}
+
