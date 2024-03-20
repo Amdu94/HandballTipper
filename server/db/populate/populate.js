@@ -21,6 +21,8 @@ const populateMatches = async () => {
         date: match.date,
         homeScore: match.scores.home,
         awayScore: match.scores.away,
+        homeGuess: null,
+        awayGuess: null,
     }));
 
     await matchModel.create(...matchesToDb);
