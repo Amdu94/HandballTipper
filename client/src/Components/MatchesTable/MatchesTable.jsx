@@ -1,7 +1,17 @@
-import { Link} from "react-router-dom";
 import "./MatchesTable.css";
 
-const MatchesTable =({ matches }) => (
+const formatDate = (dateString) => {
+    const options = {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+    };
+    return new Date(dateString).toLocaleString("hu-HU", options);
+};
+
+const MatchesTable = ({ matches }) => (
     <div className="MatchesTable">
         <table>
             <thead>
@@ -19,7 +29,7 @@ const MatchesTable =({ matches }) => (
                 <tr key={match._id}>
                     <td>{match.home}</td>
                     <td>{match.away}</td>
-                    <td>{match.date}</td>
+                    <td>{formatDate(match.date)}</td>
                     <td>{match.homeScore}</td>
                     <td>{match.awayScore}</td>
                     <td></td>
