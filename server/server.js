@@ -5,6 +5,8 @@ const MatchModel = require("./db/match.model");
 
 const { MONGO_URL, PORT = 8080 } = process.env;
 
+const date = new Date();
+
 if (!MONGO_URL) {
     console.error("Missing MONGO_URL environment variable");
     process.exit(1);
@@ -15,6 +17,11 @@ app.use(express.json());
 
 app.get("/api/matches/", async (req, res) => {
     const matches = await MatchModel.find().sort({ date: "asc" });
+    return res.json(matches);
+})
+
+app.get("/api/nextMatches/", async (req, res) => {
+    const matches = await MatchModel.find({ date: { $gt: date }}).sort({ date: "asc" });
     return res.json(matches);
 })
 
