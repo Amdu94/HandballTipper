@@ -1,5 +1,5 @@
 const fetchData = async () => {
-    const url = 'https://api-handball.p.rapidapi.com/games?league=177&season=2024';
+    const url = 'https://api-handball.p.rapidapi.com/games?league=50&season=2023';
     const options = {
         method: 'GET',
         headers: {
