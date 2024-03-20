@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import Loading from "../Components/Loading";
-import MatchesTable from "../Components/MatchesTable";
+import AllMatchesTable from "../Components/AllMatchesTable";
 
 const fetchMatches = () => {
     return fetch("/api/matches").then((res) => res.json());
 };
 
-const MatchesList = () => {
+const AllMatchesList = () => {
     const [loading, setLoading] = useState(true);
     const [matches, setMatches] = useState(null);
 
@@ -22,7 +22,7 @@ const MatchesList = () => {
         return <Loading />
     }
 
-    return <MatchesTable matches={matches} />;
+    return <AllMatchesTable matches={matches} />;
 };
 
-export default MatchesList;
+export default AllMatchesList;

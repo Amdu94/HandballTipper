@@ -1,4 +1,4 @@
-import "./MatchesTable.css";
+import "./AllMatchesTable.css";
 
 const formatDate = (dateString) => {
     const options = {
@@ -11,7 +11,7 @@ const formatDate = (dateString) => {
     return new Date(dateString).toLocaleString("hu-HU", options);
 };
 
-const MatchesTable = ({ matches }) => (
+const AllMatchesTable = ({ matches }) => (
     <div className="MatchesTable">
         <table>
             <thead>
@@ -40,4 +40,4 @@ const MatchesTable = ({ matches }) => (
     </div>
 );
 
-export default MatchesTable;
+export default AllMatchesTable;

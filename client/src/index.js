@@ -5,9 +5,10 @@ import reportWebVitals from './reportWebVitals';
 
 import Layout from "./Pages/Layout";
 import ErrorPage from "./Pages/ErrorPage";
-import MatchesList from "./Pages/MatchesList";
+import AllMatchesList from "./Pages/AllMatchesList";
 
 import './index.css';
+import NextMatchesList from "./Pages/NextMatchesList";
 
 const router = createBrowserRouter([
     {
@@ -17,8 +18,12 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <MatchesList />,
+                element: <AllMatchesList />,
             },
+            {
+                path: "/nextMatches",
+                element: <NextMatchesList/>,
+            }
         ],
     },
 ]);
