@@ -47,59 +47,131 @@ app.get("/api/users/:id/guesses", async (req, res) => {
 
 
 app.post("/api/users/", async (req, res, next) => {
-    const user = req.body;
+    const { username, email, password } = req.body; // Új adatok fogadása: e-mail és jelszó
 
     try {
-        const saved = await UserModel.create(user);
-        return res.json(saved);
-    } catch (err) {
-        return next(err);
-    }
-})
+        const user = await UserModel.create({ username, email, password }); // Új felhasználó létrehozása a kibővített adatokkal
 
-app.patch("/api/users/:userId/guesses", async (req, res, next) => {
-    const { userId } = req.params;
-    const { matchId, home, away } = req.body;
+        // Az összes meccs lekérése az adatbázisból
+        const matches = await MatchModel.find({}, '_id');
 
-    try {
-        // Felhasználó betöltése az azonosító alapján
-        const user = await UserModel.findById(userId);
-        const userGuesses = user.guesses;
+        // Felhasználóhoz minden meccs hozzáadása a guesses tömbbe
+        const userGuesses = matches.map(match => ({
+            match: match._id,
+            home: null,
+            away: null
+        }));
+        user.guesses = userGuesses;
 
-        if (!user) {
-            return res.status(404).json({ message: "Felhasználó nem található" });
-        }
-
-        // Meglévő tipp keresése a meccsre
-        const existingGuess = userGuesses.find((guess) => guess.match === matchId);
-
-        // Ha létezik tipp, frissítjük, ha nem, újat hozunk létre
-        if (existingGuess) {
-            existingGuess.home = home;
-            existingGuess.away = away;
-        } else {
-            userGuesses.push({ match: matchId, home, away });
-        }
-
-        // Felhasználó tippjeinek mentése
+        // Felhasználó mentése a frissített guesses tömbbel
         await user.save();
-
-        // Megkeressük a meccset és frissítjük a tippeket
-        const updatedMatch = await MatchModel.findOneAndUpdate(
-            { _id: matchId },
-            { $set: { guesses: { user: userId, homeScore: home, awayScore: away } } },
-            { new: true }
-        );
-
-        if (!updatedMatch) {
-            return res.status(404).json({ message: "Meccs nem található" });
-        }
 
         return res.json(user);
     } catch (err) {
         return next(err);
     }
 });
+
+
+// app.patch("/api/users/:userId/guesses", async (req, res, next) => {
+//     const { userId } = req.params;
+//     const { matchId, home, away } = req.body;
+//
+//     try {
+//         // Felhasználó betöltése az azonosító alapján
+//         const user = await UserModel.findById(userId);
+//         const userGuesses = user.guesses;
+//
+//         if (!user) {
+//             return res.status(404).json({ message: "Felhasználó nem található" });
+//         }
+//
+//         // Meglévő tipp keresése a meccsre
+//         const existingGuess = userGuesses.find((guess) => guess.match === matchId);
+//
+//         // Ha létezik tipp, frissítjük, ha nem, újat hozunk létre
+//         if (existingGuess) {
+//             existingGuess.home = home;
+//             existingGuess.away = away;
+//         } else {
+//             userGuesses.push({ match: matchId, home, away });
+//         }
+//
+//         // Felhasználó tippjeinek mentése
+//         await user.save();
+//
+//         // Megkeressük a meccset és frissítjük a tippeket
+//         const updatedMatch = await MatchModel.findOneAndUpdate(
+//             { _id: matchId },
+//             { $set: { guesses: { user: userId, homeScore: home, awayScore: away } } },
+//             { new: true }
+//         );
+//
+//         if (!updatedMatch) {
+//             return res.status(404).json({ message: "Meccs nem található" });
+//         }
+//
+//         return res.json(user);
+//     } catch (err) {
+//         return next(err);
+//     }
+// });
+
+app.patch("/api/users/:userId/guesses/:guessId", async (req, res) => {
+    const { userId, guessId } = req.params;
+    const { home, away } = req.body;
+
+    try {
+        const user = await UserModel.findById(userId);
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        }
+
+        const { ObjectId } = require('mongoose').Types;
+
+        const guessIdObject = new ObjectId(guessId);
+        const guessIndex = user.guesses.findIndex(guess => guess._id.equals(guessIdObject));
+        if (guessIndex === -1) {
+            return res.status(404).json({ message: "Guess not found" });
+        }
+
+        // Frissítjük a tippet
+        user.guesses[guessIndex].home = home;
+        user.guesses[guessIndex].away = away
+        const matchId = user.guesses[guessIndex].match;
+
+        // Mentjük a változást az adatbázisba
+        await user.save();
+
+        // Megkeressük a meccset
+        const match = await MatchModel.findById(matchId);
+        if (!match) {
+            return res.status(404).json({ message: "Match not found" });
+        }
+
+        // Ellenőrizzük, hogy az adott felhasználó már adott-e tippet az adott meccshez
+        const existingGuessIndex = match.guesses.findIndex(guess => guess.user && guess.user.toString() === userId);
+
+        // Ha már adott tippet, frissítjük az adott tippet
+        if (existingGuessIndex !== -1) {
+            match.guesses[existingGuessIndex].homeScore = home;
+            match.guesses[existingGuessIndex].awayScore = away;
+        } else {
+            // Ha még nem adott tippet, hozzáadjuk az új tippet a `guesses` tömbhöz
+            match.guesses.push({ user: userId, homeScore: home, awayScore: away });
+        }
+
+        // Mentjük a meccset az új vagy frissített tippel
+        await match.save();
+
+        res.json({ message: "Guess updated successfully" });
+    } catch (error) {
+        console.error("Error:", error);
+        res.status(500).json({ message: "Internal Server Error" });
+    }
+});
+
+
 
 
 
