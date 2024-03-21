@@ -1,0 +1,37 @@
+.GuessesTable {
+    width: 100%; /* Set the table to full width */
+    border-collapse: collapse; /* Remove borders between cells */
+}
+
+.GuessesTable th,
+.GuessesTable td {
+    padding: 10px 20px; /* Add some padding for better readability */
+    text-align: center; /* Center text in all cells */
+}
+
+.GuessesTable thead th {
+    background-color: #333; /* Dark background for headers */
+    color: #fff; /* White text for headers */
+    font-weight: bold; /* Make headers bolder */
+}
+
+.GuessesTable tr:nth-child(even) {
+    background-color: #f2f2f2; /* Alternate row background color */
+}
+
+.GuessesTable tr:hover {
+    background-color: #ddd; /* Highlight row on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Optional: Style specific columns (adjust class names as needed) */
+.GuessesTable .date {
+    color: #999; /* Lighter color for date column */
+}
+
+.GuessesTable .homeScore,
+.GuessesTable .awayScore {
+    font-weight: bold; /* Bold text for scores */
+    color: #007bff; /* Blue color for scores */
+}
+
