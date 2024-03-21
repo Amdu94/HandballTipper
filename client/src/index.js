@@ -9,6 +9,7 @@ import AllMatchesList from "./Pages/AllMatchesList";
 
 import './index.css';
 import NextMatchesList from "./Pages/NextMatchesList";
+import GuessesList from "./Pages/GuessesList";
 
 const router = createBrowserRouter([
     {
@@ -23,7 +24,11 @@ const router = createBrowserRouter([
             {
                 path: "/nextMatches",
                 element: <NextMatchesList/>,
-            }
+            },
+            {
+                path: "/users/:userId/guesses", // Új útvonal
+                element: <GuessesList />,
+            },
         ],
     },
 ]);
