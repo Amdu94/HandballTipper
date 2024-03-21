@@ -10,6 +10,7 @@ import AllMatchesList from "./Pages/AllMatchesList";
 import './index.css';
 import NextMatchesList from "./Pages/NextMatchesList";
 import GuessesList from "./Pages/GuessesList";
+import CreateUserForm from "./Pages/CreateUserForm";
 
 const router = createBrowserRouter([
     {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
                 path: "/users/:userId/guesses", // Új útvonal
                 element: <GuessesList />,
             },
+            {
+                path: "/newUser",
+                element: <CreateUserForm />
+            }
         ],
     },
 ]);
