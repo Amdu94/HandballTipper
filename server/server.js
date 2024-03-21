@@ -2,7 +2,6 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const MatchModel = require("./db/match.model");
-const GuessModel = require("./db/guess.model");
 const UserModel = require("./db/user.model");
 
 const { MONGO_URL, PORT = 8080 } = process.env;
