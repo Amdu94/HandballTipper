@@ -8,8 +8,13 @@ const MatchSchema = new Schema({
     date: Date,
     homeScore: Number,
     awayScore: Number,
-    homeGuess: Number,
-    awayGuess: Number,
+    guesses: [
+        {
+            user: String,
+            homeScore: Number,
+            awayScore: Number,
+        }
+    ]
 });
 
 module.exports = mongoose.model("Matches", MatchSchema);
