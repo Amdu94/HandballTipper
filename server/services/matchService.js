@@ -1,15 +1,21 @@
-const MatchModel = require("../db/match.model");
+const MatchModel = require("../db/models/match.model");
 
-exports.getAllMatches = () => {
+const getAllMatches = () => {
     return MatchModel.find().sort({ date: "asc" });
 };
 
-exports.getMatchById = (id) => {
+const getMatchById = (id) => {
     return MatchModel.findById(id);
 };
 
-exports.getNextMatches = () => {
+const getNextMatches = () => {
     const date = new Date();
     return MatchModel.find({ date: { $gt: date }}).sort({ date: "asc" });
+};
+
+module.exports = {
+    getAllMatches,
+    getNextMatches,
+    getMatchById
 };
 
