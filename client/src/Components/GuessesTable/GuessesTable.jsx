@@ -13,7 +13,7 @@ const GuessesTable = ({ guesses, matches, onGuessChange, onSaveGuess }) => {
                     <th>Match</th>
                     <th>Home Score</th>
                     <th>Away Score</th>
-                    <th>Save</th>
+                    <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -23,19 +23,21 @@ const GuessesTable = ({ guesses, matches, onGuessChange, onSaveGuess }) => {
                         <td>
                             <input
                                 type="number"
-                                value={guess.home || ''} // Ha guess.home null, akkor üres string lesz
+                                value={guess.home || ''}
                                 onChange={(e) => onGuessChange(index, 'home', e.target.value)}
                             />
                         </td>
                         <td>
                             <input
                                 type="number"
-                                value={guess.away || ''} // Ha guess.away null, akkor üres string lesz
+                                value={guess.away || ''}
                                 onChange={(e) => onGuessChange(index, 'away', e.target.value)}
                             />
                         </td>
                         <td>
-                            <button onClick={() => onSaveGuess(guess._id)}>Save</button>
+                            <button onClick={() => onSaveGuess(guess._id)}>
+                                {guess.home !== null && guess.away !== null ? 'Update' : 'Save'}
+                            </button>
                         </td>
                     </tr>
                 ))}
@@ -46,4 +48,5 @@ const GuessesTable = ({ guesses, matches, onGuessChange, onSaveGuess }) => {
 };
 
 export default GuessesTable;
+
 

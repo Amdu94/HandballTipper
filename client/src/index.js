@@ -10,7 +10,7 @@ import AllMatchesList from "./Pages/AllMatchesList";
 import './index.css';
 import NextMatchesList from "./Pages/NextMatchesList";
 import GuessesList from "./Pages/GuessesList";
-import UserForm from "./Pages/UserForm";
+import UserForm from "./Pages/UserCreator";
 
 const router = createBrowserRouter([
     {
