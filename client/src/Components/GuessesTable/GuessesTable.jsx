@@ -15,6 +15,7 @@ const GuessesTable = ({ guesses, matches, onGuessChange, onSaveGuess }) => {
                     <th>Match</th>
                     <th>Home Score</th>
                     <th>Away Score</th>
+                    <th>Points</th>
                     <th>Action</th>
                 </tr>
                 </thead>
@@ -35,6 +36,9 @@ const GuessesTable = ({ guesses, matches, onGuessChange, onSaveGuess }) => {
                                 value={guess.away || ''}
                                 onChange={(e) => onGuessChange(index, 'away', e.target.value)}
                             />
+                        </td>
+                        <td>
+                            {guess.points}
                         </td>
                         <td>
                             <button onClick={() => onSaveGuess(guess._id)}>
