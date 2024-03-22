@@ -20,10 +20,11 @@ const CreateUser = () => {
         setLoading(true);
 
         createUser(user)
-            .then(() => {
+            .then((createdUser) => {
                 setLoading(false);
                 // További műveletek, pl. átirányítás
                 console.log('User created successfully');
+                navigate(`/users/${createdUser._id}/guesses`);
             })
             .catch((error) => {
                 console.error('Failed to create user', error);
@@ -41,3 +42,4 @@ const CreateUser = () => {
 };
 
 export default CreateUser;
+
