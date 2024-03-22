@@ -18,6 +18,16 @@ const getMatchById = async (req, res, next) => {
     }
 };
 
+const getGuessesForMatchById = async (req, res, next) => {
+    try {
+        const match = await matchService.getMatchById(req.params.id);
+        console.log(match);
+        res.json(match.guesses);
+    } catch (err) {
+        next(err);
+    }
+}
+
 const getNextMatches = async (req, res, next) => {
     try {
         const matches = await matchService.getNextMatches();
@@ -30,5 +40,6 @@ const getNextMatches = async (req, res, next) => {
 module.exports = {
     getAllMatches,
     getNextMatches,
-    getMatchById
+    getMatchById,
+    getGuessesForMatchById
 };
