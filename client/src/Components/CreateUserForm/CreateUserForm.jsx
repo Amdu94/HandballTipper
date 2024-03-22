@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
-const UserForm = ({ onSave, disabled, user, onCancel }) => {
+import "./CreateUserForm.css";
+
+const CreateUserForm = ({ onSave, disabled, user, onCancel }) => {
     const [username, setUsername] = useState(user?.username ?? '');
     const [email, setEmail] = useState(user?.email ?? '');
     const [password, setPassword] = useState(user?.password ?? '');
@@ -66,4 +68,4 @@ const UserForm = ({ onSave, disabled, user, onCancel }) => {
     );
 };
 
-export default UserForm;
+export default CreateUserForm;

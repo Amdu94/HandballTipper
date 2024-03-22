@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import UserForm from '../Components/UserForm';
+import CreateUserForm from '../Components/CreateUserForm';
 
 const createUser = (user) => {
     return fetch('/api/users', {
@@ -33,7 +33,7 @@ const CreateUser = () => {
     };
 
     return (
-        <UserForm
+        <CreateUserForm
             onCancel={() => navigate('/')}
             disabled={loading}
             onSave={handleCreateUser}
