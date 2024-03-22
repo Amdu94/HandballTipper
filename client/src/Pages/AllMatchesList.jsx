@@ -3,7 +3,7 @@ import Loading from "../Components/Loading";
 import AllMatchesTable from "../Components/AllMatchesTable";
 
 const fetchMatches = () => {
-    return fetch("/api/allMatches").then((res) => res.json());
+    return fetch("/api/matches").then((res) => res.json());
 };
 
 const AllMatchesList = () => {
