@@ -1,31 +1,33 @@
-const UserModel = require("../db/user.model");
-const MatchModel = require("../db/match.model");
+// userService.js
 
-exports.getAllUsers = () => {
+const UserModel = require("../db/models/user.model");
+const MatchModel = require("../db/models/match.model");
+const { pointsCalculator} = require("./pointsCalculator");
+
+const getAllUsers = async () => {
     return UserModel.find().sort({ date: "asc" });
 };
 
-exports.getUserById = (id) => {
+const getUserById = async (id) => {
     return UserModel.findById(id);
 };
 
-
-exports.getUserGuesses = async (id) => {
+const getUserGuesses = async (id) => {
     const user = await UserModel.findById(id);
     return user.guesses;
 };
 
-exports.createUser = async (userData) => {
+const createUser = async (userData) => {
     const { username, email, password } = userData;
     const user = await UserModel.create({ username, email, password });
     const matches = await MatchModel.find({}, '_id');
-    const userGuesses = matches.map(match => ({ match: match._id, home: null, away: null }));
+    const userGuesses = matches.map(match => ({ match: match._id, home: null, away: null, points: 0 })); // Hozzáadunk egy alapértelmezett pont értéket
     user.guesses = userGuesses;
     await user.save();
     return user;
 };
 
-exports.updateUserGuess = async (userId, guessId, { home, away }) => {
+const updateUserGuess = async (userId, guessId, { home, away }) => {
     const user = await UserModel.findById(userId);
     if (!user) {
         throw new Error("User not found");
@@ -50,5 +52,16 @@ exports.updateUserGuess = async (userId, guessId, { home, away }) => {
         match.guesses.push({ user: userId, homeScore: home, awayScore: away });
     }
     await match.save();
+    await pointsCalculator(matchId)
 };
+
+module.exports = {
+    getAllUsers,
+    getUserById,
+    getUserGuesses,
+    createUser,
+    updateUserGuess
+};
+
+
 
