@@ -1,5 +1,7 @@
 import React from 'react';
 
+import "./GuessesTable.css"
+
 const GuessesTable = ({ guesses, matches, onGuessChange, onSaveGuess }) => {
     const getMatchById = (matchId) => {
         return matches.find((match) => match._id === matchId);
