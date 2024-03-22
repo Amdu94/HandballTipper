@@ -4,7 +4,8 @@ const UserModel = require("../db/models/user.model");
 const calculatePoints = (guess, actual) => {
     const correctResult = (guess.homeScore === actual.homeScore) && (guess.awayScore === actual.awayScore);
     const correctGoalDifference = guess.homeScore - guess.awayScore === actual.homeScore - actual.awayScore;
-    const guessedWinner = guess.homeScore - guess.awayScore === actual.homeScore - actual.awayScore;
+    const guessedWinner = ((guess.homeScore > guess.awayScore) && (actual.homeScore - actual.awayScore) ||
+                            (guess.homeScore < guess.awayScore) && (actual.homeScore < actual.awayScore));
 
     if (correctResult) {
         return 5;
