@@ -1,4 +1,9 @@
-import "./AllMatchesTable.css";
+// MatchesTable.js
+
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+import "./MatchesTable.css"
 
 const formatDate = (dateString) => {
     const options = {
@@ -11,7 +16,7 @@ const formatDate = (dateString) => {
     return new Date(dateString).toLocaleString("hu-HU", options);
 };
 
-const AllMatchesTable = ({ matches }) => (
+const MatchesTable = ({ matches }) => (
     <div className="MatchesTable">
         <table>
             <thead>
@@ -21,7 +26,7 @@ const AllMatchesTable = ({ matches }) => (
                 <th>Date</th>
                 <th>Home Score</th>
                 <th>Away Score</th>
-                <th />
+                <th>View Guesses</th>
             </tr>
             </thead>
             <tbody>
@@ -32,7 +37,11 @@ const AllMatchesTable = ({ matches }) => (
                     <td>{formatDate(match.date)}</td>
                     <td>{match.homeScore}</td>
                     <td>{match.awayScore}</td>
-                    <td></td>
+                    <td>
+                        <Link to={`/matches/${match._id}/guesses`}>
+                            View Guesses
+                        </Link>
+                    </td>
                 </tr>
             ))}
             </tbody>
@@ -40,4 +49,4 @@ const AllMatchesTable = ({ matches }) => (
     </div>
 );
 
-export default AllMatchesTable;
+export default MatchesTable;
