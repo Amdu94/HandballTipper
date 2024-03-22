@@ -1,0 +1,16 @@
+.GuessesForMatchTable table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.GuessesForMatchTable th,
+.GuessesForMatchTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.GuessesForMatchTable th {
+    background-color: #007bff;
+    color: white;
+}
