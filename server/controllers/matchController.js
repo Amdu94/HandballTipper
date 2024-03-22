@@ -1,7 +1,6 @@
-const MatchModel = require("../db/match.model");
 const matchService = require("../services/matchService");
 
-exports.getAllMatches = async (req, res, next) => {
+const getAllMatches = async (req, res, next) => {
     try {
         const matches = await matchService.getAllMatches();
         res.json(matches);
@@ -10,7 +9,7 @@ exports.getAllMatches = async (req, res, next) => {
     }
 };
 
-exports.getMatchById = async (req, res, next) => {
+const getMatchById = async (req, res, next) => {
     try {
         const match = await matchService.getMatchById(req.params.id);
         res.json(match);
@@ -19,11 +18,17 @@ exports.getMatchById = async (req, res, next) => {
     }
 };
 
-exports.getNextMatches = async (req, res, next) => {
+const getNextMatches = async (req, res, next) => {
     try {
         const matches = await matchService.getNextMatches();
         res.json(matches);
     } catch (err) {
         next(err);
     }
+};
+
+module.exports = {
+    getAllMatches,
+    getNextMatches,
+    getMatchById
 };
