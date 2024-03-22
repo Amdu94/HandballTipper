@@ -42,6 +42,8 @@ const pointsCalculator = async (matchId) => {
         if (userGuessIndex !== -1) {
             user.guesses[userGuessIndex].points = guess.points;
             await user.save();
+            user.points = user.guesses.reduce((sum, current) => sum + current.points, 0);
+            await user.save();
         }
     }
 };
