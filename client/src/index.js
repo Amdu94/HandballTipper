@@ -5,12 +5,16 @@ import reportWebVitals from './reportWebVitals';
 
 import Layout from "./Pages/Layout";
 import ErrorPage from "./Pages/ErrorPage";
-import AllMatchesList from "./Pages/AllMatchesList";
-
-import './index.css';
-import NextMatchesList from "./Pages/NextMatchesList";
+import MatchesList from "./Pages/MatchesList";
+import UserList from "./Pages/UserList";
 import GuessesList from "./Pages/GuessesList";
 import UserForm from "./Pages/UserCreator";
+import Home from "./Pages/Home";
+
+import './index.css';
+import GuessesForMatchList from "./Pages/GuessesForMatchList";
+
+
 
 const router = createBrowserRouter([
     {
@@ -20,11 +24,19 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <AllMatchesList />,
+                element: <Home />,
             },
             {
-                path: "/nextMatches",
-                element: <NextMatchesList/>,
+                path: "/matches",
+                element: <MatchesList/>,
+            },
+            {
+                path: "/matches/:matchId/guesses",
+                element: <GuessesForMatchList/>
+            },
+            {
+                path: "/users",
+                element: <UserList/>
             },
             {
                 path: "/users/:userId/guesses", // Új útvonal
