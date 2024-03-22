@@ -13,7 +13,7 @@ const GuessesList = () => {
         const fetchData = async () => {
             try {
                 const guessesResponse = await fetch(`/api/users/${userId}/guesses`);
-                const matchesResponse = await fetch("/api/allMatches");
+                const matchesResponse = await fetch("/api/matches");
 
                 const userGuesses = await guessesResponse.json();
                 const matchesData = await matchesResponse.json();
