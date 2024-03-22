@@ -1,3 +1,5 @@
+// Layout.js
+
 import { Outlet, Link } from "react-router-dom";
 
 import "./Layout.css"
@@ -7,10 +9,16 @@ const Layout = () => (
         <nav>
             <ul>
                 <li className="grow">
-                    <Link to="/">Matches</Link>
+                    <Link to="/">Home</Link>
                 </li>
                 <li className="grow">
-                    <Link to="/nextMatches">Next matches</Link>
+                    <Link to="/matches">Matches</Link>
+                </li>
+                <li className="grow">
+                    <Link to="/users">Users</Link>
+                </li>
+                <li className="grow">
+                    <Link to="/newUser">Create User</Link>
                 </li>
             </ul>
         </nav>
@@ -19,4 +27,5 @@ const Layout = () => (
 );
 
 export default Layout;
+
 
