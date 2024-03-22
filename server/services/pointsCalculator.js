@@ -16,9 +16,16 @@ const pointsCalculator = async (matchId) => {
         const user = await UserModel.findById(guess.user);
 
         if (guess.homeScore === correctHomeScore && guess.awayScore === correctAwayScore) {
-            guess.points = 10; // Ha a tipp egyezik az eredménnyel, adjunk 10 pontot
-        } else {
-            guess.points = 0; // Ellenkező esetben ne adjunk pontot
+            guess.points = 5;
+        } else if (guess.homeScore - guess.awayScore === correctHomeScore - correctAwayScore){
+            guess.points = 3
+        } else if ((guess.homeScore > guess.awayScore && correctHomeScore > correctAwayScore) ||
+                    (guess.homeScore < guess.awayScore && correctHomeScore < correctAwayScore) ||
+                    (guess.homeScore === guess.awayScore && correctHomeScore === correctAwayScore)){
+            guess.points = 1;
+        }
+        else {
+            guess.points = 0;
         }
 
         await match.save();
