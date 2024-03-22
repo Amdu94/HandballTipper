@@ -10,7 +10,7 @@ import AllMatchesList from "./Pages/AllMatchesList";
 import './index.css';
 import NextMatchesList from "./Pages/NextMatchesList";
 import GuessesList from "./Pages/GuessesList";
-import CreateUserForm from "./Pages/CreateUserForm";
+import UserForm from "./Pages/UserForm";
 
 const router = createBrowserRouter([
     {
@@ -32,7 +32,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/newUser",
-                element: <CreateUserForm />
+                element: <UserForm />
             }
         ],
     },
