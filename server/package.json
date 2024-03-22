@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "populate": "node ./db/populate/populate.js",
+    "populate": "node db/populate/populateMatches.js",
     "format": "prettier -w ."
   },
   "keywords": [],
