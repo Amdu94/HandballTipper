@@ -29,6 +29,10 @@ const GuessesList = () => {
         fetchData();
     }, [userId]);
 
+    const getMatchById = (matchId) => {
+        return matches.find((match) => match._id === matchId);
+    };
+
     const handleGuessChange = (index, field, value) => {
         const updatedGuesses = [...guesses];
         updatedGuesses[index][field] = value;
@@ -56,7 +60,8 @@ const GuessesList = () => {
 
     return (
         <>
-            <GuessesTable guesses={guesses} matches={matches} onGuessChange={handleGuessChange} onSaveGuess={saveUserGuesses} />
+            <GuessesTable guesses={guesses} matches={matches} onGuessChange={handleGuessChange}
+                          onSaveGuess={saveUserGuesses} getMatchById={getMatchById}/>
         </>
     );
 };
