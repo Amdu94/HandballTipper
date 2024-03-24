@@ -1,0 +1,38 @@
+version: "3.8"
+services:
+  web:
+    build: ./client
+    depends_on:
+      - api
+    ports:
+      - "3000:3000"
+    networks:
+      - network-backend
+  api:
+    build: ./server
+    depends_on:
+      - mongo
+    ports:
+      - "8080:8080"
+    networks:
+      - network-backend
+    expose:
+      - 3000
+  mongo:
+    image: mongo
+    restart: always
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      MONGODB_INITDB_ROOT_USERNAME: username
+      MONGODB_INITDB_ROOT_PASSWORD: password
+    ports:
+       - "27017:27017"
+    networks:
+      - network-backend
+
+networks:
+  network-backend:
+
+volumes:
+  mongodb_data:
