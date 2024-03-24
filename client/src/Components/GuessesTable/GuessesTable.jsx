@@ -2,7 +2,7 @@ import React from 'react';
 
 import "./GuessesTable.css"
 
-const GuessesTable = ({ guesses, onGuessChange, onSaveGuess, getMatchById }) => {
+const GuessesTable = ({ guesses, onGuessChange, onSaveGuess, getMatchById, isPastMatch }) => {
 
 
     return (
@@ -26,6 +26,7 @@ const GuessesTable = ({ guesses, onGuessChange, onSaveGuess, getMatchById }) => 
                                 type="number"
                                 value={guess.home || ''}
                                 onChange={(e) => onGuessChange(index, 'home', e.target.value)}
+                                disabled={isPastMatch(guess.match)}
                             />
                         </td>
                         <td>
@@ -33,15 +34,18 @@ const GuessesTable = ({ guesses, onGuessChange, onSaveGuess, getMatchById }) => 
                                 type="number"
                                 value={guess.away || ''}
                                 onChange={(e) => onGuessChange(index, 'away', e.target.value)}
+                                disabled={isPastMatch(guess.match)}
                             />
                         </td>
                         <td>
                             {guess.points}
                         </td>
                         <td>
-                            <button onClick={() => onSaveGuess(guess._id)}>
-                                {guess.home !== null && guess.away !== null ? 'Update' : 'Save'}
-                            </button>
+                            {isPastMatch(guess.match) ?
+                                'The guess is not allowed' :
+                            <button onClick={() => onSaveGuess(guess._id)} disabled={isPastMatch(guess.match)}>
+                                Save
+                            </button>}
                         </td>
                     </tr>
                 ))}
