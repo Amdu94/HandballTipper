@@ -52,7 +52,7 @@ const updateUserGuess = async (userId, guessId, { home, away }) => {
         match.guesses.push({ user: userId, homeScore: home, awayScore: away });
     }
     await match.save();
-    await pointsCalculator(matchId)
+    //await pointsCalculator(matchId)
 };
 
 module.exports = {

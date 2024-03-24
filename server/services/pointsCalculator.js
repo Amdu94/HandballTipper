@@ -39,7 +39,7 @@ const pointsCalculator = async (matchId) => {
 
         await match.save();
 
-        const userGuessIndex = user.guesses.findIndex((userGuess) => userGuess.match.toString() === matchId);
+        const userGuessIndex = user.guesses.findIndex((userGuess) => userGuess.match.toString() === matchId.toString());
         if (userGuessIndex !== -1) {
             user.guesses[userGuessIndex].points = guess.points;
             await user.save();
