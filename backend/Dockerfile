@@ -1,4 +1,4 @@
-FROM node:21-alpine
+FROM node:21-alpine AS development
 
 LABEL authors="dulai.adam"
 
@@ -8,8 +8,8 @@ COPY package*.json ./
 
 RUN npm install
 
-COPY . .
+COPY . /usr/src/app
 
-EXPOSE 3000
+EXPOSE 8000
 
 CMD ["npm", "start"]

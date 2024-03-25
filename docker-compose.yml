@@ -1,38 +1,58 @@
 version: "3.8"
 services:
-  react-frontend:
-    build: frontend
-    depends_on:
-      - backend
+  frontend:
+    build:
+      context: frontend
+      target: development
     ports:
       - "3000:3000"
+    stdin_open: true
+    volumes:
+      - ./frontend:/usr/src/app
+      - /usr/src/app/node_modules
+    restart: always
     networks:
-      - network-backend
+      - node-network
+    depends_on:
+      - backend
 
   backend:
-    build: backend
+    restart: always
+    build:
+      context: backend
+      target: development
+    volumes:
+      - ./backend:/usr/src/app
+      - /usr/src/app/node_modules
     depends_on:
       - mongo
+    networks:
+      - node-network
     ports:
       - "8080:8080"
-    networks:
-      - network-backend
 
   mongo:
-    image: mongo
     restart: always
-    volumes:
-      - mongodb_data:/data/db
-    environment:
-      MONGODB_INITDB_ROOT_USERNAME: username
-      MONGODB_INITDB_ROOT_PASSWORD: password
-    ports:
-       - "27017:27017"
+    image: mongo:4.2.0
     networks:
-      - network-backend
+      - node-network
+    expose:
+      - 27017
+
+  nginx:
+    build:
+      context: nginx
+    container_name: nginx
+    restart: always
+    tty: true
+    ports:
+      - "8000:80"
+    networks:
+      - node-network
+    depends_on:
+      - backend
+      - frontend
 
 networks:
-  network-backend:
-
-volumes:
-  mongodb_data:
+  node-network:
+    driver: bridge
