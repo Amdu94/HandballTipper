@@ -26,7 +26,7 @@ const pointsCalculator = async (matchId) => {
         throw new Error("Match not found");
     }
 
-    const { homeScore, awayScore, guesses } = match; // Destructuring for cleaner access
+    const { homeScore, awayScore, guesses } = match;
 
     for (const guess of guesses) {
         const user = await UserModel.findById(guess.user);
