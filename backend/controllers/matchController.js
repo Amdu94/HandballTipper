@@ -21,7 +21,6 @@ const getMatchById = async (req, res, next) => {
 const getGuessesForMatchById = async (req, res, next) => {
     try {
         const match = await matchService.getMatchById(req.params.id);
-        console.log(match);
         res.json(match.guesses);
     } catch (err) {
         next(err);
