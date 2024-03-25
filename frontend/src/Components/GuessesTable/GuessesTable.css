@@ -1,0 +1,34 @@
+.GuessesTable table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.GuessesTable th,
+.GuessesTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.GuessesTable th {
+    background-color: #007bff;
+    color: white;
+}
+
+.GuessesTable input[type='number'] {
+    width: 60px;
+    padding: 5px;
+}
+
+.GuessesTable button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.GuessesTable button:hover {
+    background-color: #0056b3;
+}

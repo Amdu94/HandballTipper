@@ -1,0 +1,25 @@
+.UsersTable table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.UsersTable th,
+.UsersTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.UsersTable th {
+    background-color: #007bff;
+    color: white;
+}
+
+.UsersTable td a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.UsersTable td a:hover {
+    text-decoration: underline;
+}

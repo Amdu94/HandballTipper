@@ -1,0 +1,25 @@
+.MatchesTable table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.MatchesTable th,
+.MatchesTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.MatchesTable th {
+    background-color: #007bff;
+    color: white;
+}
+
+.MatchesTable td a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.MatchesTable td a:hover {
+    text-decoration: underline;
+}
