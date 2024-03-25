@@ -1,8 +1,7 @@
-require("dotenv").config({ path: '../.env' });
+require('dotenv').config();
 const connectToDatabase = require("./connectToDatabase");
 const disconnectFromDatabase = require("./disconnectFromDatabase");
 const populateMatches = require("./populate/populateMatches");
-const populateGames = require("./populate/populateGames");
 
 const main = async () => {
     const mongoUrl = process.env.MONGO_URL;
@@ -14,10 +13,9 @@ const main = async () => {
 
     try {
         await connectToDatabase(mongoUrl);
-        await populateGames();
+        await populateMatches();
 
         await disconnectFromDatabase();
-        console.log("Matches created");
     } catch (error) {
         console.error(error);
         process.exit(1);
