@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Loading from '../Components/Loading';
-import GuessesForMatchTable from '../Components/GuessesForMatchTable';
+import GuessesForMatchTable from '../Components/GuessesForMatchTable/GuessesForMatchTable.jsx';
 
 const fetchGuessesForMatch = (matchId) => {
     return fetch(`/api/matches/${matchId}/guesses`).then((res) => res.json());

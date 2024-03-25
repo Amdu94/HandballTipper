@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import CreateUserForm from '../Components/CreateUserForm';
+import CreateUserForm from '../Components/CreateUserForm/CreateUserForm.jsx';
 
 const createUser = (user) => {
     return fetch('/api/users', {
