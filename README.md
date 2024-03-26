@@ -1,5 +1,3 @@
-<a name="readme-top"></a>
-
 <!-- PROJECT SHIELDS -->
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
@@ -11,41 +9,24 @@
 <!-- PROJECT LOGO -->
 <div align="center">
   <h3 align="center">HandballTipper</h3>
-
   <p align="center">
+    A full stack application for handball tipping game for friend groups.
     <br />
     <a href="https://github.com/Amdu94/HandballTipper"><strong>Explore the repo »</strong></a>
-    <br />
-    <br />
   </p>
 </div>
 
-
-
 <!-- TABLE OF CONTENTS -->
 <details>
-  <summary>Table of Contents</summary>
+  <summary><h2 style="display: inline">Table of Contents</h2></summary>
   <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#built-with">Built With</a></li>
+    <li><a href="#getting-started">Getting Started</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
-
 
 
 <!-- ABOUT THE PROJECT -->
@@ -55,36 +36,32 @@ Welcome to HandballTipper, a full-stack application built with Express for the b
 
 On this website, users can register and submit their tips for upcoming handball matches. They can view and modify their tips until the start of the match. Currently, all users can see the tips submitted for each match, but in future updates, they will only be visible once the match has started.
 
-The scoring for users is currently calculated only after the match by running the main.js file.
-
-IMPORTANT!!!
-Under Development!
+<div align="center">
+  <p><strong>IMPORTANT!!! Under Development!</strong></p>
+</div>
 
 Project Start Date: 2024.03.19
 
 Future Developments:
+- Writing tests
+- Automatic result and score updates after the match
+- Introduction of CI/CD
+- Authentication implementation
+- Enhancing the frontend design
+- Building the application in other programming languages
+- Deployment on AWS environment
+- Sending automatic alerts if there are no submitted tips for a match within an hour.
 
-Writing tests
-Automatic result and score updates after the match
-Introduction of CI/CD
-Authentication implementation
-Enhancing the frontend design
-Building the application in other programming languages
-Deployment on AWS environment
-Sending automatic alerts if there are no submitted tips for a match within an hour.
+## Built With
 
-### Built With
-
-* [![JavaScript][JavaScript-url]][JavaScript.com]
-* ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
-* [![React][React.js]][React-url]
-* ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
-* [![HTML5][HTML5-url]][HTML5.com]
-* [![CSS3][CSS3-url]][CSS3.org]
-* [![MongoDB][MongoDB-url]][MongoDB.com]
-* ![Nginx](https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white)
-
-
+* ![JavaScript][JavaScript-url]
+* ![Express.js][Express-url]
+* ![React.js][React-url]
+* ![Docker][Docker-url]
+* ![HTML5][HTML5-url]
+* ![CSS3][CSS3-url]
+* ![MongoDB][MongoDB-url]
+* ![Nginx][Nginx-url]
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -95,15 +72,11 @@ To get a local copy up and running follow these simple steps.
 
 #### Docker
 
-Before installing the project, make sure you have Docker installed on your machine.
-Docker can be downloaded and installed from the official Docker website. Here are the links to download Docker for
-different operating systems:
+Before installing the project, make sure you have Docker installed on your machine. Docker can be downloaded and installed from the official Docker website.
 
-[Docker Desktop for Windows](https://docs.docker.com/desktop/install/windows-install/)
-
-[Docker Desktop for Mac](https://docs.docker.com/desktop/install/mac-install/)
-
-[Docker Desktop for Linux](https://docs.docker.com/desktop/install/linux-install/)
+- [Docker Desktop for Windows](https://docs.docker.com/desktop/install/windows-install/)
+- [Docker Desktop for Mac](https://docs.docker.com/desktop/install/mac-install/)
+- [Docker Desktop for Linux](https://docs.docker.com/desktop/install/linux-install/)
 
 ### Installation
 
