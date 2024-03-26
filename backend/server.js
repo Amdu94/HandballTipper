@@ -1,4 +1,3 @@
-require("dotenv").config({ path: "../.env"});
 const express = require("express");
 const mongoose = require("mongoose");
 const matchRoutes = require("./routes/matchRoutes");
@@ -7,10 +6,9 @@ const errorHandler = require("./middleware/errorHandler");
 
 const app = express();
 
-// const { MONGO_URL, PORT = 8080 } = process.env;
-const MONGO_URL = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@tipper.nfr2hxu.mongodb.net/`
 
-console.log(MONGO_URL);
+const MONGO_URL = "mongodb://mongo:27017"
+const PORT = 8080;
 
 if (!MONGO_URL) {
     console.error("Missing MONGO_URL environment variable");
