@@ -1,11 +1,11 @@
 # Stage 1: Build the React.js application
 
-FROM node:21-alpine
+FROM node:21-alpine AS development
 LABEL authors="dulai.adam"
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
-COPY package*.json ./
+COPY package*.json /usr/src/app
 
 RUN npm install
 # RUN npm install react-scripts -g
@@ -13,6 +13,6 @@ RUN npm install
 # copy app files
 COPY . .
 
-EXPOSE 8080
+EXPOSE 3000
 
 CMD ["npm", "start"]

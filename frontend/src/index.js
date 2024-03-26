@@ -1,18 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from './reportWebVitals.js';
 
-import Layout from "./Pages/Layout";
-import ErrorPage from "./Pages/ErrorPage";
-import MatchesList from "./Pages/MatchesList";
-import UserList from "./Pages/UserList";
-import GuessesList from "./Pages/GuessesList";
-import UserForm from "./Pages/UserCreator";
-import Home from "./Pages/Home";
+import Layout from "./Pages/Layout/Layout.jsx";
+import ErrorPage from "./Pages/ErrorPage.jsx";
+import MatchesList from "./Pages/MatchesList.jsx";
+import UserList from "./Pages/UserList.jsx";
+import GuessesList from "./Pages/GuessesList.jsx";
+import UserForm from "./Pages/UserCreator.jsx";
+import Home from "./Pages/Home.jsx";
 
 import './index.css';
-import GuessesForMatchList from "./Pages/GuessesForMatchList";
+import GuessesForMatchList from "./Pages/GuessesForMatchList.jsx";
 
 
 

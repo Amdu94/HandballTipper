@@ -1,11 +1,9 @@
-require("dotenv").config({ path: '../.env' });
 const connectToDatabase = require("./connectToDatabase");
 const disconnectFromDatabase = require("./disconnectFromDatabase");
 const populateMatches = require("./populate/populateMatches");
-const populateGames = require("./populate/populateGames");
 
 const main = async () => {
-    const mongoUrl = process.env.MONGO_URL;
+    const mongoUrl = "mongodb://mongo:27017";
 
     if (!mongoUrl) {
         console.error("Missing MONGO_URL environment variable");
@@ -14,10 +12,9 @@ const main = async () => {
 
     try {
         await connectToDatabase(mongoUrl);
-        await populateGames();
+        await populateMatches();
 
         await disconnectFromDatabase();
-        console.log("Matches created");
     } catch (error) {
         console.error(error);
         process.exit(1);

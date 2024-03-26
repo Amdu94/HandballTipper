@@ -1,12 +1,23 @@
 // MatchesList.js
 
 import React, { useEffect, useState } from 'react';
-import Loading from '../Components/Loading';
-import MatchesTable from '../Components/MatchesTable';
+import Loading from '../Components/Loading/Loading.jsx';
+import MatchesTable from '../Components/MatchesTable/MatchesTable.jsx';
 
 const fetchMatches = () => {
-    return fetch('/api/matches').then((res) => res.json());
+    return fetch('/api/matches')
+        .then((res) => {
+            if (!res.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return res.json();
+        })
+        .catch((error) => {
+            console.error('Error fetching matches:', error);
+            throw error; // Rethrow the error to be handled by the caller
+        });
 };
+
 
 const MatchesList = () => {
     const [loading, setLoading] = useState(true);

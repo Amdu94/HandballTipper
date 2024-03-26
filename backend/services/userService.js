@@ -1,8 +1,6 @@
-// userService.js
-
 const UserModel = require("../db/models/user.model");
 const MatchModel = require("../db/models/match.model");
-const { pointsCalculator} = require("./pointsCalculator");
+
 
 const getAllUsers = async () => {
     return UserModel.find().sort({ date: "asc" });
@@ -52,7 +50,6 @@ const updateUserGuess = async (userId, guessId, { home, away }) => {
         match.guesses.push({ user: userId, homeScore: home, awayScore: away });
     }
     await match.save();
-    //await pointsCalculator(matchId)
 };
 
 module.exports = {

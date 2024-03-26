@@ -1,8 +1,8 @@
 // UserList.js
 
 import React, { useEffect, useState } from 'react';
-import Loading from '../Components/Loading';
-import UsersTable from '../Components/UsersTable';
+import Loading from '../Components/Loading/Loading.jsx';
+import UsersTable from '../Components/UsersTable/UsersTable.jsx';
 
 const fetchUsers = () => {
     return fetch('/api/users').then((res) => res.json());
