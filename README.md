@@ -76,7 +76,7 @@ Sending automatic alerts if there are no submitted tips for a match within an ho
 ### Built With
 
 * [![JavaScript][JavaScript-url]][JavaScript.com]
-* [![Express.js][Express-url]][Express-url]
+* ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 * [![React][React.js]][React-url]
 * [![Docker][Docker-url]][Docker-url]
 * [![HTML5][HTML5-url]][HTML5.com]
