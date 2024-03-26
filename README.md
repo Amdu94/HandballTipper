@@ -138,7 +138,7 @@ Contributions are what make the open-source community such an amazing place to l
 Adam Dulai - [GitHub Profile](https://github.com/Amdu94)
 
 
-Project Link: [https://github.com/Amdu94/Gofri-King](https://github.com/Amdu94/Gofri-King)
+Project Link: [https://github.com/Amdu94/HandballTipper](https://github.com/Amdu94/HandballTipper)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
