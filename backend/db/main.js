@@ -3,7 +3,7 @@ const disconnectFromDatabase = require("./disconnectFromDatabase");
 const populateMatches = require("./populate/populateMatches");
 
 const main = async () => {
-    const mongoUrl = "mongodb://mongo:27017";
+    const mongoUrl = "mongodb://localhost:27017";
 
     if (!mongoUrl) {
         console.error("Missing MONGO_URL environment variable");

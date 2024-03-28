@@ -6,8 +6,7 @@ const errorHandler = require("./middleware/errorHandler");
 
 const app = express();
 
-
-const MONGO_URL = "mongodb://mongo:27017"
+const MONGO_URL = "mongodb://localhost:27017"
 const PORT = 8080;
 
 if (!MONGO_URL) {
