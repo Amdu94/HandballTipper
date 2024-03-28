@@ -7,7 +7,7 @@ const GuessSchema = new Schema({
     match: String,
     home: Number,
     away: Number,
-    points: { type: Number, default: 0 } // Új mező: pontok
+    points: { type: Number, default: 0 }
 });
 
 const UserSchema = new Schema({
@@ -15,7 +15,7 @@ const UserSchema = new Schema({
     email: String,
     password: String,
     points: { type: Number, default: 0 },
-    guesses: [GuessSchema] // GuessSchema hozzáadása a guesses tömbhöz
+    guesses: [GuessSchema]
 });
 
 module.exports = mongoose.model("User", UserSchema);
