@@ -22,7 +22,6 @@ const CreateUser = () => {
         createUser(user)
             .then((createdUser) => {
                 setLoading(false);
-                // További műveletek, pl. átirányítás
                 console.log('User created successfully');
                 navigate(`/users/${createdUser._id}/guesses`);
             })

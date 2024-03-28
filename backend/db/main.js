@@ -13,7 +13,6 @@ const main = async () => {
     try {
         await connectToDatabase(mongoUrl);
         await populateMatches();
-
         await disconnectFromDatabase();
     } catch (error) {
         console.error(error);

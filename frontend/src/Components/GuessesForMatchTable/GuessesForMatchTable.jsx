@@ -1,5 +1,3 @@
-// GuessesForMatchTable.js
-
 import React from 'react';
 
 import "./GuessesForMatchTable.css"

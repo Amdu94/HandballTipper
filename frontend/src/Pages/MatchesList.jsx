@@ -1,5 +1,3 @@
-// MatchesList.js
-
 import React, { useEffect, useState } from 'react';
 import Loading from '../Components/Loading/Loading.jsx';
 import MatchesTable from '../Components/MatchesTable/MatchesTable.jsx';
@@ -14,7 +12,7 @@ const fetchMatches = () => {
         })
         .catch((error) => {
             console.error('Error fetching matches:', error);
-            throw error; // Rethrow the error to be handled by the caller
+            throw error;
         });
 };
 

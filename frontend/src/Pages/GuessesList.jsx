@@ -1,5 +1,3 @@
-// GuessesList.jsx
-
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Loading from "../Components/Loading";
@@ -10,7 +8,7 @@ const GuessesList = () => {
     const [guesses, setGuesses] = useState([]);
     const [matches, setMatches] = useState([]);
     const { userId } = useParams();
-    const currentDate = new Date();// Aktuális dátum állapota
+    const currentDate = new Date();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -76,7 +74,7 @@ const GuessesList = () => {
                 onSaveGuess={saveUserGuesses}
                 getMatchById={getMatchById}
                 currentDate={currentDate}
-                isPastMatch={isPastMatch}// Pass current date as prop
+                isPastMatch={isPastMatch}
             />
         </>
     );

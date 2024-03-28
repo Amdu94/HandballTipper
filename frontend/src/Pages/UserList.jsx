@@ -1,5 +1,3 @@
-// UserList.js
-
 import React, { useEffect, useState } from 'react';
 import Loading from '../Components/Loading/Loading.jsx';
 import UsersTable from '../Components/UsersTable/UsersTable.jsx';
@@ -25,7 +23,7 @@ const UserList = () => {
         return <Loading />;
     }
 
-    return <UsersTable users={users} />; // A users prop átadása a UsersTable komponensnek
+    return <UsersTable users={users} />;
 };
 
 export default UserList;

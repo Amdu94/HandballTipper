@@ -20,7 +20,6 @@ const calculatePoints = (guess, actual) => {
 
 
 const pointsCalculator = async (matchId) => {
-    // Fetch match and throw error if not found
     const match = await MatchModel.findById(matchId);
     if (!match) {
         throw new Error("Match not found");

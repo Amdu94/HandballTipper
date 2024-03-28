@@ -1,5 +1,3 @@
-// UsersTable.js
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -13,7 +11,7 @@ const UsersTable = ({ users }) => (
                 <th>Username</th>
                 <th>Email</th>
                 <th>Points</th>
-                <th>Actions</th> {/* Új oszlop a műveleteknek */}
+                <th>Actions</th>
             </tr>
             </thead>
             <tbody>
@@ -23,7 +21,6 @@ const UsersTable = ({ users }) => (
                     <td>{user.email}</td>
                     <td>{user.points}</td>
                     <td>
-                        {/* Link hozzáadása a tippjeinek megtekintéséhez */}
                         <Link to={`/users/${user._id}/guesses`}>
                             View Guesses
                         </Link>
