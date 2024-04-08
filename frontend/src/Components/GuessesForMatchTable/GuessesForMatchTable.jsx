@@ -17,7 +17,7 @@ const GuessesForMatchTable = ({ guesses }) => (
             </thead>
             <tbody>
             {guesses.map((guess) => (
-                <tr key={guess._id}>
+                <tr key={guess.id}>
                     <td>{guess.user}</td>
                     <td>{guess.homeScore}</td>
                     <td>{guess.awayScore}</td>

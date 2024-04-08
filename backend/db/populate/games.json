@@ -9,7 +9,7 @@
   "response": [
     {
       "id": 149354,
-      "date": "2023-08-30T15:15:00+00:00",
+      "date": "2024-08-30T15:15:00+00:00",
       "time": "15:15",
       "timestamp": 1693408500,
       "timezone": "UTC",
@@ -44,8 +44,8 @@
         }
       },
       "scores": {
-        "home": 10,
-        "away": 10
+        "home": 20,
+        "away": 20
       },
       "periods": {
         "first": {
@@ -60,7 +60,7 @@
     },
     {
       "id": 149350,
-      "date": "2023-09-01T16:00:00+00:00",
+      "date": "2024-09-01T16:00:00+00:00",
       "time": "16:00",
       "timestamp": 1693584000,
       "timezone": "UTC",
@@ -95,8 +95,8 @@
         }
       },
       "scores": {
-        "home": null,
-        "away": null
+        "home": 20,
+        "away": 20
       },
       "periods": {
         "first": {
