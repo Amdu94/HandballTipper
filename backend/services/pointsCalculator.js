@@ -21,8 +21,7 @@ function calculatePoints(guess, actual) {
 async function pointsCalculator(matchId) {
     try {
         const match = await prisma.matches.findUnique({
-            where: { id: matchId },
-            include: { guesses: true }
+            where: { id: matchId }
         });
 
         if (!match) {
@@ -51,7 +50,7 @@ async function pointsCalculator(matchId) {
             if (userGuessIndex !== -1) {
                 user.guesses[userGuessIndex] = { ...user.guesses[userGuessIndex], points: guess.points };
                 const totalPoints = user.guesses.reduce((sum, current) => sum + current.points, 0);
-                await prisma.users.update({ where: { id: user.id }, data: { points: totalPoints } });
+                await prisma.users.update({ where: { id: user.id }, data: { guesses: user.guesses, points: totalPoints } });
             }
         }
 
