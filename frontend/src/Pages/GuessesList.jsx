@@ -10,7 +10,7 @@ const GuessesList = () => {
     const [guesses, setGuesses] = useState([]);
     const [matches, setMatches] = useState([]);
     const { userId } = useParams();
-    const currentDate = new Date();// Aktuális dátum állapota
+    const currentDate = new Date();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -33,7 +33,7 @@ const GuessesList = () => {
     }, [userId]);
 
     const getMatchById = (matchId) => {
-        return matches.find((match) => match._id === matchId);
+        return matches.find((match) => match.id === matchId);
     };
 
     const isPastMatch = (matchId) => {
@@ -44,18 +44,23 @@ const GuessesList = () => {
 
     const handleGuessChange = (index, field, value) => {
         const updatedGuesses = [...guesses];
-        updatedGuesses[index][field] = value;
+        updatedGuesses[index][field] = Number(value);
         setGuesses(updatedGuesses);
     };
 
     const saveUserGuesses = async (guessId) => {
         try {
+            const guessToSave = {
+                home: guesses.find(guess => guess.match === guessId).home,
+                away: guesses.find(guess => guess.match === guessId).away,
+            };
+
             await fetch(`/api/users/${userId}/guesses/${guessId}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(guesses.find(guess => guess._id === guessId)),
+                body: JSON.stringify(guessToSave),
             });
             console.log('Guess saved successfully');
         } catch (error) {

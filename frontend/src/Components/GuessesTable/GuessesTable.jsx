@@ -43,7 +43,7 @@ const GuessesTable = ({ guesses, onGuessChange, onSaveGuess, getMatchById, isPas
                         <td>
                             {isPastMatch(guess.match) ?
                                 'The guess is not allowed' :
-                            <button onClick={() => onSaveGuess(guess._id)} disabled={isPastMatch(guess.match)}>
+                            <button onClick={() => onSaveGuess(guess.match)} disabled={isPastMatch(guess.match)}>
                                 Save
                             </button>}
                         </td>
