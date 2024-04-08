@@ -16,8 +16,8 @@ type MatchesGuesses {
 
 type UsersGuesses {
   match  String
-  home   Int?
-  away   Int?
+  homeScore   Int?
+  awayScore   Int?
   points Int
 }
 

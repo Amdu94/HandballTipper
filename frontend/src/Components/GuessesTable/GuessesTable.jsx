@@ -24,16 +24,16 @@ const GuessesTable = ({ guesses, onGuessChange, onSaveGuess, getMatchById, isPas
                         <td>
                             <input
                                 type="number"
-                                value={guess.home || ''}
-                                onChange={(e) => onGuessChange(index, 'home', e.target.value)}
+                                value={guess.homeScore || ''}
+                                onChange={(e) => onGuessChange(index, 'homeScore', e.target.value)}
                                 disabled={isPastMatch(guess.match)}
                             />
                         </td>
                         <td>
                             <input
                                 type="number"
-                                value={guess.away || ''}
-                                onChange={(e) => onGuessChange(index, 'away', e.target.value)}
+                                value={guess.awayScore || ''}
+                                onChange={(e) => onGuessChange(index, 'awayScore', e.target.value)}
                                 disabled={isPastMatch(guess.match)}
                             />
                         </td>

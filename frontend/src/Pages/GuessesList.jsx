@@ -51,8 +51,8 @@ const GuessesList = () => {
     const saveUserGuesses = async (guessId) => {
         try {
             const guessToSave = {
-                home: guesses.find(guess => guess.match === guessId).home,
-                away: guesses.find(guess => guess.match === guessId).away,
+                homeScore: guesses.find(guess => guess.match === guessId).homeScore,
+                awayScore: guesses.find(guess => guess.match === guessId).awayScore,
             };
 
             await fetch(`/api/users/${userId}/guesses/${guessId}`, {
