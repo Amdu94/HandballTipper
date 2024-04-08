@@ -12,4 +12,6 @@ COPY . /usr/src/app
 
 EXPOSE 8000
 
+RUN npx prisma generate
+
 CMD ["npm", "start"]
