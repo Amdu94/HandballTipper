@@ -54,7 +54,7 @@ async function addNewMatch(newMatch, users) {
         }
     });
 
-    console.log(`New match added: ${newMatch.home} vs ${newMatch.away}`);
+    console.log(`New match added: ${newMatch.teams.home.name} vs ${newMatch.teams.away.name}`);
 
     for (const user of users) {
         user.guesses.push({
