@@ -2,7 +2,7 @@ const userService = require("../services/userService");
 
 const getAllUsers = async (req, res, next) => {
     try {
-        const users = await userService.getAllUsers();
+        const users = await userService.getUsers();
         res.json(users);
     } catch (err) {
         next(err);
@@ -11,7 +11,7 @@ const getAllUsers = async (req, res, next) => {
 
 const getUserById = async (req, res, next) => {
     try {
-        const user = await userService.getUserById(req.params.id);
+        const user = await userService.getUser(req.params.id);
         res.json(user);
     } catch (err) {
         next(err);
@@ -20,8 +20,8 @@ const getUserById = async (req, res, next) => {
 
 const getUserGuesses = async (req, res, next) => {
     try {
-        const guesses = await userService.getUserGuesses(req.params.id);
-        res.json(guesses);
+        const guesses = await userService.getUser(req.params.id);
+        res.json(guesses.guesses);
     } catch (err) {
         next(err);
     }
