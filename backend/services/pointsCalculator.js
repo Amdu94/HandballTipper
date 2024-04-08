@@ -1,11 +1,11 @@
-const MatchModel = require("../db/models/match.model");
-const UserModel = require("../db/models/user.model");
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
 
-const calculatePoints = (guess, actual) => {
+function calculatePoints(guess, actual) {
     const correctResult = (guess.homeScore === actual.homeScore) && (guess.awayScore === actual.awayScore);
-    const correctGoalDifference = guess.homeScore - guess.awayScore === actual.homeScore - actual.awayScore;
-    const guessedWinner = ((guess.homeScore > guess.awayScore) && (actual.homeScore - actual.awayScore) ||
-                            (guess.homeScore < guess.awayScore) && (actual.homeScore < actual.awayScore));
+    const correctGoalDifference = Math.abs(guess.homeScore - guess.awayScore) === Math.abs(actual.homeScore - actual.awayScore);
+    const guessedWinner = (guess.homeScore > guess.awayScore && actual.homeScore > actual.awayScore) ||
+        (guess.homeScore < guess.awayScore && actual.homeScore < actual.awayScore);
 
     if (correctResult) {
         return 5;
@@ -16,41 +16,56 @@ const calculatePoints = (guess, actual) => {
     } else {
         return 0;
     }
-};
+}
 
+async function pointsCalculator(matchId) {
+    try {
+        const match = await prisma.matches.findUnique({
+            where: { id: matchId },
+            include: { guesses: true }
+        });
 
-const pointsCalculator = async (matchId) => {
-    // Fetch match and throw error if not found
-    const match = await MatchModel.findById(matchId);
-    if (!match) {
-        throw new Error("Match not found");
-    }
-
-    const { homeScore, awayScore, guesses } = match;
-
-    for (const guess of guesses) {
-        const user = await UserModel.findById(guess.user);
-
-        if (!user) {
-            throw new Error("User not found");
+        if (!match) {
+            throw new Error('Match not found');
         }
 
-        guess.points = calculatePoints(guess, { homeScore, awayScore });
+        const { homeScore, awayScore, guesses } = match;
 
-        await match.save();
+        for (const guess of guesses) {
+            const user = await prisma.users.findUnique({
+                where: { id: guess.user }
+            });
 
-        const userGuessIndex = user.guesses.findIndex((userGuess) => userGuess.match.toString() === matchId.toString());
-        if (userGuessIndex !== -1) {
-            user.guesses[userGuessIndex].points = guess.points;
-            await user.save();
-            user.points = user.guesses.reduce((sum, current) => sum + current.points, 0);
-            await user.save();
+            if (!user) {
+                throw new Error('User not found');
+            }
+
+            guess.points = calculatePoints(guess, { homeScore, awayScore });
+
+            const guessIndex = match.guesses.findIndex(g => g.id === guess.id);
+            if (guessIndex !== -1) {
+                match.guesses[guessIndex] = { ...match.guesses[guessIndex], points: guess.points };
+            }
+
+            const userGuessIndex = user.guesses.findIndex(userGuess => userGuess.match === matchId);
+            if (userGuessIndex !== -1) {
+                user.guesses[userGuessIndex] = { ...user.guesses[userGuessIndex], points: guess.points };
+                const totalPoints = user.guesses.reduce((sum, current) => sum + current.points, 0);
+                await prisma.users.update({ where: { id: user.id }, data: { points: totalPoints } });
+            }
         }
-    }
-};
 
-module.exports = {
-    pointsCalculator,
-};
+        await prisma.matches.update({
+            where: { id: matchId },
+            data: { guesses: match.guesses }
+        });
+    } catch (error) {
+        console.error('Error in pointsCalculator:', error);
+        throw error;
+    }
+}
+
+module.exports = { pointsCalculator };
+
 
 
