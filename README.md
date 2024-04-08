@@ -134,7 +134,7 @@ different operating systems:
    "Enter the port number: "e.g(8080)"
     ```
    MONGODB_URL: This variable specifies the connection string to your MongoDB database.
-   Replace "mongodb+srv://test:test@cluster0.ns1yp.mongodb.net/myFirstDatabase" with your actual connection details.
+   Replace the MONGODB_URL with your actual connection details.
 
    PORT: This variable defines the port on which the HandballTipper backend will run. 
    The default is 8080, but you can customize it if needed.
