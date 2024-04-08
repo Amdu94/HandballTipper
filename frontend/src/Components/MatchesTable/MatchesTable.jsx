@@ -31,14 +31,14 @@ const MatchesTable = ({ matches }) => (
             </thead>
             <tbody>
             {matches.map((match) => (
-                <tr key={match._id}>
+                <tr key={match.id}>
                     <td>{match.home}</td>
                     <td>{match.away}</td>
                     <td>{formatDate(match.date)}</td>
                     <td>{match.homeScore}</td>
                     <td>{match.awayScore}</td>
                     <td>
-                        <Link to={`/matches/${match._id}/guesses`}>
+                        <Link to={`/matches/${match.id}/guesses`}>
                             View Guesses
                         </Link>
                     </td>

@@ -22,9 +22,8 @@ const CreateUser = () => {
         createUser(user)
             .then((createdUser) => {
                 setLoading(false);
-                // További műveletek, pl. átirányítás
                 console.log('User created successfully');
-                navigate(`/users/${createdUser._id}/guesses`);
+                navigate(`/users/${createdUser.id}/guesses`);
             })
             .catch((error) => {
                 console.error('Failed to create user', error);

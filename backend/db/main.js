@@ -1,19 +1,20 @@
 const connectToDatabase = require("./connectToDatabase");
 const disconnectFromDatabase = require("./disconnectFromDatabase");
 const populateMatches = require("./populate/populateMatches");
+require('dotenv').config();
 
 const main = async () => {
-    const mongoUrl = "mongodb://mongo:27017";
 
-    if (!mongoUrl) {
+    const MONGO_URL = process.env.DATABASE_URL;
+
+    if (!MONGO_URL) {
         console.error("Missing MONGO_URL environment variable");
         process.exit(1);
     }
 
     try {
-        await connectToDatabase(mongoUrl);
+        await connectToDatabase(MONGO_URL);
         await populateMatches();
-
         await disconnectFromDatabase();
     } catch (error) {
         console.error(error);

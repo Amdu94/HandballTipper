@@ -1,56 +1,120 @@
-const UserModel = require("../db/models/user.model");
-const MatchModel = require("../db/models/match.model");
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
 
-
-const getAllUsers = async () => {
-    return UserModel.find().sort({ date: "asc" });
-};
-
-const getUserById = async (id) => {
-    return UserModel.findById(id);
-};
-
-const getUserGuesses = async (id) => {
-    const user = await UserModel.findById(id);
-    return user.guesses;
-};
-
-const createUser = async (userData) => {
-    const { username, email, password } = userData;
-    const user = await UserModel.create({ username, email, password });
-    const matches = await MatchModel.find({}, '_id');
-    const userGuesses = matches.map(match => ({ match: match._id, home: null, away: null, points: 0 })); // Hozzáadunk egy alapértelmezett pont értéket
-    user.guesses = userGuesses;
-    await user.save();
-    return user;
-};
-
-const updateUserGuess = async (userId, guessId, { home, away }) => {
-    const user = await UserModel.findById(userId);
-    if (!user) {
-        throw new Error("User not found");
+async function getAllUsers() {
+    try {
+        return await prisma.users.findMany({
+            orderBy: { username: 'asc' },
+        });
+    } catch (error) {
+        handlePrismaError('Error fetching users:', error);
     }
-    const guessIndex = user.guesses.findIndex(guess => guess._id.equals(guessId));
-    if (guessIndex === -1) {
-        throw new Error("Guess not found");
+}
+
+async function getUserById(id) {
+    try {
+        return await prisma.users.findUnique({
+            where: { id },
+        });
+    } catch (error) {
+        handlePrismaError('Error fetching user by ID:', error);
     }
-    user.guesses[guessIndex].home = home;
-    user.guesses[guessIndex].away = away;
-    const matchId = user.guesses[guessIndex].match;
-    await user.save();
-    const match = await MatchModel.findById(matchId);
-    if (!match) {
-        throw new Error("Match not found");
+}
+
+async function getUserGuesses(id) {
+    try {
+        const user = await prisma.users.findUnique({
+            where: { id }
+        });
+        return user.guesses;
+    } catch (error) {
+        handlePrismaError('Error fetching user guesses:', error);
     }
-    const existingGuessIndex = match.guesses.findIndex(guess => guess.user && guess.user.toString() === userId);
-    if (existingGuessIndex !== -1) {
-        match.guesses[existingGuessIndex].homeScore = home;
-        match.guesses[existingGuessIndex].awayScore = away;
-    } else {
-        match.guesses.push({ user: userId, homeScore: home, awayScore: away });
+}
+
+async function createUser(userData) {
+    try {
+        const { username, email, password } = userData;
+        const matches = await prisma.matches.findMany({});
+        const guesses = matches.map(match => ({
+            match: match.id,
+            home: null,
+            away: null,
+            points: 0,
+        }));
+        return await prisma.users.create({
+            data: {
+                username,
+                email,
+                password,
+                guesses,
+                points: 0,
+            },
+        });
+    } catch (error) {
+        handlePrismaError('Error creating user:', error);
     }
-    await match.save();
-};
+}
+
+async function updateUserGuess(userId, guessId, { home, away }) {
+    try {
+        const user = await prisma.users.findUnique({
+            where: { id: userId }
+        });
+        if (!user) {
+            throw new Error("User not found");
+        }
+        const guessIndex = user.guesses.findIndex(guess => guess.match === guessId);
+        if (guessIndex === -1) {
+            throw new Error("Guess not found");
+        }
+        user.guesses[guessIndex].home = home;
+        user.guesses[guessIndex].away = away;
+        await prisma.users.update({
+            where: { id: userId },
+            data: { guesses: user.guesses }
+        });
+        const matchId = user.guesses[guessIndex].match;
+        const match = await prisma.matches.findUnique({
+            where: { id: guessId }
+        });
+        if (!match) {
+            throw new Error("Match not found");
+        }
+        const existingGuessIndex = match.guesses.findIndex(guess => guess.user === userId);
+        if (existingGuessIndex !== -1) {
+            match.guesses[existingGuessIndex].homeScore = home;
+            match.guesses[existingGuessIndex].awayScore = away;
+            await prisma.matches.update({
+                where: {
+                    id: matchId,
+                },
+                data: { guesses: match.guesses }
+            });
+        } else {
+            await prisma.matches.update({
+                where: { id: matchId },
+                data: {
+                    guesses: {
+                        push: [{
+                            user: userId,
+                            homeScore: home,
+                            awayScore: away,
+                            points: 0
+                        }]
+                    },
+                },
+            });
+        }
+    } catch (error) {
+        handlePrismaError('Error updating user guess:', error);
+    }
+}
+
+function handlePrismaError(message, error) {
+    console.error(message, error);
+    throw error;
+}
 
 module.exports = {
     getAllUsers,
@@ -59,6 +123,7 @@ module.exports = {
     createUser,
     updateUserGuess
 };
+
 
 
 

@@ -1,21 +1,43 @@
-const MatchModel = require("../db/models/match.model");
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
 
-const getAllMatches = () => {
-    return MatchModel.find().sort({ date: "asc" });
-};
+async function getAllMatches() {
+    try {
+        return await prisma.matches.findMany({
+            orderBy: { date: 'asc' },
+        });
+    } catch (error) {
+        handleError('Error fetching all matches:', error);
+    }
+}
 
-const getMatchById = (id) => {
-    return MatchModel.findById(id);
-};
+async function getMatchById(id) {
+    try {
+        return await prisma.matches.findUnique({
+            where: { id },
+        });
+    } catch (error) {
+        handleError('Error fetching match by ID:', error);
+    }
+}
 
-const getNextMatches = () => {
-    const date = new Date();
-    return MatchModel.find({ date: { $gt: date }}).sort({ date: "asc" });
-};
+async function getNextMatches() {
+    try {
+        const today = new Date();
+        return await prisma.matches.findMany({
+            where: { date: { gt: today } },
+            orderBy: { date: 'asc' },
+        });
+    } catch (error) {
+        handleError('Error fetching next matches:', error);
+    }
+}
 
-module.exports = {
-    getAllMatches,
-    getNextMatches,
-    getMatchById
-};
+function handleError(message, error) {
+    console.error(message, error);
+    throw error;
+}
+
+module.exports = { getAllMatches, getNextMatches, getMatchById };
+
 

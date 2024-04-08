@@ -1,17 +1,17 @@
-const matchModel = require("../models/match.model");
-const userModel = require("../models/user.model");
-const matchApi = require("../api/matchApi");
-//const games = require("./games.json")
-const { pointsCalculator } = require("../../services/pointsCalculator")
+const { PrismaClient } = require('@prisma/client');
+//const matchApi = require("../api/matchApi");
+const games = require("./games.json");
+const { pointsCalculator } = require("../../services/pointsCalculator");
 
-const populateMatches = async () => {
+const prisma = new PrismaClient();
 
-    const fetchedMatches = await matchApi();
-    const existingMatches = await matchModel.find();
-    const users = await userModel.find();
+async function populateMatches() {
 
-    // Frissítés vagy hozzáadás minden meccsre az adatbázisban
-    for (const newMatch of fetchedMatches.response) {
+    //const fetchedMatches = await matchApi();
+    const existingMatches = await prisma.matches.findMany({});
+    const users = await prisma.users.findMany({});
+
+    for (const newMatch of games.response) {
         const existingMatch = existingMatches.find(match =>
             match.home === newMatch.teams.home.name &&
             match.away === newMatch.teams.away.name &&
@@ -19,45 +19,52 @@ const populateMatches = async () => {
         );
 
         if (existingMatch) {
-            // Ha a meccs már létezik az adatbázisban, ellenőrizd, hogy az eredmény megváltozott-e
-            if (existingMatch.homeScore !== newMatch.scores.home || existingMatch.awayScore !== newMatch.scores.away) {
-                // Ha az eredmény megváltozott, frissítsd az adatbázist az új eredménnyel
-                existingMatch.homeScore = newMatch.scores.home;
-                existingMatch.awayScore = newMatch.scores.away;
-                await existingMatch.save();
-                console.log(`Match result updated for ${existingMatch.home} vs ${existingMatch.away}`);
-                console.log(existingMatch._id);
-                await pointsCalculator(existingMatch._id);
-            }
+            await updateExistingMatch(existingMatch, newMatch);
         } else {
-            // Ha a meccs még nem létezik az adatbázisban, hozzáadás
-            const matchToDb = {
-                home: newMatch.teams.home.name,
-                away: newMatch.teams.away.name,
-                date: newMatch.date,
-                homeScore: newMatch.scores.home,
-                awayScore: newMatch.scores.away,
-                guesses: []
-            };
-            const newMatchDb = await matchModel.create(matchToDb);
-
-            for (const user of users) {
-                user.guesses.push({
-                    match: newMatchDb._id,
-                    home: null,
-                    away: null
-                });
-                await user.save();
-            }
-
-            console.log(`New match added: ${matchToDb.home} vs ${matchToDb.away}`);
+            await addNewMatch(newMatch, users);
         }
     }
+}
 
-    // Felhasználók létrehozása
-    //await userModel.create();
-    console.log("Users created");
-};
+async function updateExistingMatch(existingMatch, newMatch) {
+    if (existingMatch.homeScore !== newMatch.scores.home || existingMatch.awayScore !== newMatch.scores.away) {
+        existingMatch.homeScore = newMatch.scores.home;
+        existingMatch.awayScore = newMatch.scores.away;
+        await prisma.matches.update({
+            where: { id: existingMatch.id },
+            data: {
+                homeScore: existingMatch.homeScore,
+                awayScore: existingMatch.awayScore
+            }
+        });
+        console.log(`Match result updated for ${existingMatch.home} vs ${existingMatch.away}`);
+        await pointsCalculator(existingMatch.id);
+    }
+}
+
+async function addNewMatch(newMatch, users) {
+    const newMatchDb = await prisma.matches.create({
+        data: {
+            home: newMatch.teams.home.name,
+            away: newMatch.teams.away.name,
+            date: newMatch.date,
+            homeScore: newMatch.scores.home,
+            awayScore: newMatch.scores.away,
+            guesses: []
+        }
+    });
+
+    console.log(`New match added: ${newMatch.teams.home.name} vs ${newMatch.teams.away.name}`);
+
+    for (const user of users) {
+        user.guesses.push({
+            match: newMatchDb.id,
+            home: null,
+            away: null
+        });
+        await user.save();
+    }
+}
 
 module.exports = populateMatches;
 

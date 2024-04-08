@@ -1,8 +1,10 @@
-const mongoose = require("mongoose");
+const { PrismaClient } = require('@prisma/client');
+
+const prisma = new PrismaClient();
 
 const disconnectFromDatabase = async () => {
     try {
-        await mongoose.disconnect();
+        await prisma.$disconnect();
         console.log("Disconnected from database");
     } catch (error) {
         console.error("Error disconnecting from database:", error);
