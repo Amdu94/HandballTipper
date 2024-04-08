@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const main = async () => {
 
-    const MONGO_URL = process.env.DATABASE_URL;
+    const MONGO_URL = process.env.MONGO_URL;
 
     if (!MONGO_URL) {
         console.error("Missing MONGO_URL environment variable");

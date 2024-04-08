@@ -9,7 +9,7 @@ async function startServer() {
     const app = express();
     const prisma = new PrismaClient();
 
-    const MONGO_URL = process.env.DATABASE_URL;
+    const MONGO_URL = process.env.MONGO_URL;
     const PORT = process.env.PORT;
 
     if (!MONGO_URL) {
