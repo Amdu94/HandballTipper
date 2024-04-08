@@ -44,8 +44,8 @@
         }
       },
       "scores": {
-        "home": null,
-        "away": null
+        "home": 10,
+        "away": 10
       },
       "periods": {
         "first": {
