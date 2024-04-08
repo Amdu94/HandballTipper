@@ -107,18 +107,44 @@ different operating systems:
 ### Installation
 
 1. Clone the repo
+
+   Begin by cloning the HandballTipper repository using Git:
+
    ```sh
    git clone https://github.com/Amdu94/HandballTipper
    ```
-2. Navigate to the root directory of the project(Where the docker-compose.yaml file is located)
 
-3. Create and run the Docker container using:
+   This command will download the project's files to your local machine.
+
+2. Project Navigation
+
+   Once the cloning is complete, navigate to the root directory of the project,
+   where you'll find the docker-compose.yaml file.
+   You can use your terminal's cd command for this:
+
+   ```sh
+   cd HandballTipper
+   ```
+
+3. Run the entrypoint.sh script. Here you have to add the MongoDb database URL and the PORT where the backend will run.
+
+   ```sh
+    .entrypoint.sh
+   "Enter the MongoDB database URL:" "e.g("mongodb+srv://test:test@cluster0.ns1yp.mongodb.net/myFirstDatabase")"
+   "Enter the port number: "e.g(8080)"
+    ```
+   MONGODB_URL: This variable specifies the connection string to your MongoDB database.
+   Replace mongodb+srv://test:test@cluster0.ns1yp.mongodb.net/myFirstDatabase with your actual connection details.
+   PORT: This variable defines the port on which the HandballTipper backend will run. 
+   The default is 8080, but you can customize it if needed.
+
+4. Create and run the Docker container using:
 
    ```sh
     docker-compose up
     ```
 
-4. Open your browser and navigate to [http://localhost:8000](http://localhost:8000)
+5. Open your browser and navigate to [http://localhost:8000](http://localhost:8000)
 
 <!-- CONTRIBUTING -->
 ## Contributing
