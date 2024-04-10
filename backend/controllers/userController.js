@@ -30,7 +30,7 @@ const getUserGuesses = async (req, res, next) => {
 const createUser = async (req, res, next) => {
     try {
         const user = await userService.createUser(req.body);
-        res.json(user);
+        res.status(201).json(user);
     } catch (err) {
         next(err);
     }
