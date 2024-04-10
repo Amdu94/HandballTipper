@@ -31,7 +31,12 @@ describe('Server Endpoints', () => {
         server.close();
     });
 
-
+    describe('Error Handling', () => {
+        test('Non-existent endpoint should return 404', async () => {
+            const response = await request(app).get('/non-existent-endpoint');
+            expect(response.statusCode).toBe(404);
+        });
+    });
 
 
 });
