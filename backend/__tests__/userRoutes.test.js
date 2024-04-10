@@ -29,7 +29,7 @@ describe('User Routes', () => {
         const response = await request(app)
             .post('/api/users')
             .send(newUser);
-        expect(response.statusCode).toBe(200); // Assuming status 200 for created resource
+        expect(response.statusCode).toBe(201); // Assuming status 201 for created resource
         expect(response.body).toHaveProperty('id');
     });
 
