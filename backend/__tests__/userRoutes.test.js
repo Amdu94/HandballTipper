@@ -18,7 +18,6 @@ describe('User Routes', () => {
         const response = await request(app).get(`/api/users/${userId}`);
         expect(response.statusCode).toBe(200);
         expect(response.body).toHaveProperty('id', userId);
-        // Add more specific checks based on your data structure
     });
 
     test('POST /api/users - should create a new user', async () => {
@@ -26,14 +25,12 @@ describe('User Routes', () => {
             username: 'John Doe1',
             email: 'john1@example.com',
             password: 'john1'
-            // Add other required fields for creating a user
         };
         const response = await request(app)
             .post('/api/users')
             .send(newUser);
         expect(response.statusCode).toBe(200); // Assuming status 200 for created resource
         expect(response.body).toHaveProperty('id');
-        // Add more specific checks based on your data structure
     });
 
     test('PATCH /api/users/:userId/guesses/:guessId - should update a user guess', async () => {
@@ -47,7 +44,6 @@ describe('User Routes', () => {
             .patch(`/api/users/${userId}/guesses/${guessId}`)
             .send(updatedGuess);
         expect(response.statusCode).toBe(200);
-        // Add more specific checks based on your data structure
     });
 
     test('POST /api/users - should fail with missing fields', async () => {
@@ -60,14 +56,10 @@ describe('User Routes', () => {
         expect(response.statusCode).toBe(500); // Assuming status 400 for bad request
     });
 
-    // Add more validation tests for user input data
-
     test('GET /api/users/:id/guesses - should return guesses for a specific user', async () => {
         const userId = '66141538f1452d367f499d54'; // assuming this user id exists in your database
         const response = await request(app).get(`/api/users/${userId}/guesses`);
         expect(response.statusCode).toBe(200);
-        // Add more specific checks based on your data structure
     });
 
-    // Add more tests as needed for other endpoints
 });
