@@ -6,7 +6,8 @@
     "start": "node server.js",
     "dev": "nodemon server.js",
     "populate": "node db/populate/populateMatches.js",
-    "format": "prettier -w ."
+    "format": "prettier -w .",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -20,8 +21,10 @@
     "mongoose": "^8.2.2"
   },
   "devDependencies": {
+    "jest": "^29.7.0",
     "nodemon": "^3.1.0",
     "prettier": "^3.2.5",
-    "prisma": "^5.12.1"
+    "prisma": "^5.12.1",
+    "supertest": "^6.3.4"
   }
 }
