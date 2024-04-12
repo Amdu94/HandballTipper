@@ -1,4 +1,4 @@
-const matchService = require("../services/matchService");
+import matchService from "../services/matchService.js";
 
 const getAllMatches = async (req, res, next) => {
     try {
@@ -25,7 +25,7 @@ const getGuessesForMatchById = async (req, res, next) => {
     } catch (err) {
         next(err);
     }
-}
+};
 
 const getNextMatches = async (req, res, next) => {
     try {
@@ -36,9 +36,12 @@ const getNextMatches = async (req, res, next) => {
     }
 };
 
-module.exports = {
+const matchController = {
     getAllMatches,
     getNextMatches,
     getMatchById,
     getGuessesForMatchById
 };
+
+export default matchController;
+

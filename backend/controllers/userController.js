@@ -1,4 +1,4 @@
-const userService = require("../services/userService");
+import userService from "../services/userService.js"
 
 const getAllUsers = async (req, res, next) => {
     try {
@@ -45,10 +45,12 @@ const updateUserGuess = async (req, res, next) => {
     }
 };
 
-module.exports = {
+const userController = {
     getAllUsers,
     getUserById,
     getUserGuesses,
     createUser,
     updateUserGuess
 };
+
+export default userController;
