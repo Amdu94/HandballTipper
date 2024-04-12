@@ -1,4 +1,5 @@
-const errorHandler = require('../middleware/errorHandler');
+import errorHandler from '../middleware/errorHandler';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 
 describe('Error Handling Middleware', () => {
     let mockRequest, mockResponse, mockNext;
@@ -6,13 +7,13 @@ describe('Error Handling Middleware', () => {
     beforeEach(() => {
         mockRequest = {};
         mockResponse = {
-            status: jest.fn(() => mockResponse),
-            json: jest.fn(),
+            status: vi.fn(() => mockResponse),
+            json: vi.fn(),
         };
-        mockNext = jest.fn();
+        mockNext = vi.fn();
     });
 
-    test('Should handle internal server errors with status code 500', async () => {
+    it('Should handle internal server errors with status code 500', async () => {
         // Simulate an internal server error
         const error = new Error('Test internal server error');
 
@@ -21,6 +22,5 @@ describe('Error Handling Middleware', () => {
         expect(mockResponse.status).toHaveBeenCalledWith(500);
         expect(mockResponse.json).toHaveBeenCalledWith({ message: "Internal Server Error" });
     });
-
-
 });
+
