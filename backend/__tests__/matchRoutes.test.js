@@ -46,20 +46,39 @@ vi.mock('@prisma/client', () => {
 
 describe('Match Routes', () => {
     it('GET /api/matches - should return all matches', async () => {
-        const response = await request(app).get('/api/matches').timeout(10000);
+        const response = await request(app).get('/api/matches');
         expect(response.statusCode).toBe(200);
         expect(response.body).toBeInstanceOf(Array);
         // Add more specific assertions based on your data structure
     });
 
+    it('GET /api/matches - should return matches with correct structure', async () => {
+        const response = await request(app).get('/api/matches');
+        expect(response.statusCode).toBe(200);
+        expect(response.body).toBeInstanceOf(Array);
+        expect(response.body[0]).toHaveProperty('home');
+        expect(response.body[0]).toHaveProperty('away');
+        expect(response.body[0].home).toBe('HazaiCsapat');
+        expect(response.body[0].away).toBe('VendégCsapat');
+        // További specifikus ellenőrzések...
+    });
+
     it('GET /api/matches/:id - should return match by id', async () => {
         const matchId = '6614152331941ceff63eb070';
         const response = await request(app).get(`/api/matches/${matchId}`);
-        console.log(response.statusCode);
         expect(response.statusCode).toBe(200);
 
         // Add more specific assertions based on your data structure
         //expect(response.body.id).toBe(matchId);
+    });
+
+    // Hibakezelés Tesztelése
+    it('GET /api/matches/:id - should handle non-existent match id', async () => {
+        const nonExistentMatchId = 'nonexistentid';
+        const response = await request(app).get(`/api/matches/${nonExistentMatchId}`);
+        console.log(response)
+        expect(response.statusCode).toBe(404);
+        expect(response.body).toHaveProperty('error');
     });
 
     it('GET /api/matches/next - should return next matches', async () => {
