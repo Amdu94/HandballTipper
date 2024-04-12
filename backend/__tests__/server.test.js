@@ -1,9 +1,10 @@
-const request = require('supertest');
-const express = require('express');
-const { PrismaClient } = require('@prisma/client');
-const matchRoutes = require('../routes/matchRoutes');
-const userRoutes = require('../routes/userRoutes');
-const errorHandler = require('../middleware/errorHandler');
+import request from "supertest";
+import express from "express";
+import { PrismaClient } from '@prisma/client';
+import matchRoutes from "../routes/matchRoutes.js";
+import userRoutes from "../routes/userRoutes.js";
+import errorHandler from "../middleware/errorHandler.js";
+import { describe, it, expect, beforeAll, afterAll } from 'vitest';
 
 const app = express();
 app.use(express.json());
@@ -22,7 +23,7 @@ describe('Server Endpoints', () => {
         await prisma.$disconnect();
     });
 
-    test('App starts and listens on the defined port', async () => {
+    it('App starts and listens on the defined port', async () => {
         const PORT = process.env.PORT || 8080;
         const server = app.listen(PORT, () => {
             console.log(`App is listening on port ${PORT}`);
@@ -32,7 +33,7 @@ describe('Server Endpoints', () => {
     });
 
     describe('Error Handling', () => {
-        test('Non-existent endpoint should return 404', async () => {
+        it('Non-existent endpoint should return 404', async () => {
             const response = await request(app).get('/non-existent-endpoint');
             expect(response.statusCode).toBe(404);
         });
