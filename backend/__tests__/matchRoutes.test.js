@@ -76,7 +76,6 @@ describe('Match Routes', () => {
     it('GET /api/matches/:id - should handle non-existent match id', async () => {
         const nonExistentMatchId = 'nonexistentid';
         const response = await request(app).get(`/api/matches/${nonExistentMatchId}`);
-        console.log(response)
         expect(response.statusCode).toBe(404);
         expect(response.body).toHaveProperty('error');
     });
@@ -98,4 +97,52 @@ describe('Match Routes', () => {
         expect(response.body[0].user).toBeDefined(); // Check if user field is defined in the first guess
         // Add more specific assertions as needed
     });
+
+    it('GET /api/matches/:id - should return match by id with correct structure', async () => {
+        const matchId = '6614152331941ceff63eb070';
+        const response = await request(app).get(`/api/matches/${matchId}`);
+        expect(response.statusCode).toBe(200);
+        expect(response.body).toHaveProperty('id');
+        expect(response.body).toHaveProperty('home');
+        expect(response.body).toHaveProperty('away');
+        expect(response.body.id).toBe(matchId);
+        expect(response.body.home).toBe('HazaiCsapat');
+        expect(response.body.away).toBe('VendégCsapat');
+        // További specifikus ellenőrzések...
+    });
+
+    // ...
+
+    it('GET /api/matches/next - should return next matches with correct structure', async () => {
+        const response = await request(app).get('/api/matches/next');
+        expect(response.statusCode).toBe(200);
+        expect(response.body).toBeInstanceOf(Array);
+        expect(response.body.length).toBeGreaterThan(0); // Check if next matches array is not empty
+        expect(response.body[0]).toHaveProperty('date');
+        expect(response.body[0]).toHaveProperty('home');
+        // További specifikus ellenőrzések...
+    });
+
+    // ...
+
+    it('GET /api/matches/:id/guesses - should return guesses for a specific match with correct structure', async () => {
+        const matchId = '6614152331941ceff63eb070'; // assuming this match id exists in your database
+        const response = await request(app).get(`/api/matches/${matchId}/guesses`);
+        expect(response.statusCode).toBe(200);
+        expect(response.body).toBeInstanceOf(Array);
+        expect(response.body.length).toBeGreaterThan(0); // Check if guesses array is not empty
+        expect(response.body[0]).toHaveProperty('user');
+        expect(response.body[0]).toHaveProperty('homeScore');
+        // További specifikus ellenőrzések...
+    });
+
+    // Hibakezelés Tesztelése
+    it('GET /api/matches/:id - should handle non-existent match id', async () => {
+        const nonExistentMatchId = 'nonexistentid';
+        const response = await request(app).get(`/api/matches/${nonExistentMatchId}`);
+        expect(response.statusCode).toBe(404);
+        expect(response.body).toHaveProperty('error');
+        expect(response.body.error).toBe('Match not found');
+    });
+
 });
