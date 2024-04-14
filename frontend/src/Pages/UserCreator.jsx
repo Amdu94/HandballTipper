@@ -9,15 +9,22 @@ const createUser = (user) => {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(user),
-    }).then((res) => res.json());
+    }).then((res) => {
+        if (!res.ok) {
+            throw new Error('Failed to create user');
+        }
+        return res.json();
+    });
 };
 
-const CreateUser = () => {
+const UserCreator = () => {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(''); // Új állapot a hibaüzenet tárolására
 
     const handleCreateUser = (user) => {
         setLoading(true);
+        setError(''); // Töröljük a korábbi hibaüzenetet
 
         createUser(user)
             .then((createdUser) => {
@@ -27,6 +34,7 @@ const CreateUser = () => {
             })
             .catch((error) => {
                 console.error('Failed to create user', error);
+                setError(error.message); // Beállítjuk a hibaüzenetet
                 setLoading(false);
             });
     };
@@ -36,9 +44,11 @@ const CreateUser = () => {
             onCancel={() => navigate('/')}
             disabled={loading}
             onSave={handleCreateUser}
+            errorMessage={error} // Átadjuk a hibaüzenetet a formnak
         />
     );
 };
 
-export default CreateUser;
+export default UserCreator;
+
 

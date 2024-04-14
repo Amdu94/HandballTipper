@@ -17,4 +17,4 @@ const fetchData = async () => {
     }
 };
 
-module.exports = fetchData;
+export default fetchData

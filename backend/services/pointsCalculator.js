@@ -1,4 +1,4 @@
-const { PrismaClient } = require('@prisma/client');
+import { PrismaClient } from "@prisma/client"
 const prisma = new PrismaClient();
 
 function calculatePoints(guess, actual) {
@@ -64,7 +64,7 @@ async function pointsCalculator(matchId) {
     }
 }
 
-module.exports = { pointsCalculator };
+module.exports = { pointsCalculator, calculatePoints };
 
 
 

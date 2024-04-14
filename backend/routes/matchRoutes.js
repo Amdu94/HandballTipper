@@ -1,10 +1,11 @@
-const express = require("express");
+import express from 'express';
 const router = express.Router();
-const matchController = require("../controllers/matchController");
+import matchController from "../controllers/matchController.js"
+
 
 router.get("/", matchController.getAllMatches);
-router.get("/:id", matchController.getMatchById);
 router.get("/next", matchController.getNextMatches);
+router.get("/:id", matchController.getMatchById);
 router.get("/:id/guesses", matchController.getGuessesForMatchById)
 
-module.exports = router;
+export default router;

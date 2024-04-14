@@ -1,9 +1,10 @@
-const express = require("express");
-const { PrismaClient } = require('@prisma/client');
-const matchRoutes = require("./routes/matchRoutes");
-const userRoutes = require("./routes/userRoutes");
-const errorHandler = require("./middleware/errorHandler");
-require('dotenv').config();
+import express from "express";
+import { PrismaClient } from "@prisma/client"
+import matchRoutes from "./routes/matchRoutes.js";
+import userRoutes from "./routes/userRoutes.js"
+import errorHandler from "./middleware/errorHandler.js"
+import dotenv from 'dotenv'
+dotenv.config();
 
 async function startServer() {
     const app = express();
@@ -16,6 +17,7 @@ async function startServer() {
         console.error("Missing MONGO_URL environment variable");
         process.exit(1);
     }
+
 
     app.use(express.json());
     app.use("/api/matches", matchRoutes);

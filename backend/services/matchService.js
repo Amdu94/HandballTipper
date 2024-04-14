@@ -1,7 +1,7 @@
-const { PrismaClient } = require('@prisma/client');
+import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
-async function getAllMatches() {
+const getAllMatches = async() => {
     try {
         return await prisma.matches.findMany({
             orderBy: { date: 'asc' },
@@ -11,7 +11,7 @@ async function getAllMatches() {
     }
 }
 
-async function getMatchById(id) {
+const getMatchById = async(id) => {
     try {
         return await prisma.matches.findUnique({
             where: { id },
@@ -21,7 +21,7 @@ async function getMatchById(id) {
     }
 }
 
-async function getNextMatches() {
+const getNextMatches = async() => {
     try {
         const today = new Date();
         return await prisma.matches.findMany({
@@ -38,6 +38,10 @@ function handleError(message, error) {
     throw error;
 }
 
-module.exports = { getAllMatches, getNextMatches, getMatchById };
-
+const matchService = {
+    getAllMatches,
+    getNextMatches,
+    getMatchById,
+}
+export default matchService;
 

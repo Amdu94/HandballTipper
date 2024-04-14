@@ -1,7 +1,7 @@
-const { PrismaClient } = require('@prisma/client');
+import { PrismaClient } from "@prisma/client"
 const prisma = new PrismaClient();
 
-async function getUsers(orderBy = { username: 'asc' }) {
+const getUsers = async(orderBy = { username: 'asc' }) => {
     try {
         return await prisma.users.findMany({ orderBy });
     } catch (error) {
@@ -9,7 +9,7 @@ async function getUsers(orderBy = { username: 'asc' }) {
     }
 }
 
-async function getUser(id) {
+const getUser = async(id) => {
     try {
         return await prisma.users.findUnique({
             where: { id },
@@ -19,7 +19,7 @@ async function getUser(id) {
     }
 }
 
-async function createUser(userData) {
+const createUser = async(userData) => {
     try {
         const { username, email, password } = userData;
         const guesses = await prisma.matches.findMany({}).then((matches) =>
@@ -44,7 +44,7 @@ async function createUser(userData) {
     }
 }
 
-async function updateUserGuess(userId, guessId, guessData) {
+const updateUserGuess = async(userId, guessId, guessData) => {
     try {
         await updateUserGuessInUser(userId, guessId, guessData);
         await updateUserGuessInMatch(guessId, userId, guessData);
@@ -53,7 +53,7 @@ async function updateUserGuess(userId, guessId, guessData) {
     }
 }
 
-async function updateUserGuessInUser(userId, guessId, guessData) {
+const updateUserGuessInUser = async(userId, guessId, guessData) => {
     const user = await prisma.users.findUnique({ where: { id: userId } });
     if (!user) {
         throw new Error("User not found");
@@ -72,7 +72,7 @@ async function updateUserGuessInUser(userId, guessId, guessData) {
     });
 }
 
-async function updateUserGuessInMatch(guessId, userId, guessData) {
+const updateUserGuessInMatch = async(guessId, userId, guessData) => {
     const match = await prisma.matches.findUnique({ where: { id: guessId } });
     if (!match) {
         throw new Error("Match not found");
@@ -98,12 +98,14 @@ function handlePrismaError(message, error) {
     throw error;
 }
 
-module.exports = {
+const userService = {
     getUsers,
     getUser,
     createUser,
     updateUserGuess,
 };
+
+export default userService;
 
 
 
