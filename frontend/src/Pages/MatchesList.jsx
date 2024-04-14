@@ -1,42 +1,44 @@
-// MatchesList.js
-
 import React, { useEffect, useState } from 'react';
 import Loading from '../Components/Loading/Loading.jsx';
 import MatchesTable from '../Components/MatchesTable/MatchesTable.jsx';
 
 const fetchMatches = () => {
-    return fetch('/api/matches')
-        .then((res) => {
-            if (!res.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return res.json();
-        })
-        .catch((error) => {
-            console.error('Error fetching matches:', error);
-            throw error; // Rethrow the error to be handled by the caller
-        });
+    return fetch('/api/matches').then((res) => res.json());
 };
-
 
 const MatchesList = () => {
     const [loading, setLoading] = useState(true);
-    const [matches, setMatches] = useState(null);
+    const [matches, setMatches] = useState([]);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         fetchMatches()
-            .then((matches) => {
+            .then((fetchedMatches) => {
+                setMatches(fetchedMatches);
                 setLoading(false);
-                setMatches(matches);
             })
+            .catch((fetchError) => {
+                setError(fetchError);
+                setLoading(false);
+            });
     }, []);
 
     if (loading) {
-        return <Loading />
+        return <Loading />;
+    }
+
+    if (!matches || matches.length === 0) {
+        return <div>No matches available</div>;
+    }
+
+    if (error) {
+        return <div>Error fetching matches: {error.message}</div>;
     }
 
     return <MatchesTable matches={matches} />;
 };
 
 export default MatchesList;
+
+
 
