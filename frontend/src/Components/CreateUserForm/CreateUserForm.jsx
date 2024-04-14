@@ -2,27 +2,31 @@ import React, { useState } from 'react';
 
 import "./CreateUserForm.css";
 
-const CreateUserForm = ({ onSave, disabled, user, onCancel }) => {
+const CreateUserForm = ({ onSave, disabled, user, onCancel, errorMessage }) => {
     const [username, setUsername] = useState(user?.username ?? '');
     const [email, setEmail] = useState(user?.email ?? '');
     const [password, setPassword] = useState(user?.password ?? '');
     const [emailError, setEmailError] = useState('');
-
-    const isFormValid = () => {
-        if (!username || !email || !password) return false;
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-            setEmailError('Invalid email address');
-            return false;
-        }
-        return true;
-    };
+    const [formError, setFormError] = useState(errorMessage); // Új állapot a form hibaüzenetének
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!isFormValid()) return;
+        let valid = true;
 
-        const userData = { username, email, password };
-        onSave(user ? { ...user, ...userData } : userData);
+        if (!username || !email || !password) {
+            setFormError('All fields are required');
+            valid = false;
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            setEmailError('Invalid email address');
+            valid = false;
+        }
+
+        if (valid) {
+            setFormError('');
+            setEmailError('');
+            const userData = { username, email, password };
+            onSave(user ? { ...user, ...userData } : userData);
+        }
     };
 
     return (
@@ -59,7 +63,8 @@ const CreateUserForm = ({ onSave, disabled, user, onCancel }) => {
                     disabled={disabled}
                 />
             </label>
-            <button type="submit" disabled={disabled || !isFormValid()}>
+            {errorMessage && <div className="error">{errorMessage}</div>}
+            <button type="submit" disabled={disabled || !username || !email || !password || emailError || formError}>
                 {user ? 'Update User' : 'Create User'}
             </button>
             <button type="button" onClick={onCancel} disabled={disabled}>
