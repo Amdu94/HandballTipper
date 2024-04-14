@@ -13,40 +13,40 @@ describe('CreateUserForm', () => {
 
     test('allows user to enter username, email, and password', () => {
         render(<CreateUserForm onSave={() => {}} onCancel={() => {}} />);
-        fireEvent.change(screen.getByLabelText(/username/i), { target: { value: 'teszt_felhasznalo' } });
-        fireEvent.change(screen.getByLabelText(/email/i), { target: { value: 'teszt@example.com' } });
-        fireEvent.change(screen.getByLabelText(/password/i), { target: { value: 'jelszo123' } });
-        expect(screen.getByLabelText(/username/i).value).toBe('teszt_felhasznalo');
-        expect(screen.getByLabelText(/email/i).value).toBe('teszt@example.com');
-        expect(screen.getByLabelText(/password/i).value).toBe('jelszo123');
+        fireEvent.change(screen.getByLabelText(/username/i), { target: { value: 'test_user' } });
+        fireEvent.change(screen.getByLabelText(/email/i), { target: { value: 'test@example.com' } });
+        fireEvent.change(screen.getByLabelText(/password/i), { target: { value: 'password123' } });
+        expect(screen.getByLabelText(/username/i).value).toBe('test_user');
+        expect(screen.getByLabelText(/email/i).value).toBe('test@example.com');
+        expect(screen.getByLabelText(/password/i).value).toBe('password123');
     });
 
     test('calls onSave with the user data when form is submitted', () => {
         const mockOnSave = jest.fn();
         render(<CreateUserForm onSave={mockOnSave} onCancel={() => {}} />);
-        fireEvent.change(screen.getByLabelText(/username/i), { target: { value: 'teszt_felhasznalo' } });
-        fireEvent.change(screen.getByLabelText(/email/i), { target: { value: 'teszt@example.com' } });
-        fireEvent.change(screen.getByLabelText(/password/i), { target: { value: 'jelszo123' } });
+        fireEvent.change(screen.getByLabelText(/username/i), { target: { value: 'test_user' } });
+        fireEvent.change(screen.getByLabelText(/email/i), { target: { value: 'test@example.com' } });
+        fireEvent.change(screen.getByLabelText(/password/i), { target: { value: 'password123' } });
         fireEvent.click(screen.getByText(/create user/i));
         expect(mockOnSave).toHaveBeenCalledWith({
-            username: 'teszt_felhasznalo',
-            email: 'teszt@example.com',
-            password: 'jelszo123',
+            username: 'test_user',
+            email: 'test@example.com',
+            password: 'password123',
         });
     });
 
     test('does not call onSave if the username is empty when form is submitted', () => {
         const mockOnSave = jest.fn();
         render(<CreateUserForm onSave={mockOnSave} onCancel={() => {}} />);
-        fireEvent.change(screen.getByLabelText(/email/i), { target: { value: 'teszt@example.com' } });
-        fireEvent.change(screen.getByLabelText(/password/i), { target: { value: 'jelszo123' } });
+        fireEvent.change(screen.getByLabelText(/email/i), { target: { value: 'test@example.com' } });
+        fireEvent.change(screen.getByLabelText(/password/i), { target: { value: 'password123' } });
         fireEvent.click(screen.getByText(/create user/i));
         expect(mockOnSave).not.toHaveBeenCalled();
     });
 
     test('displays error message if the email is invalid', () => {
         render(<CreateUserForm onSave={() => {}} onCancel={() => {}} />);
-        fireEvent.change(screen.getByLabelText(/email/i), { target: { value: 'tesztemail' } });
+        fireEvent.change(screen.getByLabelText(/email/i), { target: { value: 'invalid_email' } });
         fireEvent.blur(screen.getByLabelText(/email/i));
         expect(screen.getByText(/invalid email address/i)).toBeInTheDocument();
     });
@@ -68,42 +68,42 @@ describe('CreateUserForm', () => {
         expect(screen.getByText(/create user/i)).toBeDisabled();
     });
 
-
-    // További tesztek, mint például a "Cancel" gomb funkciója, vagy a "disabled" prop kezelése...
+    // Additional tests such as testing the functionality of the "Cancel" button, or handling the "disabled" prop...
 });
 
 describe('CreateUserForm Logic Tests', () => {
     test('form is invalid if username is empty', () => {
         render(<CreateUserForm onSave={() => {}} onCancel={() => {}} />);
-        fireEvent.change(screen.getByLabelText(/email/i), { target: { value: 'teszt@example.com' } });
-        fireEvent.change(screen.getByLabelText(/password/i), { target: { value: 'jelszo123' } });
+        fireEvent.change(screen.getByLabelText(/email/i), { target: { value: 'test@example.com' } });
+        fireEvent.change(screen.getByLabelText(/password/i), { target: { value: 'password123' } });
         const createUserButton = screen.getByRole('button', { name: /create user/i });
         expect(createUserButton).toBeDisabled();
     });
 
     test('form is invalid if email is empty', () => {
         render(<CreateUserForm onSave={() => {}} onCancel={() => {}} />);
-        fireEvent.change(screen.getByLabelText(/username/i), { target: { value: 'teszt_felhasznalo' } });
-        fireEvent.change(screen.getByLabelText(/password/i), { target: { value: 'jelszo123' } });
+        fireEvent.change(screen.getByLabelText(/username/i), { target: { value: 'test_user' } });
+        fireEvent.change(screen.getByLabelText(/password/i), { target: { value: 'password123' } });
         const createUserButton = screen.getByRole('button', { name: /create user/i });
         expect(createUserButton).toBeDisabled();
     });
 
     test('form is invalid if password is empty', () => {
         render(<CreateUserForm onSave={() => {}} onCancel={() => {}} />);
-        fireEvent.change(screen.getByLabelText(/username/i), { target: { value: 'teszt_felhasznalo' } });
-        fireEvent.change(screen.getByLabelText(/email/i), { target: { value: 'teszt@example.com' } });
+        fireEvent.change(screen.getByLabelText(/username/i), { target: { value: 'test_user' } });
+        fireEvent.change(screen.getByLabelText(/email/i), { target: { value: 'test@example.com' } });
         const createUserButton = screen.getByRole('button', { name: /create user/i });
         expect(createUserButton).toBeDisabled();
     });
 
     test('form is valid and button is enabled when all fields are filled', () => {
         render(<CreateUserForm onSave={() => {}} onCancel={() => {}} />);
-        fireEvent.change(screen.getByLabelText(/username/i), { target: { value: 'teszt_felhasznalo' } });
-        fireEvent.change(screen.getByLabelText(/email/i), { target: { value: 'teszt@example.com' } });
-        fireEvent.change(screen.getByLabelText(/password/i), { target: { value: 'jelszo123' } });
+        fireEvent.change(screen.getByLabelText(/username/i), { target: { value: 'test_user' } });
+        fireEvent.change(screen.getByLabelText(/email/i), { target: { value: 'test@example.com' } });
+        fireEvent.change(screen.getByLabelText(/password/i), { target: { value: 'password123' } });
         const createUserButton = screen.getByRole('button', { name: /create user/i });
         expect(createUserButton).not.toBeDisabled();
     });
 });
+
 
