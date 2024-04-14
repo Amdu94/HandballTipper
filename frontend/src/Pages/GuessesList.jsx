@@ -1,5 +1,3 @@
-// GuessesList.jsx
-
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Loading from "../Components/Loading";
@@ -8,7 +6,7 @@ import GuessesTable from "../Components/GuessesTable/GuessesTable.jsx";
 const GuessesList = () => {
     const [loading, setLoading] = useState(true);
     const [guesses, setGuesses] = useState([]);
-    const [matches, setMatches] = useState([]);
+    //const [matches, setMatches] = useState([]);
     const { userId } = useParams();
     const currentDate = new Date();
 
@@ -21,8 +19,15 @@ const GuessesList = () => {
                 const userGuesses = await guessesResponse.json();
                 const matchesData = await matchesResponse.json();
 
-                setGuesses(userGuesses);
-                setMatches(matchesData);
+                // Kiszámítjuk a matchDetails és isPastMatch értékeket minden tipphez
+                const enrichedGuesses = userGuesses.map(guess => {
+                    const match = matchesData.find((m) => m.id === guess.match);
+                    const pastMatch = new Date(match.date) < currentDate;
+                    return { ...guess, matchDetails: match, pastMatch };
+                });
+
+                setGuesses(enrichedGuesses);
+                //setMatches(matchesData);
                 setLoading(false);
             } catch (error) {
                 console.error("Error:", error);
@@ -31,16 +36,6 @@ const GuessesList = () => {
 
         fetchData();
     }, [userId]);
-
-    const getMatchById = (matchId) => {
-        return matches.find((match) => match.id === matchId);
-    };
-
-    const isPastMatch = (matchId) => {
-        const match = getMatchById(matchId);
-        return new Date(match.date) < currentDate;
-    };
-
 
     const handleGuessChange = (index, field, value) => {
         const updatedGuesses = [...guesses];
@@ -76,15 +71,12 @@ const GuessesList = () => {
         <>
             <GuessesTable
                 guesses={guesses}
-                matches={matches}
                 onGuessChange={handleGuessChange}
                 onSaveGuess={saveUserGuesses}
-                getMatchById={getMatchById}
-                currentDate={currentDate}
-                isPastMatch={isPastMatch}// Pass current date as prop
             />
         </>
     );
 };
 
 export default GuessesList;
+
