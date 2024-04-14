@@ -105,7 +105,5 @@ describe('CreateUserForm Logic Tests', () => {
         const createUserButton = screen.getByRole('button', { name: /create user/i });
         expect(createUserButton).not.toBeDisabled();
     });
-
-    // További tesztek, mint például az email formátumának ellenőrzése, vagy a jelszó hosszának és biztonságának tesztelése...
 });
 
