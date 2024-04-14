@@ -1,10 +1,7 @@
 import React from 'react';
-
 import "./GuessesTable.css"
 
-const GuessesTable = ({ guesses, onGuessChange, onSaveGuess, getMatchById, isPastMatch }) => {
-
-
+const GuessesTable = ({ guesses, onGuessChange, onSaveGuess }) => {
     return (
         <div className="GuessesTable">
             <table>
@@ -20,13 +17,13 @@ const GuessesTable = ({ guesses, onGuessChange, onSaveGuess, getMatchById, isPas
                 <tbody>
                 {guesses.map((guess, index) => (
                     <tr key={index}>
-                        <td>{getMatchById(guess.match)?.home} vs {getMatchById(guess.match)?.away}</td>
+                        <td>{guess.matchDetails?.home} vs {guess.matchDetails?.away}</td>
                         <td>
                             <input
                                 type="number"
                                 value={guess.homeScore || ''}
                                 onChange={(e) => onGuessChange(index, 'homeScore', e.target.value)}
-                                disabled={isPastMatch(guess.match)}
+                                disabled={guess.pastMatch}
                             />
                         </td>
                         <td>
@@ -34,18 +31,18 @@ const GuessesTable = ({ guesses, onGuessChange, onSaveGuess, getMatchById, isPas
                                 type="number"
                                 value={guess.awayScore || ''}
                                 onChange={(e) => onGuessChange(index, 'awayScore', e.target.value)}
-                                disabled={isPastMatch(guess.match)}
+                                disabled={guess.pastMatch}
                             />
                         </td>
                         <td>
                             {guess.points}
                         </td>
                         <td>
-                            {isPastMatch(guess.match) ?
+                            {guess.pastMatch ?
                                 'The guess is not allowed' :
-                            <button onClick={() => onSaveGuess(guess.match)} disabled={isPastMatch(guess.match)}>
-                                Save
-                            </button>}
+                                <button onClick={() => onSaveGuess(guess.match)} disabled={guess.pastMatch}>
+                                    Save
+                                </button>}
                         </td>
                     </tr>
                 ))}
@@ -56,5 +53,7 @@ const GuessesTable = ({ guesses, onGuessChange, onSaveGuess, getMatchById, isPas
 };
 
 export default GuessesTable;
+
+
 
 
