@@ -9,7 +9,6 @@ const getAllMatches = async (req, res, next) => {
     }
 };
 
-// matchController.js
 const getMatchById = async (req, res, next) => {
     try {
         const match = await matchService.getMatchById(req.params.id);

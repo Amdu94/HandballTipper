@@ -64,7 +64,7 @@ async function pointsCalculator(matchId) {
     }
 }
 
-module.exports = { pointsCalculator, calculatePoints };
+export { calculatePoints, pointsCalculator };
 
 
 

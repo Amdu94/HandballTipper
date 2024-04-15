@@ -1,7 +1,7 @@
-const { PrismaClient } = require('@prisma/client');
+import { PrismaClient } from '@prisma/client'
+import games from './games.json' assert { type: 'json' };
 //const matchApi = require("../api/matchApi");
-const games = require("./games.json");
-const { pointsCalculator } = require("../../services/pointsCalculator");
+import { pointsCalculator } from "../../services/pointsCalculator.js";
 
 const prisma = new PrismaClient();
 
@@ -66,5 +66,5 @@ async function addNewMatch(newMatch, users) {
     }
 }
 
-module.exports = populateMatches;
+export default populateMatches;
 

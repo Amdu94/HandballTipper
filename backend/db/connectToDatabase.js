@@ -1,4 +1,4 @@
-import PrismaClient from "@prisma/client"
+import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
@@ -12,4 +12,4 @@ const connectToDatabase = async (mongoUrl) => {
     }
 };
 
-module.exports = connectToDatabase;
+export default connectToDatabase;

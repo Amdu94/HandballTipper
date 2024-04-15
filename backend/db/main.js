@@ -1,7 +1,8 @@
-const connectToDatabase = require("./connectToDatabase");
-const disconnectFromDatabase = require("./disconnectFromDatabase");
-const populateMatches = require("./populate/populateMatches");
-require('dotenv').config();
+import populateMatches from "./populate/populateMatches.js";
+import connectToDatabase from "./connectToDatabase.js";
+import disconnectFromDatabase from "./disconnectFromDatabase.js";
+import dotenv from 'dotenv'
+dotenv.config();
 
 const main = async () => {
 
