@@ -13,7 +13,7 @@ if [ ! -f backend/.env ]; then
 
   # Create the .env file with the provided values
   echo "MONGO_URL=$mongo_url" > backend/.env
-  echo "API_KEY=$api_key" > backend/.env
+  echo "API_KEY=$api_key" >> backend/.env
   echo "PORT=$port" >> backend/.env
 
 fi
