@@ -31,8 +31,14 @@ jobs:
       run: |
         cd frontend && npm test
         cd ../backend && npm test
+      env:
+        MONGO_URL: ${{ secrets.MONGO_URL }}
+        PORT: ${{ secrets.PORT }}
     - name: Build Docker Images
       run: docker-compose build
+      env:
+        MONGO_URL: ${{ secrets.MONGO_URL }}
+        PORT: ${{ secrets.PORT }}
     - name: Run Integration Tests
       run: docker-compose up -d
 
