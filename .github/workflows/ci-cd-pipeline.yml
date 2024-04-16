@@ -9,6 +9,9 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    env:
+      MONGO_URL: ${{ secrets.MONGO_URL }}
+      PORT: ${{ secrets.PORT }}
     services:
       mongo:
         image: mongo
@@ -24,21 +27,12 @@ jobs:
       run: |
         cd frontend && npm install
         cd ../backend && npm install
-      env:
-        MONGO_URL: ${{ secrets.MONGO_URL }}
-        PORT: ${{ secrets.PORT }}
     - name: Run Tests
       run: |
         cd frontend && npm test
         cd ../backend && npm test
-      env:
-        MONGO_URL: ${{ secrets.MONGO_URL }}
-        PORT: ${{ secrets.PORT }}
     - name: Build Docker Images
       run: docker-compose build
-      env:
-        MONGO_URL: ${{ secrets.MONGO_URL }}
-        PORT: ${{ secrets.PORT }}
     - name: Run Integration Tests
       run: docker-compose up -d
 
