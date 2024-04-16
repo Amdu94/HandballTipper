@@ -31,6 +31,11 @@ jobs:
       run: |
         cd frontend && npm test
         cd ../backend && npm test
+    - name: Create .env file
+      run: |
+        echo "MONGO_URL=${{ secrets.MONGO_URL }}" > backend/.env
+        echo "PORT=${{ secrets.PORT }}" >> backend/.env
+        echo "API_KEY=${{ secrets.API_KEY }}" >> backend/.env
     - name: Build Docker Images
       run: |
           docker-compose build
