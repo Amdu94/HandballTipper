@@ -24,8 +24,9 @@ services:
 #    volumes:
 #      - ./backend:/usr/src/app
 #      - /usr/src/app/node_modules
-    env_file:
-      - ./backend/.env
+    environment:
+      MONGO_URL: ${{ secrets.MONGO_URL }}
+      PORT: ${{ secrets.PORT }}
     depends_on:
       - mongo
     networks:
