@@ -6,6 +6,8 @@ import userRoutes from "../routes/userRoutes.js";
 import fetchData from "../db/api/matchApi.js"
 import errorHandler from "../middleware/errorHandler.js";
 import { describe, it, expect, vi, beforeAll, afterAll } from 'vitest';
+import dotenv from 'dotenv'
+dotenv.config();
 
 const app = express();
 app.use(express.json());
@@ -13,6 +15,7 @@ app.use("/api/matches", matchRoutes);
 app.use("/api/users", userRoutes);
 app.use(errorHandler);
 
+const API_KEY = process.env.API_KEY;
 describe('Server Endpoints', () => {
     let prisma;
 
@@ -67,7 +70,7 @@ describe('Server Endpoints', () => {
         expect(fetch).toHaveBeenCalledWith('https://api-handball.p.rapidapi.com/games?league=50&season=2023', {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': '7611778bc8msh18078fe1032908dp13d104jsn2d2f4f9e2868',
+                'X-RapidAPI-Key': API_KEY,
                 'X-RapidAPI-Host': 'api-handball.p.rapidapi.com'
             }
         });
