@@ -28,7 +28,7 @@ describe('MatchesTable Component', () => {
         expect(screen.getByText('AwayTeam')).toBeInTheDocument();
         expect(screen.getByText('2')).toBeInTheDocument();
         expect(screen.getByText('1')).toBeInTheDocument();
-        expect(screen.getByText('2024. ápr. 11. 14:00')).toBeInTheDocument();
+        expect(screen.getByText('2024. ápr. 11. 12:00')).toBeInTheDocument();
         expect(screen.getByRole('link', { name: /View Guesses/i })).toBeInTheDocument();
     });
 });
