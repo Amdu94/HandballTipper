@@ -81,7 +81,7 @@ Future Developments:
 * [![HTML5][HTML5-url]][HTML5.com]
 * [![CSS3][CSS3-url]][CSS3.org]
 * [![MongoDB][MongoDB-url]][MongoDB.com]
-* ![Nginx](https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white)
+
 
 
 
@@ -193,6 +193,5 @@ Project Link: [https://github.com/Amdu94/HandballTipper](https://github.com/Amdu
 [CSS3.org]: https://www.w3.org/Style/CSS/
 [MongoDB-url]: https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white
 [MongoDB.com]: https://www.mongodb.com/
-[Nginx]: https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white
-[Nginx-url]: https://www.nginx.com/
+
 
