@@ -54,8 +54,8 @@ describe('Match Routes', () => {
         expect(response.body).toBeInstanceOf(Array);
         expect(response.body[0]).toHaveProperty('home');
         expect(response.body[0]).toHaveProperty('away');
-        expect(response.body[0].home).toBe('HazaiCsapat');
-        expect(response.body[0].away).toBe('VendégCsapat');
+        expect(response.body[0].home).toBe('HomeTeam');
+        expect(response.body[0].away).toBe('AwayTeam');
     });
 
     it('GET /api/matches/:id - should return match by id', async () => {
@@ -96,8 +96,8 @@ describe('Match Routes', () => {
         expect(response.body).toHaveProperty('home');
         expect(response.body).toHaveProperty('away');
         expect(response.body.id).toBe(matchId);
-        expect(response.body.home).toBe('HazaiCsapat');
-        expect(response.body.away).toBe('VendégCsapat');
+        expect(response.body.home).toBe('HomeTeam');
+        expect(response.body.away).toBe('AwayTeam');
     });
 
     it('GET /api/matches/next - should return next matches with correct structure', async () => {
@@ -110,7 +110,7 @@ describe('Match Routes', () => {
     });
 
     it('GET /api/matches/:id/guesses - should return guesses for a specific match with correct structure', async () => {
-        const matchId = '6614152331941ceff63eb070'; // assuming this match id exists in your database
+        const matchId = '6614152331941ceff63eb070';
         const response = await request(app).get(`/api/matches/${matchId}/guesses`);
         expect(response.statusCode).toBe(200);
         expect(response.body).toBeInstanceOf(Array);
