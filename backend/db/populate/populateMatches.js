@@ -1,17 +1,17 @@
 import { PrismaClient } from '@prisma/client'
 import games from './games.json' assert { type: 'json' };
 import { pointsCalculator } from "../../services/pointsCalculator.js";
-import matchApi from "../api/matchApi.js";
+//import matchApi from "../api/matchApi.js";
 
 const prisma = new PrismaClient();
 
 async function populateMatches() {
 
-    const fetchedMatches = await matchApi();
+    //const fetchedMatches = await matchApi();
     const existingMatches = await prisma.matches.findMany({});
     const users = await prisma.users.findMany({});
 
-    for (const newMatch of fetchedMatches.response) {
+    for (const newMatch of games.response) {
         const existingMatch = existingMatches.find(match =>
             match.home === newMatch.teams.home.name &&
             match.away === newMatch.teams.away.name &&
