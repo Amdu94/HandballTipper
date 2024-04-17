@@ -7,7 +7,7 @@ const CreateUserForm = ({ onSave, disabled, user, onCancel, errorMessage }) => {
     const [email, setEmail] = useState(user?.email ?? '');
     const [password, setPassword] = useState(user?.password ?? '');
     const [emailError, setEmailError] = useState('');
-    const [formError, setFormError] = useState(errorMessage); // Új állapot a form hibaüzenetének
+    const [formError, setFormError] = useState(errorMessage);
 
     const handleSubmit = (e) => {
         e.preventDefault();

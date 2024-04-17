@@ -7,15 +7,13 @@ const app = express();
 app.use(express.json());
 app.use('/api/users', userRoutes);
 
-// Mockoljuk a PrismaClient-et
 vi.mock('@prisma/client', () => {
     const mockUsers = [
-        // Itt adjuk meg a mockolt felhasználók listáját
         {
             id: '5e9f8f8f8f8f8f8f8f8f8f8f',
-            username: 'teszt_felhasznalo1',
-            email: 'teszt1@example.com',
-            password: 'jelszo123',
+            username: 'test_user1',
+            email: 'test1@example.com',
+            password: 'password123',
             points: 100,
             guesses: [
                 {
@@ -23,19 +21,17 @@ vi.mock('@prisma/client', () => {
                     homeScore: 2,
                     awayScore: 1,
                     points: 3
-                },
-                // További tipp adatok...
+                }
             ]
-        },
-        // További mockolt felhasználók...
+        }
     ];
 
     const mockMatches = [
         {
             id: '6614152331941ceff63eb070',
             date: new Date('2024-04-11T12:00:00Z'),
-            home: 'HazaiCsapat',
-            away: 'VendégCsapat',
+            home: 'HomeTeam',
+            away: 'AwayTeam',
             homeScore: null,
             awayScore: null,
             guesses: [
@@ -44,11 +40,9 @@ vi.mock('@prisma/client', () => {
                     homeScore: 2,
                     awayScore: 1,
                     points: 3
-                },
-                // További tipp adatok...
+                }
             ]
-        },
-        // További meccs adatok...
+        }
     ];
 
     const mockPrismaClient = {
@@ -60,7 +54,7 @@ vi.mock('@prisma/client', () => {
             }),
             create: vi.fn().mockImplementation(({ data }) => {
                 const newUser = {
-                    id: 'új_felhasználó_id', // Egyedi ID generálása
+                    id: 'new_user_id',
                     ...data,
                     guesses: mockMatches.map(match => ({
                         match: match.id,
@@ -130,9 +124,9 @@ describe('User Routes', () => {
 
     it('POST /api/users - should create a new user', async () => {
         const newUser = {
-            username: 'uj_felhasznalo',
-            email: 'uj@example.com',
-            password: 'jelszo123'
+            username: 'new_user',
+            email: 'new@example.com',
+            password: 'password123'
         };
         const response = await request(app)
             .post('/api/users')
@@ -159,7 +153,6 @@ describe('User Routes', () => {
         console.log(response.body)
         expect(response.statusCode).toBe(200);
         expect(response.body.message).toBe("Guess updated successfully");
-        // ...további ellenőrzések...
     });
 
 });

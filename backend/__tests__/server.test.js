@@ -43,13 +43,11 @@ describe('Server Endpoints', () => {
         });
     });
 
-    // Környezeti változók tesztelése
     it('should have the necessary environment variables', () => {
         expect(process.env.MONGO_URL).toBeDefined();
         expect(process.env.PORT).toBeDefined();
     });
 
-    // Adatbázis kapcsolat tesztelé
     it('should connect to the database', async () => {
         await expect(prisma.$connect()).resolves.not.toThrow();
     });
@@ -57,16 +55,14 @@ describe('Server Endpoints', () => {
 
     // Integrációs tesztek
     it('should integrate with external API successfully', async () => {
-        // Mockoljuk a fetch függvényt
         global.fetch = vi.fn(() =>
             Promise.resolve({
                 json: () => Promise.resolve({ games: [] }), // Tegyük fel, hogy ez az API válasza
             })
         );
 
-        const data = await fetchData(); // fetchData a mockolt fetch függvényt használja
+        const data = await fetchData();
 
-        // Ellenőrizzük, hogy a fetch függvényt helyesen hívták-e meg
         expect(fetch).toHaveBeenCalledWith('https://api-handball.p.rapidapi.com/games?league=50&season=2023', {
             method: 'GET',
             headers: {
@@ -75,7 +71,6 @@ describe('Server Endpoints', () => {
             }
         });
 
-        // Ellenőrizzük, hogy a válasz megfelelő-e
         expect(data).toEqual({ games: [] });
     });
 

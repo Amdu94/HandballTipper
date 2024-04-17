@@ -19,7 +19,7 @@ const GuessesList = () => {
                 const userGuesses = await guessesResponse.json();
                 const matchesData = await matchesResponse.json();
 
-                // Kiszámítjuk a matchDetails és isPastMatch értékeket minden tipphez
+
                 const enrichedGuesses = userGuesses.map(guess => {
                     const match = matchesData.find((m) => m.id === guess.match);
                     const pastMatch = new Date(match.date) < currentDate;

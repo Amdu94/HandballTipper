@@ -5,7 +5,6 @@ import matchService from "../services/matchService.js";
 import { describe, it, expect, vi } from 'vitest';
 
 
-// Mocking the Prisma matches.findMany method for getAllMatches
 vi.mock('@prisma/client', () => ({
     PrismaClient: vi.fn().mockImplementation(() => ({
         matches: {
@@ -23,4 +22,3 @@ describe('Match Service Tests', () => {
 
 });
 
-// Additional tests can be written for error handling and other scenarios
