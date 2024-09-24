@@ -10,8 +10,8 @@ const sofaSportApi = async(course, page) => {
             method: 'GET',
             url: baseUrl,
             params: {
-                seasons_id: '53411',
-                unique_tournament_id: '14037',
+                seasons_id: '62491',
+                unique_tournament_id: '30',
                 page: page,
                 course_events: course
             },

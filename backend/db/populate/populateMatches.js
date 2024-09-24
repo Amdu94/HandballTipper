@@ -1,41 +1,52 @@
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '@prisma/client'
 import games from './games.json' assert { type: 'json' };
 import { pointsCalculator } from "../../services/pointsCalculator.js";
-import matchApi from "../api/pinnacleApi.js";
+//import matchApi from "../api/matchApi.js";
+import sofaSportApi from "../api/sofaSportApi.js";
 
 const prisma = new PrismaClient();
 
 async function populateMatches() {
+    const courses = ['last', 'next'];
     const users = await prisma.users.findMany({});
-    const fetchedMatches = await matchApi();
-    const existingMatches = await prisma.matches.findMany({});
 
-    if (fetchedMatches) {
-        for (const newMatch of fetchedMatches) {
-            const existingMatch = existingMatches.find(match =>
-                match.home === newMatch.teams.home.name && // Updated to access new structure
-                match.away === newMatch.teams.away.name // Updated to access new structure
-            );
+    for (const course of courses) {
+        let page = 0;
+        let hasMore = true;
 
-            if (existingMatch) {
-                await updateExistingMatch(existingMatch, newMatch);
+        while (hasMore) {
+            const fetchedMatches = await sofaSportApi(course, page);
+            const existingMatches = await prisma.matches.findMany({});
+            if (fetchedMatches && fetchedMatches.data && fetchedMatches.data.events) {
+                for (const newMatch of fetchedMatches.data.events) {
+                    const existingMatch = existingMatches.find(match =>
+                        match.home === newMatch.homeTeam.name &&
+                        match.away === newMatch.awayTeam.name
+                    );
+                    console.log(existingMatch);
+                    if (existingMatch) {
+                        await updateExistingMatch(existingMatch, newMatch);
+                    } else {
+                        await addNewMatch(newMatch, users);
+                    }
+                }
+                page++;
+                hasMore = fetchedMatches.data.hasNextPage; // Ellenőrzi, hogy van-e következő oldal
             } else {
-                await addNewMatch(newMatch, users);
+                hasMore = false; // Ha nincs több adat, befejezi a ciklust
             }
         }
     }
 }
 
+
 async function updateExistingMatch(existingMatch, newMatch) {
-    // Updated to access new structure for scores and date
-    if (existingMatch.homeScore !== newMatch.scores.home ||
-        existingMatch.awayScore !== newMatch.scores.away ||
-        existingMatch.date.getTime() !== new Date(newMatch.date).getTime()) {
-        
-        existingMatch.homeScore = newMatch.scores.home;
-        existingMatch.awayScore = newMatch.scores.away;
-        existingMatch.date = new Date(newMatch.date);
-        
+    if (existingMatch.homeScore !== newMatch.homeScore.display ||
+        existingMatch.awayScore !== newMatch.awayScore.display ||
+        existingMatch.date !== new Date(newMatch.startTimestamp * 1000)) {
+        existingMatch.homeScore = newMatch.homeScore.display;
+        existingMatch.awayScore = newMatch.awayScore.display;
+        existingMatch.date = new Date(newMatch.startTimestamp * 1000);
         await prisma.matches.update({
             where: { id: existingMatch.id },
             data: {
@@ -50,18 +61,19 @@ async function updateExistingMatch(existingMatch, newMatch) {
 }
 
 async function addNewMatch(newMatch, users) {
+    const timestamp = newMatch.startTimestamp * 1000;
     const newMatchDb = await prisma.matches.create({
         data: {
-            home: newMatch.teams.home.name, // Updated to access new structure
-            away: newMatch.teams.away.name, // Updated to access new structure
-            date: new Date(newMatch.date), // Updated to access new structure
-            homeScore: newMatch.scores.home, // Updated to access new structure
-            awayScore: newMatch.scores.away, // Updated to access new structure
+            home: newMatch.homeTeam.name,
+            away: newMatch.awayTeam.name,
+            date: new Date(timestamp),
+            homeScore: newMatch.homeScore.display,
+            awayScore: newMatch.awayScore.display,
             guesses: []
         }
     });
 
-    console.log(`New match added: ${newMatch.teams.home.name} vs ${newMatch.teams.away.name}`);
+    console.log(`New match added: ${newMatch.homeTeam.name} vs ${newMatch.awayTeam.name}`);
 
     for (const user of users) {
         user.guesses.push({
@@ -69,10 +81,9 @@ async function addNewMatch(newMatch, users) {
             home: null,
             away: null
         });
-        //await user.save(); // Adatbázis-függő mentési logika
+        //await user.save();
     }
 }
 
 export default populateMatches;
-
 
