@@ -36,6 +36,16 @@ const createUser = async (req, res, next) => {
     }
 };
 
+const loginUser = async (req, res, next) => {
+    try {
+        const { username, password } = req.body;
+        const { token, user } = await userService.loginUser(username, password);
+        res.json({ token, user });
+    } catch (err) {
+        next(err);
+    }
+};
+
 const updateUserGuess = async (req, res, next) => {
     try {
         await userService.updateUserGuess(req.params.userId, req.params.guessId, req.body);
@@ -50,6 +60,7 @@ const userController = {
     getUserById,
     getUserGuesses,
     createUser,
+	loginUser, 
     updateUserGuess
 };
 

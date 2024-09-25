@@ -10,6 +10,9 @@ import UserList from "./Pages/UserList.jsx";
 import GuessesList from "./Pages/GuessesList.jsx";
 import UserForm from "./Pages/UserCreator.jsx";
 import Home from "./Pages/Home.jsx";
+import Login from "./Pages/Login.jsx";
+import Logout from "./Pages/Logout.jsx";
+import ProtectedRoute from './Pages/ProtectedRoute.jsx';
 
 import './index.css';
 import GuessesForMatchList from "./Pages/GuessesForMatchList.jsx";
@@ -26,6 +29,14 @@ const router = createBrowserRouter([
                 path: "/",
                 element: <Home />,
             },
+			{
+                path: "/login", // Új útvonal a bejelentkezéshez
+                element: <Login />,
+            },
+			{
+                path: "/logout", // Új útvonal a bejelentkezéshez
+                element: <Logout />,
+            },
             {
                 path: "/matches",
                 element: <MatchesList/>,
@@ -34,14 +45,22 @@ const router = createBrowserRouter([
                 path: "/matches/:matchId/guesses",
                 element: <GuessesForMatchList/>
             },
-            {
-                path: "/users",
-                element: <UserList/>
-            },
-            {
-                path: "/users/:userId/guesses", // Új útvonal
-                element: <GuessesList />,
-            },
+			{
+				path: "/users",
+				element: (
+					<ProtectedRoute>
+						<UserList />
+					</ProtectedRoute>
+				),
+			},
+			{
+				path: "/users/:userId/guesses",
+				element: (
+					<ProtectedRoute>
+						<GuessesList />
+					</ProtectedRoute>
+				),
+			},
             {
                 path: "/newUser",
                 element: <UserForm />

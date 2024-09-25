@@ -3,7 +3,17 @@ import Loading from '../Components/Loading/Loading.jsx';
 import UsersTable from '../Components/UsersTable/UsersTable.jsx';
 
 const fetchUsers = () => {
-    return fetch('/api/users').then((res) => res.json());
+    const token = localStorage.getItem('token'); // JWT token kinyerése
+    return fetch('/api/users', {
+        headers: {
+            'Authorization': `Bearer ${token}`, // Token hozzáadása a fejléchez
+        },
+    }).then((res) => {
+        if (!res.ok) {
+            throw new Error('Unauthorized');
+        }
+        return res.json();
+    });
 };
 
 const UserList = () => {

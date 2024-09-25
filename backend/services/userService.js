@@ -1,4 +1,7 @@
 import { PrismaClient } from "@prisma/client"
+import bcrypt from 'bcrypt'; // bcrypt importálása
+import jwt from 'jsonwebtoken'; // jwt importálása
+
 const prisma = new PrismaClient();
 
 const getUsers = async(orderBy = { username: 'asc' }) => {
@@ -19,9 +22,28 @@ const getUser = async(id) => {
     }
 }
 
-const createUser = async(userData) => {
+// Felhasználó regisztrációja
+const createUser = async (userData) => {
     try {
         const { username, email, password } = userData;
+
+        // Ellenőrizzük, hogy a felhasználónév vagy email már létezik-e
+        const existingUser = await prisma.users.findFirst({
+            where: {
+                OR: [
+                    { username: username },
+                    { email: email }
+                ]
+            }
+        });
+
+        if (existingUser) {
+            throw new Error("Username or email already exists");
+        }
+
+        // Jelszó hash-elése
+        const hashedPassword = await bcrypt.hash(password, 10);
+
         const guesses = await prisma.matches.findMany({}).then((matches) =>
             matches.map((match) => ({
                 match: match.id,
@@ -30,11 +52,12 @@ const createUser = async(userData) => {
                 points: 0,
             }))
         );
+
         return await prisma.users.create({
             data: {
                 username,
                 email,
-                password,
+                password: hashedPassword, // Hashed jelszó tárolása
                 guesses,
                 points: 0,
             },
@@ -42,7 +65,34 @@ const createUser = async(userData) => {
     } catch (error) {
         handlePrismaError('Error creating user:', error);
     }
-}
+};
+
+
+// Felhasználó bejelentkezése
+const loginUser = async (username, password) => {
+    try {
+        const user = await prisma.users.findUnique({
+            where: { username },
+        });
+        if (!user) {
+            throw new Error("Invalid username or password");
+        }
+
+        const isPasswordValid = await bcrypt.compare(password, user.password);
+        if (!isPasswordValid) {
+            throw new Error("Invalid username or password");
+        }
+
+        // JWT token generálása
+        const token = jwt.sign({ userId: user.id, username: user.username }, process.env.JWT_SECRET, {
+            expiresIn: '1h',
+        });
+
+        return { token, user };
+    } catch (error) {
+        handlePrismaError('Error logging in:', error);
+    }
+};
 
 const updateUserGuess = async(userId, guessId, guessData) => {
     try {
@@ -102,6 +152,7 @@ const userService = {
     getUsers,
     getUser,
     createUser,
+	loginUser, 
     updateUserGuess,
 };
 
