@@ -2,7 +2,7 @@ import { PrismaClient } from '@prisma/client'
 import games from './games.json' assert { type: 'json' };
 import { pointsCalculator } from "../../services/pointsCalculator.js";
 //import matchApi from "../api/matchApi.js";
-import sofaSportApi from "../api/sofaSportApi.js";
+//import sofaSportApi from "../api/sofaSportApi.js";
 
 const prisma = new PrismaClient();
 
@@ -15,7 +15,7 @@ async function populateMatches() {
         let hasMore = true;
 
         while (hasMore) {
-            const fetchedMatches = await sofaSportApi(course, page);
+            const fetchedMatches = games;
             const existingMatches = await prisma.matches.findMany({});
             if (fetchedMatches && fetchedMatches.data && fetchedMatches.data.events) {
                 for (const newMatch of fetchedMatches.data.events) {

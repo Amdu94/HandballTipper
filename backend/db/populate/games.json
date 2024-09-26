@@ -3,1961 +3,1156 @@
     "events": [
       {
         "tournament": {
-          "name": "NB I, Women",
-          "slug": "nb-i-women",
-          "category": ["Object"],
-          "uniqueTournament": ["Object"],
-          "priority": 0,
-          "isGroup": false,
-          "isLive": true,
-          "id": 3192
-        },
-        "season": {
-          "name": "NB I, Women 23/24",
-          "year": "23/24",
-          "editor": false,
-          "id": 53411
-        },
-        "roundInfo": { "round": 22 },
-        "customId": "kmtbsifvc",
-        "status": { "code": 0, "description": "Not started", "type": "notstarted" },
-        "homeTeam": {
-          "name": "Mosonmagyarovari KC",
-          "slug": "mosonmagyarovari-kc",
-          "shortName": "Mosonmagyaróvár",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 372,
-          "nameCode": "MOS",
-          "national": false,
-          "type": 0,
-          "id": 170610,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "awayTeam": {
-          "name": "Neka",
-          "slug": "neka",
-          "shortName": "NEKA",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 59,
-          "nameCode": "NEK",
-          "national": true,
-          "type": 0,
-          "id": 425258,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "homeScore": {},
-        "awayScore": {},
-        "time": {},
-        "changes": { "changeTimestamp": 0 },
-        "hasGlobalHighlights": false,
-        "crowdsourcingDataDisplayEnabled": false,
-        "id": 11471211,
-        "startTimestamp": 1715364900,
-        "slug": "neka-mosonmagyarovari-kc",
-        "finalResultOnly": true,
-        "feedLocked": false,
-        "isEditor": true,
-        "crowdsourcingEnabled": false
-      },
-      {
-        "tournament": {
-          "name": "NB I, Women",
-          "slug": "nb-i-women",
-          "category": ["Object"],
-          "uniqueTournament": ["Object"],
-          "priority": 0,
-          "isGroup": false,
-          "isLive": true,
-          "id": 3192
-        },
-        "season": {
-          "name": "NB I, Women 23/24",
-          "year": "23/24",
-          "editor": true,
-          "id": 53411
-        },
-        "roundInfo": { "round": 22 },
-        "customId": "Fopsixtb",
-        "status": { "code": 0, "description": "Not started", "type": "notstarted" },
-        "homeTeam": {
-          "name": "MTK Budapest",
-          "slug": "mtk-budapest",
-          "shortName": "MTK",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 143,
-          "nameCode": "MTK",
-          "national": false,
-          "type": 0,
-          "id": 170608,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"],
-          "fieldTranslations": ["Object"]
-        },
-        "awayTeam": {
-          "name": "Békéscsabai Előre NKSE",
-          "slug": "bekescsabai-elore-nkse",
-          "shortName": "Bekescsabai",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 106,
-          "nameCode": "ENK",
-          "disabled": true,
-          "national": false,
-          "type": 0,
-          "id": 38230,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"],
-          "fieldTranslations": ["Object"]
-        },
-        "homeScore": {},
-        "awayScore": {},
-        "time": {},
-        "changes": { "changeTimestamp": 0 },
-        "hasGlobalHighlights": false,
-        "crowdsourcingDataDisplayEnabled": false,
-        "id": 11471208,
-        "startTimestamp": 1715363100,
-        "slug": "mtk-budapest-bekescsabai-elore-nkse",
-        "finalResultOnly": true,
-        "feedLocked": false,
-        "isEditor": false,
-        "crowdsourcingEnabled": true
-      },
-      {
-        "tournament": {
-          "name": "NB I, Women",
-          "slug": "nb-i-women",
-          "category": ["Object"],
-          "uniqueTournament": ["Object"],
-          "priority": 0,
+          "name": "EHF Champions League, Group B",
+          "slug": "ehf-champions-league-group-b",
+          "category": {
+            "name": "International",
+            "slug": "international",
+            "sport": {
+              "name": "Handball",
+              "slug": "handball",
+              "id": 6
+            },
+            "id": 73,
+            "country": {},
+            "flag": "international"
+          },
+          "uniqueTournament": {
+            "name": "EHF Champions League",
+            "slug": "ehf-champions-league",
+            "primaryColorHex": "#e40214",
+            "secondaryColorHex": "#aca06f",
+            "category": {
+              "name": "International",
+              "slug": "international",
+              "sport": {
+                "name": "Handball",
+                "slug": "handball",
+                "id": 6
+              },
+              "id": 73,
+              "country": {},
+              "flag": "international"
+            },
+            "userCount": 20780,
+            "crowdsourcingEnabled": false,
+            "hasPerformanceGraphFeature": false,
+            "id": 30,
+            "country": {},
+            "hasEventPlayerStatistics": false,
+            "hasBoxScore": true,
+            "displayInverseHomeAwayTeams": false
+          },
+          "priority": 56,
           "isGroup": true,
+          "groupName": "Group B",
           "isLive": false,
-          "id": 3192
+          "id": 2466
         },
         "season": {
-          "name": "NB I, Women 23/24",
-          "year": "23/24",
-          "editor": true,
-          "id": 53411
-        },
-        "roundInfo": { "round": 22 },
-        "customId": "TLcsrlmc",
-        "status": { "code": 0, "description": "Not started", "type": "notstarted" },
-        "homeTeam": {
-          "name": "Moyra-Budaors KSN KFT",
-          "slug": "moyra-budaors-ksn-kft",
-          "shortName": "Budaörs",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 60,
-          "nameCode": "MOY",
-          "disabled": true,
-          "national": false,
-          "type": 0,
-          "id": 295567,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "awayTeam": {
-          "name": "Alba Fehérvár KC",
-          "slug": "alba-fehervar-kc",
-          "shortName": "Alba",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 140,
-          "nameCode": "FVR",
-          "disabled": true,
-          "national": true,
-          "type": 0,
-          "id": 6843,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "homeScore": {},
-        "awayScore": {},
-        "time": {},
-        "changes": { "changeTimestamp": 0 },
-        "hasGlobalHighlights": false,
-        "crowdsourcingDataDisplayEnabled": true,
-        "id": 11471206,
-        "startTimestamp": 1715435100,
-        "slug": "moyra-budaors-ksn-kft-alba-fehervar-kc",
-        "finalResultOnly": false,
-        "feedLocked": true,
-        "isEditor": false,
-        "crowdsourcingEnabled": true
-      },
-      {
-        "tournament": {
-          "name": "NB I, Women",
-          "slug": "nb-i-women",
-          "category": ["Object"],
-          "uniqueTournament": ["Object"],
-          "priority": 0,
-          "isGroup": false,
-          "isLive": true,
-          "id": 3192
-        },
-        "season": {
-          "name": "NB I, Women 23/24",
-          "year": "23/24",
+          "name": "Champions League 24/25",
+          "year": "24/25",
           "editor": false,
-          "id": 53411
+          "id": 62491
         },
-        "roundInfo": { "round": 22 },
-        "customId": "OkRbsmKec",
-        "status": { "code": 0, "description": "Not started", "type": "notstarted" },
+        "roundInfo": {
+          "round": 1
+        },
+        "customId": "KGbsuGj",
+        "status": {
+          "code": 100,
+          "description": "Ended",
+          "type": "finished"
+        },
+        "winnerCode": 1,
         "homeTeam": {
-          "name": "Kisvárda",
-          "slug": "kisvarda",
-          "shortName": "Kisvárda",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 86,
-          "nameCode": "KIS",
-          "national": false,
-          "type": 0,
-          "id": 262312,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "awayTeam": {
-          "name": "Vasas SC",
-          "slug": "vasas-sc",
-          "shortName": "Vasas SC",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 66,
-          "nameCode": "VAS",
-          "national": false,
-          "type": 0,
-          "id": 230539,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "homeScore": {},
-        "awayScore": {},
-        "time": {},
-        "changes": { "changeTimestamp": 0 },
-        "hasGlobalHighlights": true,
-        "crowdsourcingDataDisplayEnabled": true,
-        "id": 11471204,
-        "startTimestamp": 1715448600,
-        "slug": "kisvarda-vasas-sc",
-        "finalResultOnly": true,
-        "feedLocked": true,
-        "isEditor": false,
-        "crowdsourcingEnabled": false
-      },
-      {
-        "tournament": {
-          "name": "NB I, Women",
-          "slug": "nb-i-women",
-          "category": ["Object"],
-          "uniqueTournament": ["Object"],
-          "priority": 0,
-          "isGroup": true,
-          "isLive": false,
-          "id": 3192
-        },
-        "season": {
-          "name": "NB I, Women 23/24",
-          "year": "23/24",
-          "editor": true,
-          "id": 53411
-        },
-        "roundInfo": { "round": 22 },
-        "customId": "YEcsZNc",
-        "status": { "code": 0, "description": "Not started", "type": "notstarted" },
-        "homeTeam": {
-          "name": "Győri Audi ETO KC",
-          "slug": "gyori-audi-eto-kc",
-          "shortName": "Győr",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 3394,
-          "nameCode": "GYO",
-          "national": false,
-          "type": 0,
-          "id": 6949,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"],
-          "fieldTranslations": ["Object"]
-        },
-        "awayTeam": {
-          "name": "FTC-Rail Cargo Hungaria",
-          "slug": "ftc-rail-cargo-hungaria",
-          "shortName": "FTC",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 2786,
-          "nameCode": "FTC",
-          "national": false,
-          "type": 0,
-          "id": 6948,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"],
-          "fieldTranslations": ["Object"]
-        },
-        "homeScore": {},
-        "awayScore": {},
-        "time": {},
-        "changes": { "changeTimestamp": 0 },
-        "hasGlobalHighlights": true,
-        "crowdsourcingDataDisplayEnabled": false,
-        "id": 11471207,
-        "startTimestamp": 1715442300,
-        "slug": "gyori-audi-eto-kc-ftc-rail-cargo-hungaria",
-        "finalResultOnly": true,
-        "feedLocked": false,
-        "isEditor": true,
-        "crowdsourcingEnabled": false
-      },
-      {
-        "tournament": {
-          "name": "NB I, Women",
-          "slug": "nb-i-women",
-          "category": ["Object"],
-          "uniqueTournament": ["Object"],
-          "priority": 0,
-          "isGroup": true,
-          "isLive": false,
-          "id": 3192
-        },
-        "season": {
-          "name": "NB I, Women 23/24",
-          "year": "23/24",
-          "editor": false,
-          "id": 53411
-        },
-        "roundInfo": { "round": 22 },
-        "customId": "fMcsVoir",
-        "status": { "code": 0, "description": "Not started", "type": "notstarted" },
-        "homeTeam": {
-          "name": "Kozármisleny SE",
-          "slug": "kozarmisleny-se",
-          "shortName": "KSE",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 45,
-          "nameCode": "KOZ",
-          "national": false,
-          "type": 0,
-          "id": 395745,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "awayTeam": {
-          "name": "DVSC Schaeffler",
-          "slug": "dvsc-schaeffler",
-          "shortName": "DVSC",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 687,
-          "nameCode": "DVS",
-          "disabled": true,
-          "national": false,
-          "type": 0,
-          "id": 6855,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "homeScore": {},
-        "awayScore": {},
-        "time": {},
-        "changes": { "changeTimestamp": 0 },
-        "hasGlobalHighlights": false,
-        "crowdsourcingDataDisplayEnabled": true,
-        "id": 11471210,
-        "startTimestamp": 1715445900,
-        "slug": "kozarmisleny-se-dvsc-schaeffler",
-        "finalResultOnly": false,
-        "feedLocked": false,
-        "isEditor": false,
-        "crowdsourcingEnabled": true
-      },
-      {
-        "tournament": {
-          "name": "NB I, Women",
-          "slug": "nb-i-women",
-          "category": ["Object"],
-          "uniqueTournament": ["Object"],
-          "priority": 0,
-          "isGroup": true,
-          "isLive": false,
-          "id": 3192
-        },
-        "season": {
-          "name": "NB I, Women 23/24",
-          "year": "23/24",
-          "editor": true,
-          "id": 53411
-        },
-        "roundInfo": { "round": 22 },
-        "customId": "cLosZYn",
-        "status": { "code": 0, "description": "Not started", "type": "notstarted" },
-        "homeTeam": {
-          "name": "Vaci NKSE",
-          "slug": "vaci-nkse",
-          "shortName": "Vác",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 260,
-          "nameCode": "NKSE",
-          "national": true,
-          "type": 0,
-          "id": 34949,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "awayTeam": {
-          "name": "Dunaújvárosi Kohász KA",
-          "slug": "dunaujvarosi-kohasz-ka",
-          "shortName": "DKKA",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 139,
-          "nameCode": "DUN",
-          "national": false,
-          "type": 0,
-          "id": 6802,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"],
-          "fieldTranslations": ["Object"]
-        },
-        "homeScore": {},
-        "awayScore": {},
-        "time": {},
-        "changes": { "changeTimestamp": 0 },
-        "hasGlobalHighlights": true,
-        "crowdsourcingDataDisplayEnabled": true,
-        "id": 11471209,
-        "startTimestamp": 1715445000,
-        "slug": "vaci-nkse-dunaujvarosi-kohasz-ka",
-        "finalResultOnly": true,
-        "feedLocked": false,
-        "isEditor": false,
-        "crowdsourcingEnabled": true
-      },
-      {
-        "tournament": {
-          "name": "NB I, Women",
-          "slug": "nb-i-women",
-          "category": ["Object"],
-          "uniqueTournament": ["Object"],
-          "priority": 0,
-          "isGroup": true,
-          "isLive": true,
-          "id": 3192
-        },
-        "season": {
-          "name": "NB I, Women 23/24",
-          "year": "23/24",
-          "editor": false,
-          "id": 53411
-        },
-        "roundInfo": { "round": 23 },
-        "customId": "YNusifvd",
-        "status": { "code": 0, "description": "Not started", "type": "notstarted" },
-        "homeTeam": {
-          "name": "Neka",
-          "slug": "neka",
-          "shortName": "NEKA",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 59,
-          "nameCode": "NEK",
-          "national": false,
-          "type": 0,
-          "id": 425258,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "awayTeam": {
-          "name": "FTC-Rail Cargo Hungaria",
-          "slug": "ftc-rail-cargo-hungaria",
-          "shortName": "FTC",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 2786,
-          "nameCode": "FTC",
-          "national": true,
-          "type": 0,
-          "id": 6948,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"],
-          "fieldTranslations": ["Object"]
-        },
-        "homeScore": {},
-        "awayScore": {},
-        "time": {},
-        "changes": { "changeTimestamp": 0 },
-        "hasGlobalHighlights": false,
-        "crowdsourcingDataDisplayEnabled": true,
-        "id": 11471212,
-        "startTimestamp": 1715787900,
-        "slug": "neka-ftc-rail-cargo-hungaria",
-        "finalResultOnly": true,
-        "feedLocked": true,
-        "isEditor": true,
-        "crowdsourcingEnabled": true
-      },
-      {
-        "tournament": {
-          "name": "NB I, Women",
-          "slug": "nb-i-women",
-          "category": ["Object"],
-          "uniqueTournament": ["Object"],
-          "priority": 0,
-          "isGroup": true,
-          "isLive": false,
-          "id": 3192
-        },
-        "season": {
-          "name": "NB I, Women 23/24",
-          "year": "23/24",
-          "editor": false,
-          "id": 53411
-        },
-        "roundInfo": { "round": 23 },
-        "customId": "imtbsmmtb",
-        "status": { "code": 0, "description": "Not started", "type": "notstarted" },
-        "homeTeam": {
-          "name": "Mosonmagyarovari KC",
-          "slug": "mosonmagyarovari-kc",
-          "shortName": "Mosonmagyaróvár",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 372,
-          "nameCode": "MOS",
-          "national": false,
-          "type": 0,
-          "id": 170610,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "awayTeam": {
-          "name": "MTK Budapest",
-          "slug": "mtk-budapest",
-          "shortName": "MTK",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 143,
-          "nameCode": "MTK",
-          "national": true,
-          "type": 0,
-          "id": 170608,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"],
-          "fieldTranslations": ["Object"]
-        },
-        "homeScore": {},
-        "awayScore": {},
-        "time": {},
-        "changes": { "changeTimestamp": 0 },
-        "hasGlobalHighlights": true,
-        "crowdsourcingDataDisplayEnabled": true,
-        "id": 11471218,
-        "startTimestamp": 1715786100,
-        "slug": "mosonmagyarovari-kc-mtk-budapest",
-        "finalResultOnly": true,
-        "feedLocked": true,
-        "isEditor": true,
-        "crowdsourcingEnabled": true
-      },
-      {
-        "tournament": {
-          "name": "NB I, Women",
-          "slug": "nb-i-women",
-          "category": ["Object"],
-          "uniqueTournament": ["Object"],
-          "priority": 0,
-          "isGroup": true,
-          "isLive": false,
-          "id": 3192
-        },
-        "season": {
-          "name": "NB I, Women 23/24",
-          "year": "23/24",
-          "editor": false,
-          "id": 53411
-        },
-        "roundInfo": { "round": 23 },
-        "customId": "ZYgsFop",
-        "status": { "code": 0, "description": "Not started", "type": "notstarted" },
-        "homeTeam": {
-          "name": "Békéscsabai Előre NKSE",
-          "slug": "bekescsabai-elore-nkse",
-          "shortName": "Bekescsabai",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 106,
-          "nameCode": "ENK",
-          "disabled": false,
-          "national": true,
-          "type": 0,
-          "id": 38230,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"],
-          "fieldTranslations": ["Object"]
-        },
-        "awayTeam": {
-          "name": "Vaci NKSE",
-          "slug": "vaci-nkse",
-          "shortName": "Vác",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 260,
-          "nameCode": "NKSE",
-          "national": false,
-          "type": 0,
-          "id": 34949,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "homeScore": {},
-        "awayScore": {},
-        "time": {},
-        "changes": { "changeTimestamp": 0 },
-        "hasGlobalHighlights": true,
-        "crowdsourcingDataDisplayEnabled": true,
-        "id": 11471217,
-        "startTimestamp": 1715788800,
-        "slug": "bekescsabai-elore-nkse-vaci-nkse",
-        "finalResultOnly": true,
-        "feedLocked": true,
-        "isEditor": true,
-        "crowdsourcingEnabled": true
-      },
-      {
-        "tournament": {
-          "name": "NB I, Women",
-          "slug": "nb-i-women",
-          "category": ["Object"],
-          "uniqueTournament": ["Object"],
-          "priority": 0,
-          "isGroup": true,
-          "isLive": true,
-          "id": 3192
-        },
-        "season": {
-          "name": "NB I, Women 23/24",
-          "year": "23/24",
-          "editor": false,
-          "id": 53411
-        },
-        "roundInfo": { "round": 23 },
-        "customId": "OkRbsrlth",
-        "status": { "code": 0, "description": "Not started", "type": "notstarted" },
-        "homeTeam": {
-          "name": "Vasas SC",
-          "slug": "vasas-sc",
-          "shortName": "Vasas SC",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 66,
-          "nameCode": "VAS",
-          "national": true,
-          "type": 0,
-          "id": 230539,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "awayTeam": {
-          "name": "Moyra-Budaors KSN KFT",
-          "slug": "moyra-budaors-ksn-kft",
-          "shortName": "Budaörs",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 60,
-          "nameCode": "MOY",
+          "name": "Aalborg Håndbold",
+          "slug": "aalborg-handbold",
+          "shortName": "Aalborg",
+          "gender": "M",
+          "sport": {
+            "name": "Handball",
+            "slug": "handball",
+            "id": 6
+          },
+          "userCount": 6653,
+          "nameCode": "AAB",
           "disabled": false,
           "national": false,
           "type": 0,
-          "id": 295567,
-          "country": ["Object"],
+          "id": 4085,
+          "country": {
+            "alpha2": "DK",
+            "alpha3": "DNK",
+            "name": "Denmark"
+          },
           "subTeams": [],
-          "teamColors": ["Object"]
+          "teamColors": {
+            "primary": "#ba3023",
+            "secondary": "#625d5d",
+            "text": "#625d5d"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "Aalborg Haandbold"
+            },
+            "shortNameTranslation": {}
+          }
         },
-        "homeScore": {},
-        "awayScore": {},
-        "time": {},
-        "changes": { "changeTimestamp": 0 },
+        "awayTeam": {
+          "name": "HBC Nantes",
+          "slug": "hbc-nantes",
+          "shortName": "Nantes",
+          "gender": "M",
+          "sport": {
+            "name": "Handball",
+            "slug": "handball",
+            "id": 6
+          },
+          "userCount": 4956,
+          "nameCode": "NAN",
+          "national": false,
+          "type": 0,
+          "id": 24069,
+          "country": {
+            "alpha2": "FR",
+            "alpha3": "FRA",
+            "name": "France"
+          },
+          "subTeams": [],
+          "teamColors": {
+            "primary": "#640064",
+            "secondary": "#ffff00",
+            "text": "#ffff00"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "نانت HBC",
+              "ru": "ГК Нант"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "homeScore": {
+          "current": 38,
+          "display": 38,
+          "period1": 16,
+          "period2": 22,
+          "normaltime": 38
+        },
+        "awayScore": {
+          "current": 31,
+          "display": 31,
+          "period1": 17,
+          "period2": 14,
+          "normaltime": 31
+        },
+        "time": {
+          "played": 3600,
+          "periodLength": 1800,
+          "overtimeLength": 300,
+          "totalPeriodCount": 2,
+          "currentPeriodStartTimestamp": 1726078679
+        },
+        "changes": {
+          "changes": [
+            "status.code",
+            "status.description",
+            "status.type",
+            "homeScore.period2",
+            "homeScore.normaltime",
+            "awayScore.period2",
+            "awayScore.normaltime",
+            "time.currentPeriodStart",
+            "time.played"
+          ],
+          "changeTimestamp": 1726078682
+        },
         "hasGlobalHighlights": true,
+        "hasEventPlayerStatistics": true,
         "crowdsourcingDataDisplayEnabled": false,
-        "id": 11471214,
-        "startTimestamp": 1715787000,
-        "slug": "moyra-budaors-ksn-kft-vasas-sc",
+        "id": 12567184,
+        "startTimestamp": 1726073100,
+        "slug": "hbc-nantes-aalborg-handbold",
         "finalResultOnly": false,
-        "feedLocked": true,
-        "isEditor": true,
+        "feedLocked": false,
+        "isEditor": false,
         "crowdsourcingEnabled": false
       },
       {
         "tournament": {
-          "name": "NB I, Women",
-          "slug": "nb-i-women",
-          "category": ["Object"],
-          "uniqueTournament": ["Object"],
-          "priority": 0,
-          "isGroup": false,
-          "isLive": false,
-          "id": 3192
-        },
-        "season": {
-          "name": "NB I, Women 23/24",
-          "year": "23/24",
-          "editor": true,
-          "id": 53411
-        },
-        "roundInfo": { "round": 24 },
-        "customId": "TLcsBNc",
-        "status": { "code": 0, "description": "Not started", "type": "notstarted" },
-        "homeTeam": {
-          "name": "FTC-Rail Cargo Hungaria",
-          "slug": "ftc-rail-cargo-hungaria",
-          "shortName": "FTC",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 2786,
-          "nameCode": "FTC",
-          "national": true,
-          "type": 0,
-          "id": 6948,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"],
-          "fieldTranslations": ["Object"]
-        },
-        "awayTeam": {
-          "name": "Alba Fehérvár KC",
-          "slug": "alba-fehervar-kc",
-          "shortName": "Alba",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 140,
-          "nameCode": "FVR",
-          "disabled": false,
-          "national": true,
-          "type": 0,
-          "id": 6843,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "homeScore": {},
-        "awayScore": {},
-        "time": {},
-        "changes": { "changeTimestamp": 0 },
-        "hasGlobalHighlights": true,
-        "crowdsourcingDataDisplayEnabled": true,
-        "id": 11471220,
-        "startTimestamp": 1716053400,
-        "slug": "ftc-rail-cargo-hungaria-alba-fehervar-kc",
-        "finalResultOnly": false,
-        "feedLocked": false,
-        "isEditor": false,
-        "crowdsourcingEnabled": true
-      },
-      {
-        "tournament": {
-          "name": "NB I, Women",
-          "slug": "nb-i-women",
-          "category": ["Object"],
-          "uniqueTournament": ["Object"],
-          "priority": 0,
+          "name": "EHF Champions League, Group B",
+          "slug": "ehf-champions-league-group-b",
+          "category": {
+            "name": "International",
+            "slug": "international",
+            "sport": {
+              "name": "Handball",
+              "slug": "handball",
+              "id": 6
+            },
+            "id": 73,
+            "country": {},
+            "flag": "international"
+          },
+          "uniqueTournament": {
+            "name": "EHF Champions League",
+            "slug": "ehf-champions-league",
+            "primaryColorHex": "#e40214",
+            "secondaryColorHex": "#aca06f",
+            "category": {
+              "name": "International",
+              "slug": "international",
+              "sport": {
+                "name": "Handball",
+                "slug": "handball",
+                "id": 6
+              },
+              "id": 73,
+              "country": {},
+              "flag": "international"
+            },
+            "userCount": 20780,
+            "crowdsourcingEnabled": false,
+            "hasPerformanceGraphFeature": false,
+            "id": 30,
+            "country": {},
+            "hasEventPlayerStatistics": false,
+            "hasBoxScore": true,
+            "displayInverseHomeAwayTeams": false
+          },
+          "priority": 56,
           "isGroup": true,
+          "groupName": "Group B",
           "isLive": false,
-          "id": 3192
+          "id": 2466
         },
         "season": {
-          "name": "NB I, Women 23/24",
-          "year": "23/24",
+          "name": "Champions League 24/25",
+          "year": "24/25",
           "editor": false,
-          "id": 53411
+          "id": 62491
         },
-        "roundInfo": { "round": 24 },
-        "customId": "nMcsrltc",
-        "status": { "code": 0, "description": "Not started", "type": "notstarted" },
+        "roundInfo": {
+          "round": 1
+        },
+        "customId": "zEbsmeX",
+        "status": {
+          "code": 100,
+          "description": "Ended",
+          "type": "finished"
+        },
+        "winnerCode": 2,
         "homeTeam": {
-          "name": "Moyra-Budaors KSN KFT",
-          "slug": "moyra-budaors-ksn-kft",
-          "shortName": "Budaörs",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 60,
-          "nameCode": "MOY",
-          "disabled": true,
-          "national": true,
-          "type": 0,
-          "id": 295567,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "awayTeam": {
-          "name": "DVSC Schaeffler",
-          "slug": "dvsc-schaeffler",
-          "shortName": "DVSC",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 687,
-          "nameCode": "DVS",
-          "disabled": true,
-          "national": true,
-          "type": 0,
-          "id": 6855,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "homeScore": {},
-        "awayScore": {},
-        "time": {},
-        "changes": { "changeTimestamp": 0 },
-        "hasGlobalHighlights": false,
-        "crowdsourcingDataDisplayEnabled": false,
-        "id": 11471224,
-        "startTimestamp": 1716037200,
-        "slug": "moyra-budaors-ksn-kft-dvsc-schaeffler",
-        "finalResultOnly": false,
-        "feedLocked": true,
-        "isEditor": true,
-        "crowdsourcingEnabled": true
-      },
-      {
-        "tournament": {
-          "name": "NB I, Women",
-          "slug": "nb-i-women",
-          "category": ["Object"],
-          "uniqueTournament": ["Object"],
-          "priority": 0,
-          "isGroup": true,
-          "isLive": false,
-          "id": 3192
-        },
-        "season": {
-          "name": "NB I, Women 23/24",
-          "year": "23/24",
-          "editor": true,
-          "id": 53411
-        },
-        "roundInfo": { "round": 24 },
-        "customId": "ZNcbOkRb",
-        "status": { "code": 0, "description": "Not started", "type": "notstarted" },
-        "homeTeam": {
-          "name": "Győri Audi ETO KC",
-          "slug": "gyori-audi-eto-kc",
-          "shortName": "Győr",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 3394,
-          "nameCode": "GYO",
-          "national": false,
-          "type": 0,
-          "id": 6949,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"],
-          "fieldTranslations": ["Object"]
-        },
-        "awayTeam": {
-          "name": "Vasas SC",
-          "slug": "vasas-sc",
-          "shortName": "Vasas SC",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 66,
-          "nameCode": "VAS",
-          "national": true,
-          "type": 0,
-          "id": 230539,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "homeScore": {},
-        "awayScore": {},
-        "time": {},
-        "changes": { "changeTimestamp": 0 },
-        "hasGlobalHighlights": false,
-        "crowdsourcingDataDisplayEnabled": false,
-        "id": 11471219,
-        "startTimestamp": 1716052500,
-        "slug": "vasas-sc-gyori-audi-eto-kc",
-        "finalResultOnly": false,
-        "feedLocked": true,
-        "isEditor": true,
-        "crowdsourcingEnabled": true
-      },
-      {
-        "tournament": {
-          "name": "NB I, Women",
-          "slug": "nb-i-women",
-          "category": ["Object"],
-          "uniqueTournament": ["Object"],
-          "priority": 0,
-          "isGroup": true,
-          "isLive": true,
-          "id": 3192
-        },
-        "season": {
-          "name": "NB I, Women 23/24",
-          "year": "23/24",
-          "editor": false,
-          "id": 53411
-        },
-        "roundInfo": { "round": 24 },
-        "customId": "PYnskmtb",
-        "status": { "code": 0, "description": "Not started", "type": "notstarted" },
-        "homeTeam": {
-          "name": "Vaci NKSE",
-          "slug": "vaci-nkse",
-          "shortName": "Vác",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 260,
-          "nameCode": "NKSE",
-          "national": true,
-          "type": 0,
-          "id": 34949,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "awayTeam": {
-          "name": "Mosonmagyarovari KC",
-          "slug": "mosonmagyarovari-kc",
-          "shortName": "Mosonmagyaróvár",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 372,
-          "nameCode": "MOS",
-          "national": true,
-          "type": 0,
-          "id": 170610,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "homeScore": {},
-        "awayScore": {},
-        "time": {},
-        "changes": { "changeTimestamp": 0 },
-        "hasGlobalHighlights": true,
-        "crowdsourcingDataDisplayEnabled": true,
-        "id": 11471221,
-        "startTimestamp": 1716053400,
-        "slug": "mosonmagyarovari-kc-vaci-nkse",
-        "finalResultOnly": true,
-        "feedLocked": true,
-        "isEditor": true,
-        "crowdsourcingEnabled": false
-      },
-      {
-        "tournament": {
-          "name": "NB I, Women",
-          "slug": "nb-i-women",
-          "category": ["Object"],
-          "uniqueTournament": ["Object"],
-          "priority": 0,
-          "isGroup": true,
-          "isLive": true,
-          "id": 3192
-        },
-        "season": {
-          "name": "NB I, Women 23/24",
-          "year": "23/24",
-          "editor": true,
-          "id": 53411
-        },
-        "roundInfo": { "round": 24 },
-        "customId": "cLcsmWdc",
-        "status": { "code": 0, "description": "Not started", "type": "notstarted" },
-        "homeTeam": {
-          "name": "Kisvárda",
-          "slug": "kisvarda",
-          "shortName": "Kisvárda",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 86,
-          "nameCode": "KIS",
-          "national": false,
-          "type": 0,
-          "id": 262312,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "awayTeam": {
-          "name": "Dunaújvárosi Kohász KA",
-          "slug": "dunaujvarosi-kohasz-ka",
-          "shortName": "DKKA",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 139,
-          "nameCode": "DUN",
-          "national": false,
-          "type": 0,
-          "id": 6802,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"],
-          "fieldTranslations": ["Object"]
-        },
-        "homeScore": {},
-        "awayScore": {},
-        "time": {},
-        "changes": { "changeTimestamp": 0 },
-        "hasGlobalHighlights": true,
-        "crowdsourcingDataDisplayEnabled": true,
-        "id": 11471223,
-        "startTimestamp": 1716040800,
-        "slug": "kisvarda-dunaujvarosi-kohasz-ka",
-        "finalResultOnly": true,
-        "feedLocked": false,
-        "isEditor": false,
-        "crowdsourcingEnabled": true
-      },
-      {
-        "tournament": {
-          "name": "NB I, Women",
-          "slug": "nb-i-women",
-          "category": ["Object"],
-          "uniqueTournament": ["Object"],
-          "priority": 0,
-          "isGroup": false,
-          "isLive": true,
-          "id": 3192
-        },
-        "season": {
-          "name": "NB I, Women 23/24",
-          "year": "23/24",
-          "editor": true,
-          "id": 53411
-        },
-        "roundInfo": { "round": 24 },
-        "customId": "FopsXoid",
-        "status": { "code": 0, "description": "Not started", "type": "notstarted" },
-        "homeTeam": {
-          "name": "Kozármisleny SE",
-          "slug": "kozarmisleny-se",
-          "shortName": "KSE",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 45,
-          "nameCode": "KOZ",
-          "national": true,
-          "type": 0,
-          "id": 395745,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "awayTeam": {
-          "name": "Békéscsabai Előre NKSE",
-          "slug": "bekescsabai-elore-nkse",
-          "shortName": "Bekescsabai",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 106,
-          "nameCode": "ENK",
-          "disabled": false,
-          "national": true,
-          "type": 0,
-          "id": 38230,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"],
-          "fieldTranslations": ["Object"]
-        },
-        "homeScore": {},
-        "awayScore": {},
-        "time": {},
-        "changes": { "changeTimestamp": 0 },
-        "hasGlobalHighlights": false,
-        "crowdsourcingDataDisplayEnabled": true,
-        "id": 11471222,
-        "startTimestamp": 1716048900,
-        "slug": "kozarmisleny-se-bekescsabai-elore-nkse",
-        "finalResultOnly": true,
-        "feedLocked": true,
-        "isEditor": true,
-        "crowdsourcingEnabled": true
-      },
-      {
-        "tournament": {
-          "name": "NB I, Women",
-          "slug": "nb-i-women",
-          "category": ["Object"],
-          "uniqueTournament": ["Object"],
-          "priority": 0,
-          "isGroup": true,
-          "isLive": true,
-          "id": 3192
-        },
-        "season": {
-          "name": "NB I, Women 23/24",
-          "year": "23/24",
-          "editor": false,
-          "id": 53411
-        },
-        "roundInfo": { "round": 24 },
-        "customId": "pmtbsifvd",
-        "status": { "code": 0, "description": "Not started", "type": "notstarted" },
-        "homeTeam": {
-          "name": "MTK Budapest",
-          "slug": "mtk-budapest",
-          "shortName": "MTK",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 143,
-          "nameCode": "MTK",
-          "national": false,
-          "type": 0,
-          "id": 170608,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"],
-          "fieldTranslations": ["Object"]
-        },
-        "awayTeam": {
-          "name": "Neka",
-          "slug": "neka",
-          "shortName": "NEKA",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 59,
-          "nameCode": "NEK",
-          "national": false,
-          "type": 0,
-          "id": 425258,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "homeScore": {},
-        "awayScore": {},
-        "time": {},
-        "changes": { "changeTimestamp": 0 },
-        "hasGlobalHighlights": true,
-        "crowdsourcingDataDisplayEnabled": false,
-        "id": 11471225,
-        "startTimestamp": 1716119100,
-        "slug": "neka-mtk-budapest",
-        "finalResultOnly": true,
-        "feedLocked": false,
-        "isEditor": false,
-        "crowdsourcingEnabled": false
-      },
-      {
-        "tournament": {
-          "name": "NB I, Women",
-          "slug": "nb-i-women",
-          "category": ["Object"],
-          "uniqueTournament": ["Object"],
-          "priority": 0,
-          "isGroup": true,
-          "isLive": false,
-          "id": 3192
-        },
-        "season": {
-          "name": "NB I, Women 23/24",
-          "year": "23/24",
-          "editor": true,
-          "id": 53411
-        },
-        "roundInfo": { "round": 25 },
-        "customId": "GLcsifvd",
-        "status": { "code": 0, "description": "Not started", "type": "notstarted" },
-        "homeTeam": {
-          "name": "Neka",
-          "slug": "neka",
-          "shortName": "NEKA",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 59,
-          "nameCode": "NEK",
-          "national": true,
-          "type": 0,
-          "id": 425258,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "awayTeam": {
-          "name": "Alba Fehérvár KC",
-          "slug": "alba-fehervar-kc",
-          "shortName": "Alba",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 140,
-          "nameCode": "FVR",
-          "disabled": true,
-          "national": true,
-          "type": 0,
-          "id": 6843,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "homeScore": {},
-        "awayScore": {},
-        "time": {},
-        "changes": { "changeTimestamp": 0 },
-        "hasGlobalHighlights": true,
-        "crowdsourcingDataDisplayEnabled": false,
-        "id": 11471226,
-        "startTimestamp": 1716388200,
-        "slug": "neka-alba-fehervar-kc",
-        "finalResultOnly": false,
-        "feedLocked": true,
-        "isEditor": false,
-        "crowdsourcingEnabled": false
-      },
-      {
-        "tournament": {
-          "name": "NB I, Women",
-          "slug": "nb-i-women",
-          "category": ["Object"],
-          "uniqueTournament": ["Object"],
-          "priority": 0,
-          "isGroup": false,
-          "isLive": true,
-          "id": 3192
-        },
-        "season": {
-          "name": "NB I, Women 23/24",
-          "year": "23/24",
-          "editor": true,
-          "id": 53411
-        },
-        "roundInfo": { "round": 25 },
-        "customId": "fMciZNc",
-        "status": { "code": 0, "description": "Not started", "type": "notstarted" },
-        "homeTeam": {
-          "name": "DVSC Schaeffler",
-          "slug": "dvsc-schaeffler",
-          "shortName": "DVSC",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 687,
-          "nameCode": "DVS",
-          "disabled": false,
-          "national": true,
-          "type": 0,
-          "id": 6855,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "awayTeam": {
-          "name": "Győri Audi ETO KC",
-          "slug": "gyori-audi-eto-kc",
-          "shortName": "Győr",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 3394,
-          "nameCode": "GYO",
-          "national": true,
-          "type": 0,
-          "id": 6949,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"],
-          "fieldTranslations": ["Object"]
-        },
-        "homeScore": {},
-        "awayScore": {},
-        "time": {},
-        "changes": { "changeTimestamp": 0 },
-        "hasGlobalHighlights": false,
-        "crowdsourcingDataDisplayEnabled": true,
-        "id": 11471228,
-        "startTimestamp": 1716400800,
-        "slug": "gyori-audi-eto-kc-dvsc-schaeffler",
-        "finalResultOnly": false,
-        "feedLocked": true,
-        "isEditor": false,
-        "crowdsourcingEnabled": true
-      },
-      {
-        "tournament": {
-          "name": "NB I, Women",
-          "slug": "nb-i-women",
-          "category": ["Object"],
-          "uniqueTournament": ["Object"],
-          "priority": 0,
-          "isGroup": true,
-          "isLive": false,
-          "id": 3192
-        },
-        "season": {
-          "name": "NB I, Women 23/24",
-          "year": "23/24",
-          "editor": true,
-          "id": 53411
-        },
-        "roundInfo": { "round": 25 },
-        "customId": "YNcsOcRb",
-        "status": { "code": 0, "description": "Not started", "type": "notstarted" },
-        "homeTeam": {
-          "name": "Vasas SC",
-          "slug": "vasas-sc",
-          "shortName": "Vasas SC",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 66,
-          "nameCode": "VAS",
-          "national": true,
-          "type": 0,
-          "id": 230539,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "awayTeam": {
-          "name": "FTC-Rail Cargo Hungaria",
-          "slug": "ftc-rail-cargo-hungaria",
-          "shortName": "FTC",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 2786,
-          "nameCode": "FTC",
-          "national": false,
-          "type": 0,
-          "id": 6948,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"],
-          "fieldTranslations": ["Object"]
-        },
-        "homeScore": {},
-        "awayScore": {},
-        "time": {},
-        "changes": { "changeTimestamp": 0 },
-        "hasGlobalHighlights": false,
-        "crowdsourcingDataDisplayEnabled": true,
-        "id": 11471227,
-        "startTimestamp": 1716394500,
-        "slug": "vasas-sc-ftc-rail-cargo-hungaria",
-        "finalResultOnly": true,
-        "feedLocked": false,
-        "isEditor": true,
-        "crowdsourcingEnabled": false
-      },
-      {
-        "tournament": {
-          "name": "NB I, Women",
-          "slug": "nb-i-women",
-          "category": ["Object"],
-          "uniqueTournament": ["Object"],
-          "priority": 0,
-          "isGroup": true,
-          "isLive": false,
-          "id": 3192
-        },
-        "season": {
-          "name": "NB I, Women 23/24",
-          "year": "23/24",
-          "editor": true,
-          "id": 53411
-        },
-        "roundInfo": { "round": 25 },
-        "customId": "kmtbsVofd",
-        "status": { "code": 0, "description": "Not started", "type": "notstarted" },
-        "homeTeam": {
-          "name": "Mosonmagyarovari KC",
-          "slug": "mosonmagyarovari-kc",
-          "shortName": "Mosonmagyaróvár",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 372,
-          "nameCode": "MOS",
-          "national": false,
-          "type": 0,
-          "id": 170610,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "awayTeam": {
-          "name": "Kozármisleny SE",
-          "slug": "kozarmisleny-se",
-          "shortName": "KSE",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 45,
-          "nameCode": "KOZ",
-          "national": true,
-          "type": 0,
-          "id": 395745,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "homeScore": {},
-        "awayScore": {},
-        "time": {},
-        "changes": { "changeTimestamp": 0 },
-        "hasGlobalHighlights": true,
-        "crowdsourcingDataDisplayEnabled": true,
-        "id": 11471231,
-        "startTimestamp": 1716389100,
-        "slug": "kozarmisleny-se-mosonmagyarovari-kc",
-        "finalResultOnly": true,
-        "feedLocked": false,
-        "isEditor": false,
-        "crowdsourcingEnabled": true
-      },
-      {
-        "tournament": {
-          "name": "NB I, Women",
-          "slug": "nb-i-women",
-          "category": ["Object"],
-          "uniqueTournament": ["Object"],
-          "priority": 0,
-          "isGroup": false,
-          "isLive": true,
-          "id": 3192
-        },
-        "season": {
-          "name": "NB I, Women 23/24",
-          "year": "23/24",
-          "editor": true,
-          "id": 53411
-        },
-        "roundInfo": { "round": 25 },
-        "customId": "BYnsimtb",
-        "status": { "code": 0, "description": "Not started", "type": "notstarted" },
-        "homeTeam": {
-          "name": "MTK Budapest",
-          "slug": "mtk-budapest",
-          "shortName": "MTK",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 143,
-          "nameCode": "MTK",
-          "national": false,
-          "type": 0,
-          "id": 170608,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"],
-          "fieldTranslations": ["Object"]
-        },
-        "awayTeam": {
-          "name": "Vaci NKSE",
-          "slug": "vaci-nkse",
-          "shortName": "Vác",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 260,
-          "nameCode": "NKSE",
-          "national": false,
-          "type": 0,
-          "id": 34949,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "homeScore": {},
-        "awayScore": {},
-        "time": {},
-        "changes": { "changeTimestamp": 0 },
-        "hasGlobalHighlights": true,
-        "crowdsourcingDataDisplayEnabled": true,
-        "id": 11471232,
-        "startTimestamp": 1716384600,
-        "slug": "mtk-budapest-vaci-nkse",
-        "finalResultOnly": false,
-        "feedLocked": true,
-        "isEditor": true,
-        "crowdsourcingEnabled": true
-      },
-      {
-        "tournament": {
-          "name": "NB I, Women",
-          "slug": "nb-i-women",
-          "category": ["Object"],
-          "uniqueTournament": ["Object"],
-          "priority": 0,
-          "isGroup": true,
-          "isLive": true,
-          "id": 3192
-        },
-        "season": {
-          "name": "NB I, Women 23/24",
-          "year": "23/24",
-          "editor": true,
-          "id": 53411
-        },
-        "roundInfo": { "round": 25 },
-        "customId": "CopsmWec",
-        "status": { "code": 0, "description": "Not started", "type": "notstarted" },
-        "homeTeam": {
-          "name": "Békéscsabai Előre NKSE",
-          "slug": "bekescsabai-elore-nkse",
-          "shortName": "Bekescsabai",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 106,
-          "nameCode": "ENK",
+          "name": "Kolstad",
+          "slug": "kolstad",
+          "shortName": "Kolstad",
+          "gender": "M",
+          "sport": {
+            "name": "Handball",
+            "slug": "handball",
+            "id": 6
+          },
+          "userCount": 1281,
+          "nameCode": "KOL",
           "disabled": false,
           "national": false,
           "type": 0,
-          "id": 38230,
-          "country": ["Object"],
+          "id": 117712,
+          "country": {
+            "alpha2": "NO",
+            "alpha3": "NOR",
+            "name": "Norway"
+          },
           "subTeams": [],
-          "teamColors": ["Object"],
-          "fieldTranslations": ["Object"]
+          "teamColors": {
+            "primary": "#ff403c",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "Kolstad Handball"
+            },
+            "shortNameTranslation": {}
+          }
         },
         "awayTeam": {
-          "name": "Kisvárda",
-          "slug": "kisvarda",
-          "shortName": "Kisvárda",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 86,
-          "nameCode": "KIS",
+          "name": "FC Barcelona HB",
+          "slug": "fc-barcelona-hb",
+          "shortName": "Barcelona",
+          "gender": "M",
+          "sport": {
+            "name": "Handball",
+            "slug": "handball",
+            "id": 6
+          },
+          "userCount": 44726,
+          "nameCode": "FCB",
+          "disabled": false,
           "national": false,
           "type": 0,
-          "id": 262312,
-          "country": ["Object"],
+          "id": 3974,
+          "country": {
+            "alpha2": "ES",
+            "alpha3": "ESP",
+            "name": "Spain"
+          },
           "subTeams": [],
-          "teamColors": ["Object"]
+          "teamColors": {
+            "primary": "#000080",
+            "secondary": "#dc143c",
+            "text": "#dc143c"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "برشلونة FC",
+              "ru": "ГК Барселона"
+            },
+            "shortNameTranslation": {}
+          }
         },
-        "homeScore": {},
-        "awayScore": {},
-        "time": {},
-        "changes": { "changeTimestamp": 0 },
-        "hasGlobalHighlights": false,
-        "crowdsourcingDataDisplayEnabled": true,
-        "id": 11471230,
-        "startTimestamp": 1716390900,
-        "slug": "kisvarda-bekescsabai-elore-nkse",
-        "finalResultOnly": true,
-        "feedLocked": true,
-        "isEditor": false,
-        "crowdsourcingEnabled": false
-      },
-      {
-        "tournament": {
-          "name": "NB I, Women",
-          "slug": "nb-i-women",
-          "category": ["Object"],
-          "uniqueTournament": ["Object"],
-          "priority": 0,
-          "isGroup": false,
-          "isLive": true,
-          "id": 3192
+        "homeScore": {
+          "current": 30,
+          "display": 30,
+          "period1": 13,
+          "period2": 17,
+          "normaltime": 30
         },
-        "season": {
-          "name": "NB I, Women 23/24",
-          "year": "23/24",
-          "editor": false,
-          "id": 53411
+        "awayScore": {
+          "current": 35,
+          "display": 35,
+          "period1": 20,
+          "period2": 15,
+          "normaltime": 35
         },
-        "roundInfo": { "round": 26 },
-        "customId": "fMcsYDc",
-        "status": { "code": 0, "description": "Not started", "type": "notstarted" },
-        "homeTeam": {
-          "name": "FTC-Rail Cargo Hungaria",
-          "slug": "ftc-rail-cargo-hungaria",
-          "shortName": "FTC",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 2786,
-          "nameCode": "FTC",
-          "national": true,
-          "type": 0,
-          "id": 6948,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"],
-          "fieldTranslations": ["Object"]
+        "time": {
+          "played": 3597,
+          "periodLength": 1800,
+          "overtimeLength": 300,
+          "totalPeriodCount": 2,
+          "currentPeriodStartTimestamp": 1726078466
         },
-        "awayTeam": {
-          "name": "DVSC Schaeffler",
-          "slug": "dvsc-schaeffler",
-          "shortName": "DVSC",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 687,
-          "nameCode": "DVS",
-          "disabled": true,
-          "national": false,
-          "type": 0,
-          "id": 6855,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
+        "changes": {
+          "changes": [
+            "status.code",
+            "status.description",
+            "status.type",
+            "homeScore.period2",
+            "homeScore.normaltime",
+            "awayScore.period2",
+            "awayScore.normaltime",
+            "time.currentPeriodStart"
+          ],
+          "changeTimestamp": 1726078469
         },
-        "homeScore": {},
-        "awayScore": {},
-        "time": {},
-        "changes": { "changeTimestamp": 0 },
         "hasGlobalHighlights": true,
-        "crowdsourcingDataDisplayEnabled": true,
-        "id": 11471238,
-        "startTimestamp": 1716658200,
-        "slug": "ftc-rail-cargo-hungaria-dvsc-schaeffler",
-        "finalResultOnly": false,
-        "feedLocked": true,
-        "isEditor": true,
-        "crowdsourcingEnabled": false
-      },
-      {
-        "tournament": {
-          "name": "NB I, Women",
-          "slug": "nb-i-women",
-          "category": ["Object"],
-          "uniqueTournament": ["Object"],
-          "priority": 0,
-          "isGroup": true,
-          "isLive": false,
-          "id": 3192
-        },
-        "season": {
-          "name": "NB I, Women 23/24",
-          "year": "23/24",
-          "editor": true,
-          "id": 53411
-        },
-        "roundInfo": { "round": 26 },
-        "customId": "ZYnsifvl",
-        "status": { "code": 0, "description": "Not started", "type": "notstarted" },
-        "homeTeam": {
-          "name": "Vaci NKSE",
-          "slug": "vaci-nkse",
-          "shortName": "Vác",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 260,
-          "nameCode": "NKSE",
-          "national": false,
-          "type": 0,
-          "id": 34949,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "awayTeam": {
-          "name": "Neka",
-          "slug": "neka",
-          "shortName": "NEKA",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 59,
-          "nameCode": "NEK",
-          "national": false,
-          "type": 0,
-          "id": 425258,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "homeScore": {},
-        "awayScore": {},
-        "time": {},
-        "changes": { "changeTimestamp": 0 },
-        "hasGlobalHighlights": false,
+        "hasEventPlayerStatistics": true,
         "crowdsourcingDataDisplayEnabled": false,
-        "id": 11471239,
-        "startTimestamp": 1716643800,
-        "slug": "neka-vaci-nkse",
-        "finalResultOnly": true,
-        "feedLocked": false,
-        "isEditor": true,
-        "crowdsourcingEnabled": false
-      },
-      {
-        "tournament": {
-          "name": "NB I, Women",
-          "slug": "nb-i-women",
-          "category": ["Object"],
-          "uniqueTournament": ["Object"],
-          "priority": 0,
-          "isGroup": true,
-          "isLive": true,
-          "id": 3192
-        },
-        "season": {
-          "name": "NB I, Women 23/24",
-          "year": "23/24",
-          "editor": true,
-          "id": 53411
-        },
-        "roundInfo": { "round": 26 },
-        "customId": "umtbsVoid",
-        "status": { "code": 0, "description": "Not started", "type": "notstarted" },
-        "homeTeam": {
-          "name": "Kozármisleny SE",
-          "slug": "kozarmisleny-se",
-          "shortName": "KSE",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 45,
-          "nameCode": "KOZ",
-          "national": false,
-          "type": 0,
-          "id": 395745,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "awayTeam": {
-          "name": "MTK Budapest",
-          "slug": "mtk-budapest",
-          "shortName": "MTK",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 143,
-          "nameCode": "MTK",
-          "national": false,
-          "type": 0,
-          "id": 170608,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"],
-          "fieldTranslations": ["Object"]
-        },
-        "homeScore": {},
-        "awayScore": {},
-        "time": {},
-        "changes": { "changeTimestamp": 0 },
-        "hasGlobalHighlights": false,
-        "crowdsourcingDataDisplayEnabled": false,
-        "id": 11471234,
-        "startTimestamp": 1716660000,
-        "slug": "kozarmisleny-se-mtk-budapest",
-        "finalResultOnly": false,
-        "feedLocked": true,
-        "isEditor": true,
-        "crowdsourcingEnabled": false
-      },
-      {
-        "tournament": {
-          "name": "NB I, Women",
-          "slug": "nb-i-women",
-          "category": ["Object"],
-          "uniqueTournament": ["Object"],
-          "priority": 0,
-          "isGroup": true,
-          "isLive": false,
-          "id": 3192
-        },
-        "season": {
-          "name": "NB I, Women 23/24",
-          "year": "23/24",
-          "editor": false,
-          "id": 53411
-        },
-        "roundInfo": { "round": 26 },
-        "customId": "Fopsrlpc",
-        "status": { "code": 0, "description": "Not started", "type": "notstarted" },
-        "homeTeam": {
-          "name": "Moyra-Budaors KSN KFT",
-          "slug": "moyra-budaors-ksn-kft",
-          "shortName": "Budaörs",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 60,
-          "nameCode": "MOY",
-          "disabled": true,
-          "national": true,
-          "type": 0,
-          "id": 295567,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"]
-        },
-        "awayTeam": {
-          "name": "Békéscsabai Előre NKSE",
-          "slug": "bekescsabai-elore-nkse",
-          "shortName": "Bekescsabai",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 106,
-          "nameCode": "ENK",
-          "disabled": true,
-          "national": true,
-          "type": 0,
-          "id": 38230,
-          "country": ["Object"],
-          "subTeams": [],
-          "teamColors": ["Object"],
-          "fieldTranslations": ["Object"]
-        },
-        "homeScore": {},
-        "awayScore": {},
-        "time": {},
-        "changes": { "changeTimestamp": 0 },
-        "hasGlobalHighlights": true,
-        "crowdsourcingDataDisplayEnabled": true,
-        "id": 11471236,
-        "startTimestamp": 1716655500,
-        "slug": "moyra-budaors-ksn-kft-bekescsabai-elore-nkse",
+        "id": 12567183,
+        "startTimestamp": 1726073100,
+        "slug": "kolstad-fc-barcelona-hb",
         "finalResultOnly": false,
         "feedLocked": false,
         "isEditor": false,
-        "crowdsourcingEnabled": true
+        "crowdsourcingEnabled": false
       },
       {
         "tournament": {
-          "name": "NB I, Women",
-          "slug": "nb-i-women",
-          "category": ["Object"],
-          "uniqueTournament": ["Object"],
-          "priority": 0,
+          "name": "EHF Champions League, Group A",
+          "slug": "ehf-champions-league-group-a",
+          "category": {
+            "name": "International",
+            "slug": "international",
+            "sport": {
+              "name": "Handball",
+              "slug": "handball",
+              "id": 6
+            },
+            "id": 73,
+            "country": {},
+            "flag": "international"
+          },
+          "uniqueTournament": {
+            "name": "EHF Champions League",
+            "slug": "ehf-champions-league",
+            "primaryColorHex": "#e40214",
+            "secondaryColorHex": "#aca06f",
+            "category": {
+              "name": "International",
+              "slug": "international",
+              "sport": {
+                "name": "Handball",
+                "slug": "handball",
+                "id": 6
+              },
+              "id": 73,
+              "country": {},
+              "flag": "international"
+            },
+            "userCount": 20780,
+            "crowdsourcingEnabled": false,
+            "hasPerformanceGraphFeature": false,
+            "id": 30,
+            "country": {},
+            "hasEventPlayerStatistics": false,
+            "hasBoxScore": true,
+            "displayInverseHomeAwayTeams": false
+          },
+          "priority": 57,
           "isGroup": true,
+          "groupName": "Group A",
           "isLive": false,
-          "id": 3192
+          "id": 2465
         },
         "season": {
-          "name": "NB I, Women 23/24",
-          "year": "23/24",
+          "name": "Champions League 24/25",
+          "year": "24/25",
           "editor": false,
-          "id": 53411
+          "id": 62491
         },
-        "roundInfo": { "round": 26 },
-        "customId": "cLcqZNc",
-        "status": { "code": 0, "description": "Not started", "type": "notstarted" },
+        "roundInfo": {
+          "round": 1
+        },
+        "customId": "YGcsVKc",
+        "status": {
+          "code": 100,
+          "description": "Ended",
+          "type": "finished"
+        },
+        "winnerCode": 1,
         "homeTeam": {
-          "name": "Győri Audi ETO KC",
-          "slug": "gyori-audi-eto-kc",
-          "shortName": "Győr",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 3394,
-          "nameCode": "GYO",
-          "national": true,
+          "name": "Sporting",
+          "slug": "sporting",
+          "shortName": "Sporting",
+          "gender": "M",
+          "sport": {
+            "name": "Handball",
+            "slug": "handball",
+            "id": 6
+          },
+          "userCount": 10385,
+          "nameCode": "SPO",
+          "disabled": false,
+          "national": false,
           "type": 0,
-          "id": 6949,
-          "country": ["Object"],
+          "id": 6795,
+          "country": {
+            "alpha2": "PT",
+            "alpha3": "PRT",
+            "name": "Portugal"
+          },
           "subTeams": [],
-          "teamColors": ["Object"],
-          "fieldTranslations": ["Object"]
+          "teamColors": {
+            "primary": "#008156",
+            "secondary": "#000000",
+            "text": "#000000"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "سپورتينغ كلوب البرتغالي",
+              "ru": "Спортинг Клуб Португалия"
+            },
+            "shortNameTranslation": {}
+          }
         },
         "awayTeam": {
-          "name": "Dunaújvárosi Kohász KA",
-          "slug": "dunaujvarosi-kohasz-ka",
-          "shortName": "DKKA",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 139,
-          "nameCode": "DUN",
-          "national": true,
+          "name": "SPR Wisła Płock",
+          "slug": "spr-wisla-plock",
+          "shortName": "Wisła Płock",
+          "gender": "M",
+          "sport": {
+            "name": "Handball",
+            "slug": "handball",
+            "id": 6
+          },
+          "userCount": 3327,
+          "nameCode": "WPL",
+          "disabled": false,
+          "national": false,
           "type": 0,
-          "id": 6802,
-          "country": ["Object"],
+          "id": 6598,
+          "country": {
+            "alpha2": "PL",
+            "alpha3": "POL",
+            "name": "Poland"
+          },
           "subTeams": [],
-          "teamColors": ["Object"],
-          "fieldTranslations": ["Object"]
+          "teamColors": {
+            "primary": "#0267bc",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "ويسلا پلوك",
+              "ru": "Висла Плоцк"
+            },
+            "shortNameTranslation": {}
+          }
         },
-        "homeScore": {},
-        "awayScore": {},
-        "time": {},
-        "changes": { "changeTimestamp": 0 },
+        "homeScore": {
+          "current": 34,
+          "display": 34,
+          "period1": 17,
+          "period2": 17,
+          "normaltime": 34
+        },
+        "awayScore": {
+          "current": 29,
+          "display": 29,
+          "period1": 14,
+          "period2": 15,
+          "normaltime": 29
+        },
+        "time": {
+          "played": 3600,
+          "periodLength": 1800,
+          "overtimeLength": 300,
+          "totalPeriodCount": 2,
+          "currentPeriodStartTimestamp": 1726086137
+        },
+        "changes": {
+          "changes": [
+            "status.code",
+            "status.description",
+            "status.type",
+            "homeScore.period2",
+            "homeScore.normaltime",
+            "awayScore.period2",
+            "awayScore.normaltime",
+            "time.currentPeriodStart"
+          ],
+          "changeTimestamp": 1726086142
+        },
         "hasGlobalHighlights": true,
+        "hasEventPlayerStatistics": true,
         "crowdsourcingDataDisplayEnabled": false,
-        "id": 11471237,
-        "startTimestamp": 1716742800,
-        "slug": "gyori-audi-eto-kc-dunaujvarosi-kohasz-ka",
+        "id": 12567177,
+        "startTimestamp": 1726080300,
+        "slug": "sporting-spr-wisla-plock",
         "finalResultOnly": false,
         "feedLocked": false,
         "isEditor": false,
-        "crowdsourcingEnabled": true
+        "crowdsourcingEnabled": false
       },
       {
         "tournament": {
-          "name": "NB I, Women",
-          "slug": "nb-i-women",
-          "category": ["Object"],
-          "uniqueTournament": ["Object"],
-          "priority": 0,
+          "name": "EHF Champions League, Group A",
+          "slug": "ehf-champions-league-group-a",
+          "category": {
+            "name": "International",
+            "slug": "international",
+            "sport": {
+              "name": "Handball",
+              "slug": "handball",
+              "id": 6
+            },
+            "id": 73,
+            "country": {},
+            "flag": "international"
+          },
+          "uniqueTournament": {
+            "name": "EHF Champions League",
+            "slug": "ehf-champions-league",
+            "primaryColorHex": "#e40214",
+            "secondaryColorHex": "#aca06f",
+            "category": {
+              "name": "International",
+              "slug": "international",
+              "sport": {
+                "name": "Handball",
+                "slug": "handball",
+                "id": 6
+              },
+              "id": 73,
+              "country": {},
+              "flag": "international"
+            },
+            "userCount": 20780,
+            "crowdsourcingEnabled": false,
+            "hasPerformanceGraphFeature": false,
+            "id": 30,
+            "country": {},
+            "hasEventPlayerStatistics": false,
+            "hasBoxScore": true,
+            "displayInverseHomeAwayTeams": false
+          },
+          "priority": 57,
           "isGroup": true,
-          "isLive": true,
-          "id": 3192
+          "groupName": "Group A",
+          "isLive": false,
+          "id": 2465
         },
         "season": {
-          "name": "NB I, Women 23/24",
-          "year": "23/24",
-          "editor": true,
-          "id": 53411
+          "name": "Champions League 24/25",
+          "year": "24/25",
+          "editor": false,
+          "id": 62491
         },
-        "roundInfo": { "round": 26 },
-        "customId": "kmtjsmWec",
-        "status": { "code": 0, "description": "Not started", "type": "notstarted" },
+        "roundInfo": {
+          "round": 1
+        },
+        "customId": "hHcsddRb",
+        "status": {
+          "code": 100,
+          "description": "Ended",
+          "type": "finished"
+        },
+        "winnerCode": 1,
         "homeTeam": {
-          "name": "Kisvárda",
-          "slug": "kisvarda",
-          "shortName": "Kisvárda",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 86,
-          "nameCode": "KIS",
-          "national": true,
+          "name": "Paris Saint-Germain Handball",
+          "slug": "paris-saint-germain-handball",
+          "shortName": "PSG",
+          "gender": "M",
+          "sport": {
+            "name": "Handball",
+            "slug": "handball",
+            "id": 6
+          },
+          "userCount": 40691,
+          "nameCode": "PSG",
+          "disabled": false,
+          "national": false,
           "type": 0,
-          "id": 262312,
-          "country": ["Object"],
+          "id": 6607,
+          "country": {
+            "alpha2": "FR",
+            "alpha3": "FRA",
+            "name": "France"
+          },
           "subTeams": [],
-          "teamColors": ["Object"]
+          "teamColors": {
+            "primary": "#000048",
+            "secondary": "#ff0000",
+            "text": "#ff0000"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "Paris Saint-Germain",
+              "ru": "Париж Хэндбол"
+            },
+            "shortNameTranslation": {}
+          }
         },
         "awayTeam": {
-          "name": "Mosonmagyarovari KC",
-          "slug": "mosonmagyarovari-kc",
-          "shortName": "Mosonmagyaróvár",
-          "gender": "F",
-          "sport": ["Object"],
-          "userCount": 372,
-          "nameCode": "MOS",
-          "national": true,
+          "name": "RK Eurofarm Pelister",
+          "slug": "rk-eurofarm-pelister",
+          "shortName": "RK Eurofarm Pelister",
+          "gender": "M",
+          "sport": {
+            "name": "Handball",
+            "slug": "handball",
+            "id": 6
+          },
+          "userCount": 712,
+          "nameCode": "PEL",
+          "national": false,
           "type": 0,
-          "id": 170610,
-          "country": ["Object"],
+          "id": 230153,
+          "country": {
+            "alpha2": "MK",
+            "alpha3": "MKD",
+            "name": "North Macedonia"
+          },
           "subTeams": [],
-          "teamColors": ["Object"]
+          "teamColors": {
+            "primary": "#ffffff",
+            "secondary": "#0000ff",
+            "text": "#0000ff"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "RK Pelister"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "homeScore": {
+          "current": 31,
+          "display": 31,
+          "period1": 18,
+          "period2": 13,
+          "normaltime": 31
+        },
+        "awayScore": {
+          "current": 29,
+          "display": 29,
+          "period1": 13,
+          "period2": 16,
+          "normaltime": 29
+        },
+        "time": {
+          "played": 3583,
+          "periodLength": 1800,
+          "overtimeLength": 300,
+          "totalPeriodCount": 2,
+          "currentPeriodStartTimestamp": 1726085791
+        },
+        "changes": {
+          "changes": [
+            "status.code",
+            "status.description",
+            "status.type",
+            "homeScore.period2",
+            "homeScore.normaltime",
+            "awayScore.period2",
+            "awayScore.normaltime",
+            "time.currentPeriodStart"
+          ],
+          "changeTimestamp": 1726085795
+        },
+        "hasGlobalHighlights": true,
+        "hasEventPlayerStatistics": true,
+        "crowdsourcingDataDisplayEnabled": false,
+        "id": 12567180,
+        "startTimestamp": 1726080300,
+        "slug": "rk-eurofarm-pelister-paris-saint-germain-handball",
+        "finalResultOnly": false,
+        "feedLocked": false,
+        "isEditor": false,
+        "crowdsourcingEnabled": false
+      },
+	  {
+        "tournament": {
+          "name": "EHF Champions League, Group A",
+          "slug": "ehf-champions-league-group-a",
+          "category": {
+            "name": "International",
+            "slug": "international",
+            "sport": {
+              "name": "Handball",
+              "slug": "handball",
+              "id": 6
+            },
+            "id": 73,
+            "country": {},
+            "flag": "international"
+          },
+          "uniqueTournament": {
+            "name": "EHF Champions League",
+            "slug": "ehf-champions-league",
+            "primaryColorHex": "#e40214",
+            "secondaryColorHex": "#aca06f",
+            "category": {
+              "name": "International",
+              "slug": "international",
+              "sport": {
+                "name": "Handball",
+                "slug": "handball",
+                "id": 6
+              },
+              "id": 73,
+              "country": {},
+              "flag": "international"
+            },
+            "userCount": 20780,
+            "crowdsourcingEnabled": false,
+            "hasPerformanceGraphFeature": false,
+            "id": 30,
+            "country": {},
+            "hasEventPlayerStatistics": false,
+            "hasBoxScore": true,
+            "displayInverseHomeAwayTeams": false
+          },
+          "priority": 57,
+          "isGroup": true,
+          "groupName": "Group A",
+          "isLive": false,
+          "id": 2465
+        },
+        "season": {
+          "name": "Champions League 24/25",
+          "year": "24/25",
+          "editor": false,
+          "id": 62491
+        },
+        "roundInfo": {
+          "round": 3
+        },
+        "customId": "VGbsdjc",
+        "status": {
+          "code": 0,
+          "description": "Not started",
+          "type": "notstarted"
+        },
+        "homeTeam": {
+          "name": "Fhk Elite",
+          "slug": "fhk-elite",
+          "shortName": "FHK Elite",
+          "gender": "M",
+          "sport": {
+            "name": "Handball",
+            "slug": "handball",
+            "id": 6
+          },
+          "userCount": 547,
+          "nameCode": "FRE",
+          "national": false,
+          "type": 0,
+          "id": 4095,
+          "country": {
+            "alpha2": "DK",
+            "alpha3": "DNK",
+            "name": "Denmark"
+          },
+          "subTeams": [],
+          "teamColors": {
+            "primary": "#d3020d",
+            "secondary": "#000000",
+            "text": "#000000"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "Fredericia HK 1990"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "awayTeam": {
+          "name": "Füchse Berlin",
+          "slug": "fuchse-berlin",
+          "shortName": "Füchse Berlin",
+          "gender": "M",
+          "sport": {
+            "name": "Handball",
+            "slug": "handball",
+            "id": 6
+          },
+          "userCount": 5349,
+          "nameCode": "BER",
+          "disabled": false,
+          "national": false,
+          "type": 0,
+          "id": 5453,
+          "country": {
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "name": "Germany"
+          },
+          "subTeams": [],
+          "teamColors": {
+            "primary": "#006d12",
+            "secondary": "#fd0000",
+            "text": "#fd0000"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "فوكسو برلين",
+              "ru": "Фюхсе Берлин"
+            },
+            "shortNameTranslation": {}
+          }
         },
         "homeScore": {},
         "awayScore": {},
         "time": {},
-        "changes": { "changeTimestamp": 0 },
+        "changes": {
+          "changeTimestamp": 0
+        },
         "hasGlobalHighlights": false,
         "crowdsourcingDataDisplayEnabled": false,
-        "id": 11471235,
-        "startTimestamp": 1716745500,
-        "slug": "kisvarda-mosonmagyarovari-kc",
+        "id": 12567897,
+        "startTimestamp": 1727369100,
+        "slug": "fuchse-berlin-fhk-elite",
         "finalResultOnly": false,
-        "feedLocked": true,
+        "feedLocked": false,
         "isEditor": false,
-        "crowdsourcingEnabled": true
+        "crowdsourcingEnabled": false
+      },
+      {
+        "tournament": {
+          "name": "EHF Champions League, Group A",
+          "slug": "ehf-champions-league-group-a",
+          "category": {
+            "name": "International",
+            "slug": "international",
+            "sport": {
+              "name": "Handball",
+              "slug": "handball",
+              "id": 6
+            },
+            "id": 73,
+            "country": {},
+            "flag": "international"
+          },
+          "uniqueTournament": {
+            "name": "EHF Champions League",
+            "slug": "ehf-champions-league",
+            "primaryColorHex": "#e40214",
+            "secondaryColorHex": "#aca06f",
+            "category": {
+              "name": "International",
+              "slug": "international",
+              "sport": {
+                "name": "Handball",
+                "slug": "handball",
+                "id": 6
+              },
+              "id": 73,
+              "country": {},
+              "flag": "international"
+            },
+            "userCount": 20780,
+            "crowdsourcingEnabled": false,
+            "hasPerformanceGraphFeature": false,
+            "id": 30,
+            "country": {},
+            "hasEventPlayerStatistics": false,
+            "hasBoxScore": true,
+            "displayInverseHomeAwayTeams": false
+          },
+          "priority": 57,
+          "isGroup": true,
+          "groupName": "Group A",
+          "isLive": false,
+          "id": 2465
+        },
+        "season": {
+          "name": "Champions League 24/25",
+          "year": "24/25",
+          "editor": false,
+          "id": 62491
+        },
+        "roundInfo": {
+          "round": 3
+        },
+        "customId": "PKcsddRb",
+        "status": {
+          "code": 0,
+          "description": "Not started",
+          "type": "notstarted"
+        },
+        "homeTeam": {
+          "name": "CS Dinamo București",
+          "slug": "cs-dinamo-bucuresti",
+          "shortName": "Dinamo București",
+          "gender": "M",
+          "sport": {
+            "name": "Handball",
+            "slug": "handball",
+            "id": 6
+          },
+          "userCount": 2807,
+          "nameCode": "DIN",
+          "disabled": false,
+          "national": false,
+          "type": 0,
+          "id": 6790,
+          "country": {
+            "alpha2": "RO",
+            "alpha3": "ROU",
+            "name": "Romania"
+          },
+          "subTeams": [],
+          "teamColors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "قص دينامو بكراسة",
+              "ru": "Динамо Бухарест"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "awayTeam": {
+          "name": "RK Eurofarm Pelister",
+          "slug": "rk-eurofarm-pelister",
+          "shortName": "RK Eurofarm Pelister",
+          "gender": "M",
+          "sport": {
+            "name": "Handball",
+            "slug": "handball",
+            "id": 6
+          },
+          "userCount": 712,
+          "nameCode": "PEL",
+          "national": false,
+          "type": 0,
+          "id": 230153,
+          "country": {
+            "alpha2": "MK",
+            "alpha3": "MKD",
+            "name": "North Macedonia"
+          },
+          "subTeams": [],
+          "teamColors": {
+            "primary": "#ffffff",
+            "secondary": "#0000ff",
+            "text": "#0000ff"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "RK Pelister"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "homeScore": {},
+        "awayScore": {},
+        "time": {},
+        "changes": {
+          "changeTimestamp": 0
+        },
+        "hasGlobalHighlights": false,
+        "crowdsourcingDataDisplayEnabled": false,
+        "id": 12567919,
+        "startTimestamp": 1727369100,
+        "slug": "rk-eurofarm-pelister-cs-dinamo-bucuresti",
+        "finalResultOnly": false,
+        "feedLocked": false,
+        "isEditor": false,
+        "crowdsourcingEnabled": false
+      },
+      {
+        "tournament": {
+          "name": "EHF Champions League, Group B",
+          "slug": "ehf-champions-league-group-b",
+          "category": {
+            "name": "International",
+            "slug": "international",
+            "sport": {
+              "name": "Handball",
+              "slug": "handball",
+              "id": 6
+            },
+            "id": 73,
+            "country": {},
+            "flag": "international"
+          },
+          "uniqueTournament": {
+            "name": "EHF Champions League",
+            "slug": "ehf-champions-league",
+            "primaryColorHex": "#e40214",
+            "secondaryColorHex": "#aca06f",
+            "category": {
+              "name": "International",
+              "slug": "international",
+              "sport": {
+                "name": "Handball",
+                "slug": "handball",
+                "id": 6
+              },
+              "id": 73,
+              "country": {},
+              "flag": "international"
+            },
+            "userCount": 20780,
+            "crowdsourcingEnabled": false,
+            "hasPerformanceGraphFeature": false,
+            "id": 30,
+            "country": {},
+            "hasEventPlayerStatistics": false,
+            "hasBoxScore": true,
+            "displayInverseHomeAwayTeams": false
+          },
+          "priority": 56,
+          "isGroup": true,
+          "groupName": "Group B",
+          "isLive": false,
+          "id": 2466
+        },
+        "season": {
+          "name": "Champions League 24/25",
+          "year": "24/25",
+          "editor": false,
+          "id": 62491
+        },
+        "roundInfo": {
+          "round": 3
+        },
+        "customId": "GHcsuGj",
+        "status": {
+          "code": 0,
+          "description": "Not started",
+          "type": "notstarted"
+        },
+        "homeTeam": {
+          "name": "OTP Bank - Pick Szeged",
+          "slug": "otp-bank-pick-szeged",
+          "shortName": "Pick Szeged",
+          "gender": "M",
+          "sport": {
+            "name": "Handball",
+            "slug": "handball",
+            "id": 6
+          },
+          "userCount": 5169,
+          "nameCode": "SZE",
+          "disabled": false,
+          "national": false,
+          "type": 0,
+          "id": 6631,
+          "country": {
+            "alpha2": "HU",
+            "alpha3": "HUN",
+            "name": "Hungary"
+          },
+          "subTeams": [],
+          "teamColors": {
+            "primary": "#15317e",
+            "secondary": "#e42217",
+            "text": "#e42217"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "SC Szeged"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "awayTeam": {
+          "name": "HBC Nantes",
+          "slug": "hbc-nantes",
+          "shortName": "Nantes",
+          "gender": "M",
+          "sport": {
+            "name": "Handball",
+            "slug": "handball",
+            "id": 6
+          },
+          "userCount": 4956,
+          "nameCode": "NAN",
+          "national": false,
+          "type": 0,
+          "id": 24069,
+          "country": {
+            "alpha2": "FR",
+            "alpha3": "FRA",
+            "name": "France"
+          },
+          "subTeams": [],
+          "teamColors": {
+            "primary": "#640064",
+            "secondary": "#ffff00",
+            "text": "#ffff00"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "نانت HBC",
+              "ru": "ГК Нант"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "homeScore": {},
+        "awayScore": {},
+        "time": {},
+        "changes": {
+          "changeTimestamp": 0
+        },
+        "hasGlobalHighlights": false,
+        "crowdsourcingDataDisplayEnabled": false,
+        "id": 12567192,
+        "startTimestamp": 1727369100,
+        "slug": "hbc-nantes-otp-bank-pick-szeged",
+        "finalResultOnly": false,
+        "feedLocked": false,
+        "isEditor": false,
+        "crowdsourcingEnabled": false
       }
 
     ],
